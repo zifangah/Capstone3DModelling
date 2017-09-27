@@ -1,0 +1,5 @@
+﻿  Building Custom Rule C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Examples/vtk-example/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Examples/vtk-example/Cylinder-bin/CMakeFiles/generate.stamp is up-to-date.
+  Cylinder.cpp
+  Cylinder.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\vtk-example\Cylinder-bin\Debug\Cylinder.exe
+  Cylinder.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Examples/vtk-example/Cylinder-bin/Debug/Cylinder.pdb (Full PDB)
