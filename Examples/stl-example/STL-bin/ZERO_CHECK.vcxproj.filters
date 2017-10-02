@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\STL-bin\CMakeFiles\1ca3f1fcfedfed8f06cc2e02369de35a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{D532360D-2AA7-3897-A4F0-00FF95613244}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

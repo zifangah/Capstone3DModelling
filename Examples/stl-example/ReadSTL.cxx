@@ -6,6 +6,8 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
+#include <vtkInteractorStyleSwitch.h>
+#include <vtkInteractorStyleTrackball.h>
 
 int main ( int argc, char *argv[] )
 {
@@ -23,6 +25,8 @@ int main ( int argc, char *argv[] )
 	reader->Update();
 
 	// Visualize
+
+	// Create a mapper and actor
 	vtkSmartPointer<vtkPolyDataMapper> mapper =
 			vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper->SetInputConnection(reader->GetOutputPort());
@@ -31,19 +35,37 @@ int main ( int argc, char *argv[] )
 			vtkSmartPointer<vtkActor>::New();
 	actor->SetMapper(mapper);
 
+	//Create renderer and render window, add the renderer to the window
 	vtkSmartPointer<vtkRenderer> renderer =
 			vtkSmartPointer<vtkRenderer>::New();
 	vtkSmartPointer<vtkRenderWindow> renderWindow =
 			vtkSmartPointer<vtkRenderWindow>::New();
 	renderWindow->AddRenderer(renderer);
+	
+
+	// Create an interactor, and attatch it to a renderwindow
 	vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
 			vtkSmartPointer<vtkRenderWindowInteractor>::New();
+
 	renderWindowInteractor->SetRenderWindow(renderWindow);
 
+	// Add the actors to the scene
 	renderer->AddActor(actor);
-	renderer->SetBackground(.3, .6, .3); // Background color green
+	renderer->SetBackground(.0, 1.0, 1.0); // Background color 
 
+	// Render an image (lights and cameras are created automatically)
 	renderWindow->Render();
+
+	//Set the window title, must be called after Render()
+	renderWindow->SetWindowName("Window :D");
+
+	//Change the default control style
+	//vtkSmartPointer<vtkInteractorStyleTrackball> style =
+	//	vtkSmartPointer<vtkInteractorStyleTrackball>::New();
+
+	//renderWindowInteractor->SetInteractorStyle(style);
+
+	// Begin mouse interaction
 	renderWindowInteractor->Start();
 
 	return EXIT_SUCCESS;
