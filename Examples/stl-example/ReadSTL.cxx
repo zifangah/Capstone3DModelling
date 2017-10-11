@@ -54,7 +54,7 @@ int main (int, char *[])
 	//Read in the file
 	//std::string inputFilename1 = argv[1];
 	cout << "Reading file 1\n";
-	std::string inputFilename1 = "C:\\Users\\KSeam\\Documents\\Courses\\UBCO\\Year 4\\COSC 499\\Capstone3DModelling\\Examples\\stl-example\\STL-bin\\Debug\\lowerModel.stl";
+	std::string inputFilename1 = "lowerModel.stl";
 
 	vtkSmartPointer<vtkSTLReader> reader1 =
 			vtkSmartPointer<vtkSTLReader>::New();
