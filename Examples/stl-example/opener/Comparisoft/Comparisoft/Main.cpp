@@ -6,6 +6,7 @@
 #include <string.h>  
 #include <tchar.h> 
 #include <shobjidl.h>
+#include <stddef.h>
 
 // Global variables  
 
@@ -19,6 +20,7 @@ HINSTANCE hInst;
 
 // Forward declarations of functions included in this code module:  
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+LPWSTR fileDialogue();
 
 int CALLBACK WinMain(
 	_In_ HINSTANCE hInstance,
@@ -117,15 +119,29 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	PAINTSTRUCT ps;
 	HDC hdc;
-	TCHAR greeting[] = _T("Hello, World!");
+	//size_t zero = 0;
+	LPWSTR greeting = L"Hello, World!";
+	LPWSTR filePath1 = NULL;
+	LPWSTR drv1 = NULL;
+	LPWSTR dir1 = NULL;
+	wchar_t fileName1[_MAX_FNAME];
+	wchar_t fileExtension1[_MAX_EXT];
+	LPWSTR drv2 = NULL;
+	LPWSTR dir2 = NULL;
+	LPWSTR filePath2 = NULL;
+	LPWSTR fileName2 = NULL;
+	LPWSTR fileExtension2 = NULL;
+	HWND text1 = NULL;
+	HWND text2 = NULL;
 
 	switch (message)
 	{
 	case WM_CREATE:
+	{
 
 		//create a button
 		CreateWindow(
-			
+
 			//thing to create
 			TEXT("button"),
 
@@ -133,7 +149,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			TEXT("Select file 1"),
 
 			//Styles
-			WS_VISIBLE|WS_CHILD,
+			WS_VISIBLE | WS_CHILD,
 
 			//x, y, width, height
 			20, 20, 80, 25,
@@ -142,43 +158,123 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			hWnd,
 
 			//unique identifier
-			(HMENU) 1,
+			(HMENU)1,
+
+			NULL, NULL
+		);
+
+		//create a textbox
+		text1 = CreateWindow(
+
+			//thing to create
+			TEXT("static"),
+
+			//text in the textbox
+			TEXT("Woot! *.*/"),
+
+			//Styles
+			WS_VISIBLE | WS_CHILD,
+
+			//x, y, width, height
+			120, 20, 350, 25,
+
+			//parent window
+			hWnd,
+
+			//unique identifier
+			(HMENU)2,
 
 			NULL, NULL
 		);
 
 		break;
+	}
 
 	case WM_COMMAND:
 
+	{
+		//if button 1 is pressed
 		if (LOWORD(wParam) == 1) {
-			MessageBox(hWnd, L"Woot! *.*/", L"Ooooooh", MB_OK | MB_ICONINFORMATION);
+			hdc = BeginPaint(hWnd, &ps);
+			LPWSTR filePath1 = fileDialogue();
+			_wsplitpath_s(filePath1, NULL, 0, NULL, 0, fileName1, _MAX_FNAME, fileExtension1, _MAX_EXT);
+			//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
+			SetDlgItemText(hWnd, 2, fileName1);
 		}
 
 		break;
+	}
 
 	case WM_PAINT:
+	{
 		hdc = BeginPaint(hWnd, &ps);
 
 		// Here your application is laid out.  
-		// For this introduction, we just print out "Hello, World!"  
-		// in the top left corner.  
 		TextOut(hdc,
 			5, 5,
 			greeting, _tcslen(greeting));
+
+
 		// End application-specific layout section.  
 
 		EndPaint(hWnd, &ps);
 		break;
+	}
 	case WM_DESTROY:
+	{
 		PostQuitMessage(0);
 		break;
 	default:
 		return DefWindowProc(hWnd, message, wParam, lParam);
 		break;
 	}
+	}
 
 	return 0;
+}
+
+LPWSTR fileDialogue()
+{
+	
+		LPWSTR pszFilePath = NULL;
+		HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
+			COINIT_DISABLE_OLE1DDE);
+		if (SUCCEEDED(hr))
+		{
+			IFileOpenDialog *pFileOpen;
+
+			// Create the FileOpenDialog object.
+			hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
+				IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
+
+			if (SUCCEEDED(hr))
+			{
+				// Show the Open dialog box.
+				hr = pFileOpen->Show(NULL);
+
+				// Get the file name from the dialog box.
+				if (SUCCEEDED(hr))
+				{
+					IShellItem *pItem;
+					hr = pFileOpen->GetResult(&pItem);
+					if (SUCCEEDED(hr))
+					{
+						hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
+
+						// Display the file name to the user.
+						if (SUCCEEDED(hr))
+						{
+							//MessageBox(NULL, pszFilePath, L"File Path", MB_OK);
+						}
+						pItem->Release();
+					}
+				}
+				pFileOpen->Release();
+			}
+			CoUninitialize();
+		}
+		return pszFilePath;
+	
 }
 
 
