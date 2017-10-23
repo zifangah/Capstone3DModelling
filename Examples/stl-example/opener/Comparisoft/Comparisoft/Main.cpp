@@ -7,6 +7,7 @@
 #include <tchar.h> 
 #include <shobjidl.h>
 #include <stddef.h>
+#include <string>
 
 // Global variables  
 
@@ -19,10 +20,10 @@ static TCHAR szTitle[] = _T("Comparisoft");
 HINSTANCE hInst;
 
 // Forward declarations of functions included in this code module:  
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+LRESULT  CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 LPWSTR fileDialogue();
 
-int CALLBACK WinMain(
+int WinMain(
 	_In_ HINSTANCE hInstance,
 	_In_ HINSTANCE hPrevInstance,
 	_In_ LPSTR     lpCmdLine,
@@ -71,7 +72,7 @@ int CALLBACK WinMain(
 		szTitle,
 		WS_OVERLAPPEDWINDOW,
 		CW_USEDEFAULT, CW_USEDEFAULT,
-		500, 100,
+		1000, 1000,
 		NULL,
 		NULL,
 		hInstance,
@@ -117,42 +118,51 @@ int CALLBACK WinMain(
 //  
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	//initialize varibles here. Initializing them in the switch statement causes compile errors.
 	PAINTSTRUCT ps;
 	HDC hdc;
-	//size_t zero = 0;
+
+	//test value, ignore this
 	LPWSTR greeting = L"Hello, World!";
-	LPWSTR filePath1 = NULL;
-	LPWSTR drv1 = NULL;
-	LPWSTR dir1 = NULL;
-	wchar_t fileName1[_MAX_FNAME];
-	wchar_t fileExtension1[_MAX_EXT];
-	LPWSTR drv2 = NULL;
-	LPWSTR dir2 = NULL;
-	LPWSTR filePath2 = NULL;
-	LPWSTR fileName2 = NULL;
-	LPWSTR fileExtension2 = NULL;
-	HWND text1 = NULL;
-	HWND text2 = NULL;
+
+	//referance file values
+	//the file path returned from the common dialogue box
+	LPWSTR filePathReferance = NULL;
+	//the name and extension after the filepath is split
+	wchar_t fileNameReferance[_MAX_FNAME];
+	wchar_t fileExtensionReferance[_MAX_EXT];
+	//the combined name and extension goes here. convert to LPCWSTR using .c_str()
+	std::wstring fileReferance = L"temp";
+
+	//production file values
+	LPWSTR filePathProduction = NULL;
+	wchar_t fileNameProduction[_MAX_FNAME];
+	wchar_t fileExtensionProduction[_MAX_EXT];
+	std::wstring fileProduction = L"temp";
+
+	//text windows. The buttons don't need this because they will never be referenced
+	HWND textReferance = NULL;
+	HWND textProduction = NULL;
 
 	switch (message)
 	{
 	case WM_CREATE:
 	{
 
-		//create a button
+		//create button for referance file
 		CreateWindow(
 
 			//thing to create
 			TEXT("button"),
 
 			//text in the button
-			TEXT("Select file 1"),
+			TEXT("Select Referance File"),
 
 			//Styles
 			WS_VISIBLE | WS_CHILD,
 
 			//x, y, width, height
-			20, 20, 80, 25,
+			20, 20, 200, 25,
 
 			//parent window
 			hWnd,
@@ -163,8 +173,32 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			NULL, NULL
 		);
 
-		//create a textbox
-		text1 = CreateWindow(
+		//create button for production file
+		CreateWindow(
+
+			//thing to create
+			TEXT("button"),
+
+			//text in the button
+			TEXT("Select Production File"),
+
+			//Styles
+			WS_VISIBLE | WS_CHILD,
+
+			//x, y, width, height
+			20, 80, 200, 25,
+
+			//parent window
+			hWnd,
+
+			//unique identifier
+			(HMENU)3,
+
+			NULL, NULL
+		);
+
+		//create textbox for referance file
+		textReferance = CreateWindow(
 
 			//thing to create
 			TEXT("static"),
@@ -176,7 +210,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			WS_VISIBLE | WS_CHILD,
 
 			//x, y, width, height
-			120, 20, 350, 25,
+			250, 20, 350, 25,
 
 			//parent window
 			hWnd,
@@ -187,19 +221,72 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			NULL, NULL
 		);
 
+		//create textbox for production file
+		textReferance = CreateWindow(
+
+			//thing to create
+			TEXT("static"),
+
+			//text in the textbox
+			TEXT("Woot! *.*/"),
+
+			//Styles
+			WS_VISIBLE | WS_CHILD,
+
+			//x, y, width, height
+			250, 80, 350, 25,
+
+			//parent window
+			hWnd,
+
+			//unique identifier
+			(HMENU)4,
+
+			NULL, NULL
+		);
+
 		break;
 	}
 
 	case WM_COMMAND:
 
 	{
-		//if button 1 is pressed
+		//if refrance button(1) is pressed
 		if (LOWORD(wParam) == 1) {
 			hdc = BeginPaint(hWnd, &ps);
-			LPWSTR filePath1 = fileDialogue();
-			_wsplitpath_s(filePath1, NULL, 0, NULL, 0, fileName1, _MAX_FNAME, fileExtension1, _MAX_EXT);
-			//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
-			SetDlgItemText(hWnd, 2, fileName1);
+
+			//open the common dialogue box, it returns a string
+			LPWSTR filePathReferance = fileDialogue();
+
+			//if the user cancelled, it will still be null
+			if (filePathReferance != NULL) {
+
+				//split the filepath into drive, derectory path, file name, and extension. we don't need drive or derectory here
+				_wsplitpath_s(filePathReferance, NULL, 0, NULL, 0, fileNameReferance, _MAX_FNAME, fileExtensionReferance, _MAX_EXT);
+
+				//convert the name and extension so thet they can be concatenated
+				fileReferance = std::wstring(fileNameReferance);
+				fileReferance += std::wstring(fileExtensionReferance);
+
+				//test value, ignore this
+				//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
+
+				//convert back so it can be printed(yes, really, this is how this works)
+				SetDlgItemText(hWnd, 2, fileReferance.c_str());
+			}
+		}
+
+		//if production button(3) is pressed
+		if (LOWORD(wParam) == 3) {
+			hdc = BeginPaint(hWnd, &ps);
+			LPWSTR filePathProduction = fileDialogue();
+			if (filePathProduction != NULL) {
+				_wsplitpath_s(filePathProduction, NULL, 0, NULL, 0, fileNameProduction, _MAX_FNAME, fileExtensionProduction, _MAX_EXT);
+				fileProduction = std::wstring(fileNameProduction);
+				fileProduction += std::wstring(fileExtensionProduction);
+				//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
+				SetDlgItemText(hWnd, 4, fileProduction.c_str());
+			}
 		}
 
 		break;

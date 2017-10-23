@@ -1,5 +1,6 @@
 ﻿  Main.cpp
-c:\users\kseam\documents\courses\ubco\year 4\cosc 499\capstone3dmodelling\examples\stl-example\opener\comparisoft\comparisoft\main.cpp(40): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
-c:\users\kseam\documents\courses\ubco\year 4\cosc 499\capstone3dmodelling\examples\stl-example\opener\comparisoft\comparisoft\main.cpp(45): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+c:\users\kseam\documents\courses\ubco\year 4\cosc 499\capstone3dmodelling\examples\stl-example\opener\comparisoft\comparisoft\main.cpp(32): warning C4007: 'WinMain': must be '__stdcall'
+c:\users\kseam\documents\courses\ubco\year 4\cosc 499\capstone3dmodelling\examples\stl-example\opener\comparisoft\comparisoft\main.cpp(41): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+c:\users\kseam\documents\courses\ubco\year 4\cosc 499\capstone3dmodelling\examples\stl-example\opener\comparisoft\comparisoft\main.cpp(46): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
   Comparisoft.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\opener\Comparisoft\Debug\Comparisoft.exe
   Comparisoft.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\opener\Comparisoft\Debug\Comparisoft.pdb (Partial PDB)

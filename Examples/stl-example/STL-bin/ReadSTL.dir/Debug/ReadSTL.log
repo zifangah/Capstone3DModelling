@@ -1,3 +1,5 @@
 ﻿  ReadSTL.cxx
+C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\ReadSTL.cxx(81): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
+C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\ReadSTL.cxx(86): warning C4302: 'type cast': truncation from 'LPWSTR' to 'WORD'
   ReadSTL.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\STL-bin\Debug\ReadSTL.exe
   ReadSTL.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Examples/stl-example/STL-bin/Debug/ReadSTL.pdb (Full PDB)
