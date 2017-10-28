@@ -5,7 +5,7 @@ PROJECT(ReadSTL)
 find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
-add_executable(ReadSTL MACOSX_BUNDLE ReadSTL.cxx)
+add_executable(ReadSTL MACOSX_BUNDLE ReadSTL.cxx VTK.h VTK.cpp fileDialogue.h fileDialogue.cpp)
 
 if(VTK_LIBRARIES)
     target_link_libraries(ReadSTL ${VTK_LIBRARIES})

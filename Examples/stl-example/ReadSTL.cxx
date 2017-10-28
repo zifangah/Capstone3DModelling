@@ -5,29 +5,14 @@
 #endif
 
 #include <iostream>
-#include <windows.h> 
+#include <windows.h>
 #include <stdlib.h>  
-#include <string.h>  
+#include <string.h> 
 #include <tchar.h> 
-#include <shobjidl.h>
 #include <stddef.h>
 #include <string>
-#include <vtkPolyData.h>
-#include <vtkSTLReader.h>
-#include <vtkSmartPointer.h>
-#include <vtkPolyDataMapper.h>
-#include <vtkActor.h>
-#include <vtkRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkRenderWindowInteractor.h>
-#include <vtkInteractorStyleSwitch.h>
-#include <vtkInteractorStyleTrackball.h>
-#include <vtkTextWidget.h>
-#include <vtkTextActor.h>
-#include <vtkTextProperty.h>
-#include <vtkTextRepresentation.h>
-#include <vtkCoordinate.h>
-#include <vtkCommand.h>
+#include "VTK.h"
+#include "fileDialogue.h"
 
 
 // Global variables  
@@ -46,19 +31,6 @@ LPWSTR filePathProduction = NULL;
 
 // Forward declarations of functions included in this code module:  
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-LPWSTR fileDialogue();
-//int VTKmain(LPWSTR, LPWSTR);
-int VTKmain();
-//std::string utf8_encode(const std::wstring);
-
-//old winmain initialization
-/*
-int WinMain(
-	_In_ HINSTANCE hInstance,
-	_In_ HINSTANCE hPrevInstance,
-	_In_ LPSTR     lpCmdLine,
-	_In_ int       nCmdShow
-)*/
 
 
 int main()
@@ -152,8 +124,6 @@ int main()
 //  
 //  PURPOSE:  Processes messages for the main window.  
 //  
-//  WM_PAINT    - Paint the main window  
-//  WM_DESTROY  - post a quit message and return  
 //  
 //  
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -167,18 +137,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	//referance file values
 
-	//the file path returned from the common dialogue box, this is declared globally with the global variables
-	//LPWSTR filePathReferance = NULL;
+	//create a temporary value to store the result of the open file dialogue
+	LPWSTR reftmp = NULL;
 
 	//the name and extension after the filepath is split
 	wchar_t fileNameReferance[_MAX_FNAME];
 	wchar_t fileExtensionReferance[_MAX_EXT];
 
-	//the combined name and extension goes here. convert to LPCWSTR using .c_str()
+	//the combined name and extension goes here. 
 	std::wstring fileReferance = L"temp";
 
 	//production file values
-	//LPWSTR filePathProduction = NULL;
+	LPWSTR prdtmp = NULL;
 	wchar_t fileNameProduction[_MAX_FNAME];
 	wchar_t fileExtensionProduction[_MAX_EXT];
 	std::wstring fileProduction = L"temp";
@@ -325,7 +295,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			hdc = BeginPaint(hWnd, &ps);
 
 			//open the common dialogue box, it returns a string
-			filePathReferance = fileDialogue();
+			reftmp = fileDialogue();
+
+			if (reftmp != NULL) {
+				filePathReferance = reftmp;
+			}
 
 			//if the user cancelled, it will still be null
 			if (filePathReferance != NULL) {
@@ -340,29 +314,30 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				//test value, ignore this
 				//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
 
-				//convert back so it can be printed(yes, really, this is how this works)
+				//change it from a wstring to a string, convert back so it can be printed(yes, really, this is how this works)
 				//if this line causes errors, go to Project, ReadSTL Properties, Configuration, Project Defaults, and set character set to Unicode
-				SetDlgItemText(hWnd, 3, fileReferance.c_str());
+				SetDlgItemText(hWnd, 3, utf8_encode(fileReferance).c_str());
 			}
 		}
 
 		//if production button(2) is pressed
 		if (LOWORD(wParam) == 2) {
 			hdc = BeginPaint(hWnd, &ps);
-			filePathProduction = fileDialogue();
+			prdtmp = fileDialogue();
+			if (prdtmp != NULL) {
+				filePathProduction = prdtmp;
+			}
 			if (filePathProduction != NULL) {
 				_wsplitpath_s(filePathProduction, NULL, 0, NULL, 0, fileNameProduction, _MAX_FNAME, fileExtensionProduction, _MAX_EXT);
 				fileProduction = std::wstring(fileNameProduction);
 				fileProduction += std::wstring(fileExtensionProduction);
-				//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
-				SetDlgItemText(hWnd, 4, fileProduction.c_str());
+				SetDlgItemText(hWnd, 4, utf8_encode(fileProduction).c_str());
 			}
 		}
 
 		//if the VTK button is pressed
 		if (LOWORD(wParam) == 5) {
-			//VTKmain(filePathReferance, filePathProduction);
-			VTKmain();
+			VTKmain(filePathReferance, filePathProduction);
 		}
 
 		break;
@@ -370,17 +345,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	case WM_PAINT:
 	{
-		hdc = BeginPaint(hWnd, &ps);
-
-		// Here your application is laid out.  
-		/*TextOut(hdc,
-			5, 5,
-			greeting, _tcslen(greeting));
-			*/
-
-
-		// End application-specific layout section.  
-
+		hdc = BeginPaint(hWnd, &ps);  
 		EndPaint(hWnd, &ps);
 		break;
 	}
@@ -395,204 +360,4 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	}
 
 	return 0;
-}
-
-LPWSTR fileDialogue()
-{
-
-	LPWSTR pszFilePath = NULL;
-	HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED |
-		COINIT_DISABLE_OLE1DDE);
-	if (SUCCEEDED(hr))
-	{
-		IFileOpenDialog *pFileOpen;
-
-		// Create the FileOpenDialog object.
-		hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_ALL,
-			IID_IFileOpenDialog, reinterpret_cast<void**>(&pFileOpen));
-
-		if (SUCCEEDED(hr))
-		{
-			// Show the Open dialog box.
-			hr = pFileOpen->Show(NULL);
-
-			// Get the file name from the dialog box.
-			if (SUCCEEDED(hr))
-			{
-				IShellItem *pItem;
-				hr = pFileOpen->GetResult(&pItem);
-				if (SUCCEEDED(hr))
-				{
-					hr = pItem->GetDisplayName(SIGDN_FILESYSPATH, &pszFilePath);
-
-					// Display the file name to the user.
-					if (SUCCEEDED(hr))
-					{
-						//MessageBox(NULL, pszFilePath, L"File Path", MB_OK);
-					}
-					pItem->Release();
-				}
-			}
-			pFileOpen->Release();
-		}
-		CoUninitialize();
-	}
-	return pszFilePath;
-
-}
-
-// Convert a wide Unicode string to an UTF8 string
-std::string utf8_encode(const std::wstring &wstr)
-{
-	if (wstr.empty()) return std::string();
-	int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
-	std::string strTo(size_needed, 0);
-	WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
-	return strTo;
-}
-
-
-
-
-
-
-//VTK code is here
-
-//launch the program from the command line
-//int main ( int argc, char *argv[] )
-//{
-//	if ( argc < 2 )
-//	{
-//		cout << "Required parameters: Filename" << endl;
-//		return EXIT_FAILURE;
-//	}
-
-//VTK code goes here. It is now a function, and is called with the file paths.
-//int VTKmain (LPWSTR referenceFile, LPWSTR productionFile)
-int VTKmain()
-{
-	
-	if (filePathReferance==NULL || filePathProduction==NULL) {
-		MessageBox(NULL, L"Please select both files first.", L"File Path", MB_OK);
-		return 0;
-	}
-
-	//MessageBox(NULL, filePathReferance, L"File Path", MB_OK);
-
-	//Read in the file
-	//std::string inputFilename1 = argv[1];
-
-	//std::string inputFilename1 = "lower Model.stl";
-
-	vtkSmartPointer<vtkSTLReader> reader1 =
-			vtkSmartPointer<vtkSTLReader>::New();
-	reader1->SetFileName(utf8_encode(filePathReferance).c_str());
-	//reader1->SetFileName(inputFilename1.c_str());
-	reader1->Update();
-
-	// Visualize
-
-
-	// Create a mapper and actor
-	vtkSmartPointer<vtkPolyDataMapper> mapper1 =
-			vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper1->SetInputConnection(reader1->GetOutputPort());
-
-	//Add the mapper to the actor
-	vtkSmartPointer<vtkActor> actor1 =
-			vtkSmartPointer<vtkActor>::New();
-	actor1->SetMapper(mapper1);
-
-	//A second stl file
-
-	//Declare the actor here, so it's in scope. If you don't, it causes errors. *this can be ignored now*
-	vtkSmartPointer<vtkActor> actor2 =
-		vtkSmartPointer<vtkActor>::New();
-
-	//Read in the file
-	//std::string inputFilename2 = argv[2];
-
-	//std::string inputFilename2 = "upperModel.stl";
-
-	vtkSmartPointer<vtkSTLReader> reader2 =
-		vtkSmartPointer<vtkSTLReader>::New();
-	reader2->SetFileName(utf8_encode(filePathProduction).c_str());
-	//reader2->SetFileName(inputFilename2.c_str());
-	reader2->Update();
-
-
-	// Create a mapper and actor
-	vtkSmartPointer<vtkPolyDataMapper> mapper2 =
-		vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper2->SetInputConnection(reader2->GetOutputPort());
-
-	//Add the mapper to the actor
-	actor2->SetMapper(mapper2);
-
-
-
-	//Create renderer and render window, add the renderer to the window
-	vtkSmartPointer<vtkRenderer> renderer =
-			vtkSmartPointer<vtkRenderer>::New();
-	vtkSmartPointer<vtkRenderWindow> renderWindow =
-			vtkSmartPointer<vtkRenderWindow>::New();
-	renderWindow->AddRenderer(renderer);
-	
-
-	// Create an interactor, and attatch it to a renderwindow
-	vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
-			vtkSmartPointer<vtkRenderWindowInteractor>::New();
-
-	renderWindowInteractor->SetRenderWindow(renderWindow);
-
-	// Add the actors to the scene
-	renderer->AddActor(actor1);
-	renderer->AddActor(actor2);
-	
-	renderer->SetBackground(.0, 1.0, 1.0); // Background color 
-
-
-	// Render an image (lights and cameras are created automatically)
-	renderWindow->Render();
-
-	//Set the window title, must be called after Render()
-	renderWindow->SetWindowName("I'm a window! :D");
-
-	// Create a text widget
-	vtkSmartPointer<vtkTextActor> textActor =
-		vtkSmartPointer<vtkTextActor>::New();
-	textActor->SetInput(utf8_encode(filePathReferance).c_str());
-	textActor->GetTextProperty()->SetColor(0.0, 1.0, 0.0);
-
-	vtkSmartPointer<vtkTextWidget> textWidget =
-		vtkSmartPointer<vtkTextWidget>::New();
-
-	vtkSmartPointer<vtkTextRepresentation> textRepresentation =
-		vtkSmartPointer<vtkTextRepresentation>::New();
-	textRepresentation->GetPositionCoordinate()->SetValue(.15, .15);
-	textRepresentation->GetPosition2Coordinate()->SetValue(.7, .2);
-	textWidget->SetRepresentation(textRepresentation);
-
-	textWidget->SetInteractor(renderWindowInteractor);
-	textWidget->SetTextActor(textActor);
-	textWidget->SelectableOff();
-
-	//Change the control style. Isn't necessary for default bahavior.
-	//vtkSmartPointer<vtkInteractorStyleTrackball> style =
-	//	vtkSmartPointer<vtkInteractorStyleTrackball>::New();
-
-	//renderWindowInteractor->SetInteractorStyle(style);
-
-	//Hide the console window. Must be before renderWindowInteractor->Start() in order to work.
-	//ShowWindow(GetConsoleWindow(), SW_HIDE);
-
-	renderWindowInteractor->Initialize();
-	renderWindow->Render();
-	//textWidget->On();
-	//renderWindow->Render();
-
-	// Begin mouse interaction
-	renderWindowInteractor->Start();
-
-	return EXIT_SUCCESS;
 }
