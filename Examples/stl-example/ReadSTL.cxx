@@ -15,6 +15,7 @@
 #include "fileDialogue.h"
 
 
+
 // Global variables  
 
 // The main window class name.  
@@ -34,7 +35,9 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 
 int main()
+
 {
+	/*
 	//Set some variables usually set in WinMain
 
 	 HINSTANCE hInstance = GetModuleHandle(NULL);
@@ -117,7 +120,7 @@ int main()
 	}
 
 	return (int)msg.wParam;
-}
+	*/}
 
 //  
 //  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)  
