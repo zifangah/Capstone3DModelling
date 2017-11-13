@@ -39,7 +39,11 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 int main(int argc, char *argv[])
 
 {
-	
+	QApplication a(argc, argv);
+	MainWindow w;
+	w.show();
+
+	return a.exec();
 	
 	/*
 	//Set some variables usually set in WinMain
