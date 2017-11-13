@@ -13,7 +13,9 @@
 #include <string>
 #include "VTK.h"
 #include "fileDialogue.h"
-
+#include <QApplication>
+#include <QtWidgets>
+#include "mainwindow.h"
 
 
 // Global variables  
@@ -34,9 +36,11 @@ LPWSTR filePathProduction = NULL;
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 
-int main()
+int main(int argc, char *argv[])
 
 {
+	
+	
 	/*
 	//Set some variables usually set in WinMain
 
