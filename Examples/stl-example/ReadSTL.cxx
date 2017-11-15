@@ -6,6 +6,8 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindowInteractor.h>
+#include <vtkDelaunay2D.h>
+#include <vtkImageMapToColors.h>
 
 int main ( int argc, char *argv[] )
 {
@@ -17,6 +19,25 @@ int main ( int argc, char *argv[] )
 
 	std::string inputFilename1 = argv[1];
 	std::string inputFilename2 = argv[2];
+
+	/* Map the scalar values in the image to colors with a lookup table: */
+	vtkSmartPointer<vtkLookupTable> lookupTable =
+			vtkSmartPointer<vtkLookupTable>::New();
+//	lookupTable->SetNumberOfTableValues(256);
+//	lookupTable->SetRange(0.0, 255.0);
+//	lookupTable->Build();
+
+	/* Pass the original image and the lookup table to a filter to create
+	 a color image: */
+	vtkSmartPointer<vtkImageMapToColors> scalarValuesToColors =
+			vtkSmartPointer<vtkImageMapToColors>::New();
+//	scalarValuesToColors->SetLookupTable(lookupTable);
+	scalarValuesToColors->PassAlphaToOutputOn();
+#if VTK_MAJOR_VERSION <= 5
+	scalarValuesToColors->SetInput(image);
+#else
+//	scalarValuesToColors->SetInputData(image);
+#endif
 
 	/* Set-up file 1 */
 	vtkSmartPointer<vtkSTLReader> reader1 =
