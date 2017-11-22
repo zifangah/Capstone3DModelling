@@ -13,9 +13,9 @@
 #include <string>
 #include "VTK.h"
 #include "fileDialogue.h"
-#include <QApplication>
-#include <QtWidgets>
-#include "mainwindow.h"
+//#include <QApplication>
+//#include <QtWidgets>
+//#include "mainwindow.h"
 
 
 // Global variables  
@@ -39,11 +39,18 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 int main(int argc, char *argv[])
 
 {
+	//argv[1];
+	//argv[2];
+	filePathReferance = L"lowerModel.stl";
+	filePathProduction = L"upperModel.stl";
+	VTKmain(filePathReferance, filePathProduction);
+	
+	/*
 	QApplication a(argc, argv);
 	MainWindow w;
 	w.show();
 
-	return a.exec();
+	return a.exec();*/
 	
 	/*
 	//Set some variables usually set in WinMain
@@ -127,8 +134,8 @@ int main(int argc, char *argv[])
 		DispatchMessage(&msg);
 	}
 
-	return (int)msg.wParam;
-	*/}
+	return (int)msg.wParam;*/
+	}
 
 //  
 //  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)  

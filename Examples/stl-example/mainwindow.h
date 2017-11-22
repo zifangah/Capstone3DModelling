@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 
 #include <QMainWindow>
 
@@ -18,4 +18,4 @@ private:
 	Ui::MainWindow *ui;
 };
 
-// MAINWINDOW_H
+// MAINWINDOW_H*/

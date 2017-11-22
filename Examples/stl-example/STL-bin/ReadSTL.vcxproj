@@ -83,7 +83,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.2\winrt_x86_msvc2017\include\QtWidgets;C:\Program Files (x86)\VTK\include\vtk-8.0;C:\Program Files (x86)\VTK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.9.2\winrt_x86_msvc2017\include\QtWidgets;C:\Qt\5.9.2\winrt_x86_msvc2017\include\QtCore;C:\Program Files (x86)\VTK\include\vtk-8.0;C:\Program Files (x86)\VTK\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -322,6 +322,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\VTK.cpp" />
     <ClInclude Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\fileDialogue.h" />
     <ClCompile Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\fileDialogue.cpp" />
+    <ClInclude Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\mainwindow.h" />
+    <ClCompile Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\mainwindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Examples\stl-example\STL-bin\ZERO_CHECK.vcxproj">
