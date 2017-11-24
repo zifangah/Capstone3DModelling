@@ -9,7 +9,7 @@ The output was:
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:23 PM.
+Build started 2017-11-23 8:19:59 PM.
 Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\3.9.2\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -35,7 +35,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.33
+Time Elapsed 00:00:01.42
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -54,7 +54,7 @@ The output was:
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:25 PM.
+Build started 2017-11-23 8:20:01 PM.
 Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\3.9.2\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -80,7 +80,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.23
+Time Elapsed 00:00:01.28
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -92,157 +92,157 @@ The CXX compiler identification is MSVC, found in "C:/Users/KSeam/Documents/Cour
 Determining if the C compiler works passed with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_fe5b7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_f7209.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:27 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_fe5b7.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:03 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_f7209.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_fe5b7.dir\Debug\".
+  Creating directory "cmTC_f7209.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_fe5b7.dir\Debug\cmTC_fe5b7.tlog\".
+  Creating directory "cmTC_f7209.dir\Debug\cmTC_f7209.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_fe5b7.dir\Debug\cmTC_fe5b7.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_f7209.dir\Debug\cmTC_f7209.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe5b7.dir\Debug\\" /Fd"cmTC_fe5b7.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCCompiler.c"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f7209.dir\Debug\\" /Fd"cmTC_f7209.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCCompiler.c"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe5b7.dir\Debug\\" /Fd"cmTC_fe5b7.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCCompiler.c"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f7209.dir\Debug\\" /Fd"cmTC_f7209.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCCompiler.c"
   testCCompiler.c
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_fe5b7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_fe5b7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_fe5b7.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_fe5b7.dir\Debug\testCCompiler.obj
-  cmTC_fe5b7.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_fe5b7.exe
-  cmTC_fe5b7.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_fe5b7.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_f7209.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_f7209.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_f7209.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f7209.dir\Debug\testCCompiler.obj
+  cmTC_f7209.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_f7209.exe
+  cmTC_f7209.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_f7209.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_fe5b7.dir\Debug\cmTC_fe5b7.tlog\unsuccessfulbuild".
-  Touching "cmTC_fe5b7.dir\Debug\cmTC_fe5b7.tlog\cmTC_fe5b7.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_fe5b7.vcxproj" (default targets).
+  Deleting file "cmTC_f7209.dir\Debug\cmTC_f7209.tlog\unsuccessfulbuild".
+  Touching "cmTC_f7209.dir\Debug\cmTC_f7209.tlog\cmTC_f7209.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_f7209.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.30
+Time Elapsed 00:00:01.63
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_4b395.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_959f0.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:29 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_4b395.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:05 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_959f0.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_4b395.dir\Debug\".
+  Creating directory "cmTC_959f0.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_4b395.dir\Debug\cmTC_4b395.tlog\".
+  Creating directory "cmTC_959f0.dir\Debug\cmTC_959f0.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_4b395.dir\Debug\cmTC_4b395.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_959f0.dir\Debug\cmTC_959f0.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4b395.dir\Debug\\" /Fd"cmTC_4b395.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_959f0.dir\Debug\\" /Fd"cmTC_959f0.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4b395.dir\Debug\\" /Fd"cmTC_4b395.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_959f0.dir\Debug\\" /Fd"cmTC_959f0.dir\Debug\vc141.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
   CMakeCCompilerABI.c
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_4b395.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_4b395.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_4b395.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_4b395.dir\Debug\CMakeCCompilerABI.obj
-  cmTC_4b395.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_4b395.exe
-  cmTC_4b395.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_4b395.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_959f0.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_959f0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_959f0.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_959f0.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_959f0.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_959f0.exe
+  cmTC_959f0.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_959f0.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_4b395.dir\Debug\cmTC_4b395.tlog\unsuccessfulbuild".
-  Touching "cmTC_4b395.dir\Debug\cmTC_4b395.tlog\cmTC_4b395.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_4b395.vcxproj" (default targets).
+  Deleting file "cmTC_959f0.dir\Debug\cmTC_959f0.tlog\unsuccessfulbuild".
+  Touching "cmTC_959f0.dir\Debug\cmTC_959f0.tlog\cmTC_959f0.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_959f0.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.31
+Time Elapsed 00:00:01.50
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_46a6d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_afd59.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:30 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_46a6d.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:07 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_afd59.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_46a6d.dir\Debug\".
+  Creating directory "cmTC_afd59.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_46a6d.dir\Debug\cmTC_46a6d.tlog\".
+  Creating directory "cmTC_afd59.dir\Debug\cmTC_afd59.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_46a6d.dir\Debug\cmTC_46a6d.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_afd59.dir\Debug\cmTC_afd59.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_46a6d.dir\Debug\\" /Fd"cmTC_46a6d.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_afd59.dir\Debug\\" /Fd"cmTC_afd59.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_46a6d.dir\Debug\\" /Fd"cmTC_46a6d.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_afd59.dir\Debug\\" /Fd"cmTC_afd59.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
   testCXXCompiler.cxx
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_46a6d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_46a6d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_46a6d.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_46a6d.dir\Debug\testCXXCompiler.obj
-  cmTC_46a6d.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_46a6d.exe
-  cmTC_46a6d.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_46a6d.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_afd59.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_afd59.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_afd59.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_afd59.dir\Debug\testCXXCompiler.obj
+  cmTC_afd59.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_afd59.exe
+  cmTC_afd59.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_afd59.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_46a6d.dir\Debug\cmTC_46a6d.tlog\unsuccessfulbuild".
-  Touching "cmTC_46a6d.dir\Debug\cmTC_46a6d.tlog\cmTC_46a6d.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_46a6d.vcxproj" (default targets).
+  Deleting file "cmTC_afd59.dir\Debug\cmTC_afd59.tlog\unsuccessfulbuild".
+  Touching "cmTC_afd59.dir\Debug\cmTC_afd59.tlog\cmTC_afd59.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_afd59.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.33
+Time Elapsed 00:00:01.34
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_bb4cc.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_2e636.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:32 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_bb4cc.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:09 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_2e636.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_bb4cc.dir\Debug\".
+  Creating directory "cmTC_2e636.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_bb4cc.dir\Debug\cmTC_bb4cc.tlog\".
+  Creating directory "cmTC_2e636.dir\Debug\cmTC_2e636.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_bb4cc.dir\Debug\cmTC_bb4cc.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_2e636.dir\Debug\cmTC_2e636.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_bb4cc.dir\Debug\\" /Fd"cmTC_bb4cc.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2e636.dir\Debug\\" /Fd"cmTC_2e636.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_bb4cc.dir\Debug\\" /Fd"cmTC_bb4cc.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_2e636.dir\Debug\\" /Fd"cmTC_2e636.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
   CMakeCXXCompilerABI.cpp
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_bb4cc.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_bb4cc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_bb4cc.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_bb4cc.dir\Debug\CMakeCXXCompilerABI.obj
-  cmTC_bb4cc.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_bb4cc.exe
-  cmTC_bb4cc.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_bb4cc.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_2e636.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_2e636.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_2e636.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_2e636.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_2e636.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_2e636.exe
+  cmTC_2e636.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_2e636.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_bb4cc.dir\Debug\cmTC_bb4cc.tlog\unsuccessfulbuild".
-  Touching "cmTC_bb4cc.dir\Debug\cmTC_bb4cc.tlog\cmTC_bb4cc.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_bb4cc.vcxproj" (default targets).
+  Deleting file "cmTC_2e636.dir\Debug\cmTC_2e636.tlog\unsuccessfulbuild".
+  Touching "cmTC_2e636.dir\Debug\cmTC_2e636.tlog\cmTC_2e636.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_2e636.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:01.60
 
 
 
@@ -250,40 +250,40 @@ Time Elapsed 00:00:01.32
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_7b4cd.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_cf1a7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:34 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_7b4cd.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:11 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_cf1a7.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_7b4cd.dir\Debug\".
+  Creating directory "cmTC_cf1a7.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_7b4cd.dir\Debug\cmTC_7b4cd.tlog\".
+  Creating directory "cmTC_cf1a7.dir\Debug\cmTC_cf1a7.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_7b4cd.dir\Debug\cmTC_7b4cd.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_cf1a7.dir\Debug\cmTC_cf1a7.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7b4cd.dir\Debug\\" /Fd"cmTC_7b4cd.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_cf1a7.dir\Debug\\" /Fd"cmTC_cf1a7.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7b4cd.dir\Debug\\" /Fd"cmTC_7b4cd.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_cf1a7.dir\Debug\\" /Fd"cmTC_cf1a7.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_7b4cd.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_7b4cd.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_7b4cd.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_7b4cd.dir\Debug\feature_tests.obj
-  cmTC_7b4cd.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_7b4cd.exe
-  cmTC_7b4cd.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_7b4cd.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_cf1a7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_cf1a7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_cf1a7.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_cf1a7.dir\Debug\feature_tests.obj
+  cmTC_cf1a7.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_cf1a7.exe
+  cmTC_cf1a7.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_cf1a7.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_7b4cd.dir\Debug\cmTC_7b4cd.tlog\unsuccessfulbuild".
-  Touching "cmTC_7b4cd.dir\Debug\cmTC_7b4cd.tlog\cmTC_7b4cd.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_7b4cd.vcxproj" (default targets).
+  Deleting file "cmTC_cf1a7.dir\Debug\cmTC_cf1a7.tlog\unsuccessfulbuild".
+  Touching "cmTC_cf1a7.dir\Debug\cmTC_cf1a7.tlog\cmTC_cf1a7.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_cf1a7.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.29
+Time Elapsed 00:00:01.52
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -346,40 +346,40 @@ Time Elapsed 00:00:01.29
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_7d713.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_0f41f.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:36 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_7d713.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:13 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_0f41f.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_7d713.dir\Debug\".
+  Creating directory "cmTC_0f41f.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_7d713.dir\Debug\cmTC_7d713.tlog\".
+  Creating directory "cmTC_0f41f.dir\Debug\cmTC_0f41f.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_7d713.dir\Debug\cmTC_7d713.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_0f41f.dir\Debug\cmTC_0f41f.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7d713.dir\Debug\\" /Fd"cmTC_7d713.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_0f41f.dir\Debug\\" /Fd"cmTC_0f41f.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_7d713.dir\Debug\\" /Fd"cmTC_7d713.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_0f41f.dir\Debug\\" /Fd"cmTC_0f41f.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_7d713.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_7d713.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_7d713.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_7d713.dir\Debug\feature_tests.obj
-  cmTC_7d713.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_7d713.exe
-  cmTC_7d713.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_7d713.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_0f41f.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_0f41f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_0f41f.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_0f41f.dir\Debug\feature_tests.obj
+  cmTC_0f41f.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_0f41f.exe
+  cmTC_0f41f.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_0f41f.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_7d713.dir\Debug\cmTC_7d713.tlog\unsuccessfulbuild".
-  Touching "cmTC_7d713.dir\Debug\cmTC_7d713.tlog\cmTC_7d713.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_7d713.vcxproj" (default targets).
+  Deleting file "cmTC_0f41f.dir\Debug\cmTC_0f41f.tlog\unsuccessfulbuild".
+  Touching "cmTC_0f41f.dir\Debug\cmTC_0f41f.tlog\cmTC_0f41f.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_0f41f.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.30
+Time Elapsed 00:00:01.45
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -442,40 +442,40 @@ Time Elapsed 00:00:01.30
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_e4536.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c5348.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:38 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_e4536.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:15 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_c5348.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_e4536.dir\Debug\".
+  Creating directory "cmTC_c5348.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_e4536.dir\Debug\cmTC_e4536.tlog\".
+  Creating directory "cmTC_c5348.dir\Debug\cmTC_c5348.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_e4536.dir\Debug\cmTC_e4536.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_c5348.dir\Debug\cmTC_c5348.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e4536.dir\Debug\\" /Fd"cmTC_e4536.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c5348.dir\Debug\\" /Fd"cmTC_c5348.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e4536.dir\Debug\\" /Fd"cmTC_e4536.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c5348.dir\Debug\\" /Fd"cmTC_c5348.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_e4536.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_e4536.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_e4536.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_e4536.dir\Debug\feature_tests.obj
-  cmTC_e4536.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_e4536.exe
-  cmTC_e4536.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_e4536.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_c5348.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_c5348.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_c5348.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_c5348.dir\Debug\feature_tests.obj
+  cmTC_c5348.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_c5348.exe
+  cmTC_c5348.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_c5348.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_e4536.dir\Debug\cmTC_e4536.tlog\unsuccessfulbuild".
-  Touching "cmTC_e4536.dir\Debug\cmTC_e4536.tlog\cmTC_e4536.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_e4536.vcxproj" (default targets).
+  Deleting file "cmTC_c5348.dir\Debug\cmTC_c5348.tlog\unsuccessfulbuild".
+  Touching "cmTC_c5348.dir\Debug\cmTC_c5348.tlog\cmTC_c5348.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_c5348.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.31
+Time Elapsed 00:00:01.46
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -538,40 +538,40 @@ Time Elapsed 00:00:01.31
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_87da9.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_3cd05.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2017-11-23 7:41:40 PM.
-Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_87da9.vcxproj" on node 1 (default targets).
+Build started 2017-11-23 8:20:17 PM.
+Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_3cd05.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_87da9.dir\Debug\".
+  Creating directory "cmTC_3cd05.dir\Debug\".
   Creating directory "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_87da9.dir\Debug\cmTC_87da9.tlog\".
+  Creating directory "cmTC_3cd05.dir\Debug\cmTC_3cd05.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_87da9.dir\Debug\cmTC_87da9.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_3cd05.dir\Debug\cmTC_3cd05.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_87da9.dir\Debug\\" /Fd"cmTC_87da9.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_3cd05.dir\Debug\\" /Fd"cmTC_3cd05.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25508.2 for x86
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_87da9.dir\Debug\\" /Fd"cmTC_87da9.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_3cd05.dir\Debug\\" /Fd"cmTC_3cd05.dir\Debug\vc141.pdb" /Gd /TP /analyze- /errorReport:queue "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_87da9.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_87da9.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_87da9.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_87da9.dir\Debug\feature_tests.obj
-  cmTC_87da9.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_87da9.exe
-  cmTC_87da9.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_87da9.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x86\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_3cd05.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_3cd05.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_3cd05.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_3cd05.dir\Debug\feature_tests.obj
+  cmTC_3cd05.vcxproj -> C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\Debug\cmTC_3cd05.exe
+  cmTC_3cd05.vcxproj -> C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin/CMakeFiles/CMakeTmp/Debug/cmTC_3cd05.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_87da9.dir\Debug\cmTC_87da9.tlog\unsuccessfulbuild".
-  Touching "cmTC_87da9.dir\Debug\cmTC_87da9.tlog\cmTC_87da9.lastbuildstate".
-Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_87da9.vcxproj" (default targets).
+  Deleting file "cmTC_3cd05.dir\Debug\cmTC_3cd05.tlog\unsuccessfulbuild".
+  Touching "cmTC_3cd05.dir\Debug\cmTC_3cd05.tlog\cmTC_3cd05.lastbuildstate".
+Done Building Project "C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\CMakeFiles\CMakeTmp\cmTC_3cd05.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:01.48
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers

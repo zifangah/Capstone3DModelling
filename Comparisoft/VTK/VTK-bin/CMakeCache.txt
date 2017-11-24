@@ -73,7 +73,7 @@ CMAKE_EXE_LINKER_FLAGS_RELEASE:STRING=/INCREMENTAL:NO
 CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/Comparisoft
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/VSVTK
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/bin/HostX86/x86/link.exe
@@ -94,7 +94,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=/INCREMENTAL:NO
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Comparisoft
+CMAKE_PROJECT_NAME:STATIC=VSVTK
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=rc
@@ -160,10 +160,10 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_VERBOSE_MAKEFILE:BOOL=OFF
 
 //Value Computed by CMake
-Comparisoft_BINARY_DIR:STATIC=C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin
+VSVTK_BINARY_DIR:STATIC=C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK/VTK-bin
 
 //Value Computed by CMake
-Comparisoft_SOURCE_DIR:STATIC=C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK
+VSVTK_SOURCE_DIR:STATIC=C:/Users/KSeam/Documents/Courses/UBCO/Year 4/COSC 499/Capstone3DModelling/Comparisoft/VTK
 
 //The directory containing a CMake configuration file for VTK.
 VTK_DIR:PATH=C:/Program Files (x86)/VTK/lib/cmake/vtk-8.0

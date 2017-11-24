@@ -164,9 +164,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{C1AA5510-C98D-32F0-8B51-051B3458C5B9}</Project>
       <Name>ZERO_CHECK</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\Comparisoft.vcxproj">
-      <Project>{92083C3A-3F1A-37D2-8A95-79FC6DBA8F10}</Project>
-      <Name>Comparisoft</Name>
+    <ProjectReference Include="C:\Users\KSeam\Documents\Courses\UBCO\Year 4\COSC 499\Capstone3DModelling\Comparisoft\VTK\VTK-bin\VSVTK.vcxproj">
+      <Project>{1326321B-7A8E-3A29-8DA9-1EC26369E748}</Project>
+      <Name>VSVTK</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
