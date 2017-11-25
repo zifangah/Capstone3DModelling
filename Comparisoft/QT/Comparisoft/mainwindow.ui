@@ -19,11 +19,39 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>221</width>
-      <height>361</height>
+      <width>771</width>
+      <height>451</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="ReferanceFileText"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Referance_File_Button">
+         <property name="text">
+          <string>Referance File</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="ProductionFileText"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="Production_File_Button">
+         <property name="text">
+          <string>Prodiction File</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
      <item>
       <widget class="QPushButton" name="RunVTK">
        <property name="text">

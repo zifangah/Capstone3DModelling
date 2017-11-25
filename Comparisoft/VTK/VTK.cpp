@@ -30,7 +30,7 @@ std::string utf8_encode(const std::wstring &wstr)
 //VTK code is here
 
 //VTK code goes here. It is now a function, and is called with the file paths.
-int VTKmain(LPWSTR filePathReferance, LPWSTR filePathProduction)
+int VTKmain(char* filePathReferance, char* filePathProduction)
 {
 
 	if (filePathReferance == NULL || filePathProduction == NULL) {
@@ -42,7 +42,8 @@ int VTKmain(LPWSTR filePathReferance, LPWSTR filePathProduction)
 
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
-	reader1->SetFileName(utf8_encode(filePathReferance).c_str());
+	//reader1->SetFileName(utf8_encode(filePathReferance).c_str());
+	reader1->SetFileName(filePathReferance);
 	reader1->Update();
 
 	// Visualize
@@ -64,8 +65,8 @@ int VTKmain(LPWSTR filePathReferance, LPWSTR filePathProduction)
 	//Read in the file
 	vtkSmartPointer<vtkSTLReader> reader2 =
 		vtkSmartPointer<vtkSTLReader>::New();
-	reader2->SetFileName(utf8_encode(filePathProduction).c_str());
-	//reader2->SetFileName(inputFilename2.c_str());
+	//reader2->SetFileName(utf8_encode(filePathProduction).c_str());
+	reader2->SetFileName(filePathProduction);
 	reader2->Update();
 
 

@@ -17,6 +17,11 @@ public:
 private slots:
     void on_RunVTK_clicked();
 
+    void on_Referance_File_Button_clicked();
+
+    void on_Production_File_Button_clicked();
+
+    QString fileDialog();
 private:
     Ui::MainWindow *ui;
 };

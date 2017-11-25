@@ -13,7 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -30,6 +32,12 @@ public:
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
+    QLineEdit *ReferanceFileText;
+    QPushButton *Referance_File_Button;
+    QHBoxLayout *horizontalLayout_2;
+    QLineEdit *ProductionFileText;
+    QPushButton *Production_File_Button;
     QPushButton *RunVTK;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -44,12 +52,44 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 0, 221, 361));
+        verticalLayoutWidget->setGeometry(QRect(0, 0, 771, 451));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        ReferanceFileText = new QLineEdit(verticalLayoutWidget);
+        ReferanceFileText->setObjectName(QStringLiteral("ReferanceFileText"));
+
+        horizontalLayout->addWidget(ReferanceFileText);
+
+        Referance_File_Button = new QPushButton(verticalLayoutWidget);
+        Referance_File_Button->setObjectName(QStringLiteral("Referance_File_Button"));
+
+        horizontalLayout->addWidget(Referance_File_Button);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        ProductionFileText = new QLineEdit(verticalLayoutWidget);
+        ProductionFileText->setObjectName(QStringLiteral("ProductionFileText"));
+
+        horizontalLayout_2->addWidget(ProductionFileText);
+
+        Production_File_Button = new QPushButton(verticalLayoutWidget);
+        Production_File_Button->setObjectName(QStringLiteral("Production_File_Button"));
+
+        horizontalLayout_2->addWidget(Production_File_Button);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
         RunVTK = new QPushButton(verticalLayoutWidget);
         RunVTK->setObjectName(QStringLiteral("RunVTK"));
 
@@ -75,6 +115,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
+        Referance_File_Button->setText(QApplication::translate("MainWindow", "Referance File", Q_NULLPTR));
+        Production_File_Button->setText(QApplication::translate("MainWindow", "Prodiction File", Q_NULLPTR));
         RunVTK->setText(QApplication::translate("MainWindow", "Run VTK", Q_NULLPTR));
     } // retranslateUi
 

@@ -13,9 +13,7 @@
 #include <string>
 #include "VTK.h"
 #include "fileDialogue.h"
-//#include <QApplication>
-//#include <QtWidgets>
-//#include "mainwindow.h"
+
 
 
 // Global variables  
@@ -29,8 +27,8 @@ static TCHAR szTitle[] = _T("Comparisoft");
 HINSTANCE hInst;
 
 //declare the file path variables here so that they are global
-LPWSTR filePathReferance = NULL;
-LPWSTR filePathProduction = NULL;
+char* filePathReferance = NULL;
+char* filePathProduction = NULL;
 
 // Forward declarations of functions included in this code module:  
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -39,10 +37,10 @@ LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 int main(int argc, char *argv[])
 
 {
-	//argv[1];
-	//argv[2];
-	filePathReferance = L"lowerModel.stl";
-	filePathProduction = L"upperModel.stl";
+	filePathReferance = argv[1];
+	filePathProduction = argv[2];
+	//filePathReferance = L"lowerModel.stl";
+	//filePathProduction = L"upperModel.stl";
 	VTKmain(filePathReferance, filePathProduction);
 
 	/*
@@ -144,6 +142,7 @@ int main(int argc, char *argv[])
 //  
 //  
 //  
+/*
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	//initialize varibles here. Initializing them in the switch statement causes compile errors.
@@ -237,7 +236,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			TEXT("static"),
 
 			//text in the textbox
-			TEXT("Woot! *.*/"),
+			TEXT("Woot!"),
 
 			//Styles
 			WS_VISIBLE | WS_CHILD,
@@ -261,7 +260,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			TEXT("static"),
 
 			//text in the textbox
-			TEXT("Woot! *.*/"),
+			TEXT("Woot!"),
 
 			//Styles
 			WS_VISIBLE | WS_CHILD,
@@ -330,7 +329,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 				fileReferance += std::wstring(fileExtensionReferance);
 
 				//test value, ignore this
-				//MessageBox(hWnd, L"Woot! *.*/", fileName1, MB_OK | MB_ICONINFORMATION);
+				//MessageBox(hWnd, L"Woot!", fileName1, MB_OK | MB_ICONINFORMATION);
 
 				//change it from a wstring to a string, convert back so it can be printed(yes, really, this is how this works)
 				//if this line causes errors, go to Project, ReadSTL Properties, Configuration, Project Defaults, and set character set to Unicode
@@ -378,4 +377,4 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	}
 
 	return 0;
-}
+}*/
