@@ -5,10 +5,10 @@
 #endif
 
 #include <iostream>
-#include <windows.h>
-#include <stdlib.h>  
-#include <string.h> 
-#include <tchar.h> 
+//#include <windows.h>
+#include <stdlib.h>
+#include <string.h>
+//#include <tchar.h>
 #include <stddef.h>
 #include <string>
 #include "VTK.h"
@@ -16,32 +16,32 @@
 
 
 
-// Global variables  
+// Global variables
 
-// The main window class name.  
-static TCHAR szWindowClass[] = _T("win32app");
+// The main window class name.
+//static TCHAR szWindowClass[] = _T("win32app");
 
-// The string that appears in the application's title bar.  
-static TCHAR szTitle[] = _T("Comparisoft");
+// The string that appears in the application's title bar.
+//static TCHAR szTitle[] = _T("Comparisoft");
 
-HINSTANCE hInst;
+//HINSTANCE hInst;
 
 //declare the file path variables here so that they are global
-char* filePathReferance = NULL;
+char* filePathReference = NULL;
 char* filePathProduction = NULL;
 
-// Forward declarations of functions included in this code module:  
-LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+// Forward declarations of functions included in this code module:
+//LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 
 
 int main(int argc, char *argv[])
 
 {
-	filePathReferance = argv[1];
+	filePathReference = argv[1];
 	filePathProduction = argv[2];
 	//filePathReferance = L"lowerModel.stl";
 	//filePathProduction = L"upperModel.stl";
-	VTKmain(filePathReferance, filePathProduction);
+	VTKmain(filePathReference, filePathProduction);
 
 	/*
 	QApplication a(argc, argv);
@@ -135,13 +135,13 @@ int main(int argc, char *argv[])
 	return (int)msg.wParam;*/
 }
 
-//  
-//  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)  
-//  
-//  PURPOSE:  Processes messages for the main window.  
-//  
-//  
-//  
+//
+//  FUNCTION: WndProc(HWND, UINT, WPARAM, LPARAM)
+//
+//  PURPOSE:  Processes messages for the main window.
+//
+//
+//
 /*
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -161,7 +161,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	wchar_t fileNameReferance[_MAX_FNAME];
 	wchar_t fileExtensionReferance[_MAX_EXT];
 
-	//the combined name and extension goes here. 
+	//the combined name and extension goes here.
 	std::wstring fileReferance = L"temp";
 
 	//production file values

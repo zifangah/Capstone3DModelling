@@ -1,2 +1,2 @@
-#pragma once
-LPWSTR fileDialogue();
+//#pragma once
+//LPWSTR fileDialogue();
