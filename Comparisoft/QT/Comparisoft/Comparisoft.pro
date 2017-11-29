@@ -35,4 +35,4 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
-INCLUDEPATH += "C:\Program Files (x86)\VTK\include\vtk-8.0"
+
