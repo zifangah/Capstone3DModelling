@@ -5,9 +5,10 @@
 #endif
 
 #include <iostream>
-//#include <windows.h>
+#include <windows.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 //#include <tchar.h>
 #include <stddef.h>
 #include <string>
@@ -37,11 +38,16 @@ char* filePathProduction = NULL;
 int main(int argc, char *argv[])
 
 {
+	std::cout << "Hello World";
+	std::cout << "Hello World"<<std::endl;
+	printf("Hello World\n");
+	fflush(stdout);
 	filePathReference = argv[1];
 	filePathProduction = argv[2];
 	//filePathReferance = L"lowerModel.stl";
 	//filePathProduction = L"upperModel.stl";
 	VTKmain(filePathReference, filePathProduction);
+
 
 	/*
 	QApplication a(argc, argv);

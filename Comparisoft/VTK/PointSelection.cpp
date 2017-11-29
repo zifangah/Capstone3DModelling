@@ -11,7 +11,9 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 
 #include "PointSelection.h"
 
-	/**
+
+
+/**
 	@brief Alter the inherited OnLeftButtonDown() of
 	vtkInteractorStyleTrackballCamera to be compatible with our intended use.
 	@returns void

@@ -119,10 +119,10 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderWindow->SetWindowName("Comparisoft");
 
 	// Create a text widget
-	/*
-	vtkSmartPointer<vtkTextActor> textActor =
+	
+	/*vtkSmartPointer<vtkTextActor> textActor =
 		vtkSmartPointer<vtkTextActor>::New();
-	textActor->SetInput(utf8_encode(filePathReferance).c_str());
+	textActor->SetInput("Placeholder");
 	textActor->GetTextProperty()->SetColor(0.0, 1.0, 0.0);
 
 	vtkSmartPointer<vtkTextWidget> textWidget =
@@ -136,8 +136,8 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 
 	textWidget->SetInteractor(renderWindowInteractor);
 	textWidget->SetTextActor(textActor);
-	textWidget->SelectableOff();
-	*/
+	textWidget->SelectableOff();*/
+	
 
 	//Change the control style. Isn't necessary for default bahavior.
 	//vtkSmartPointer<vtkInteractorStyleTrackball> style =

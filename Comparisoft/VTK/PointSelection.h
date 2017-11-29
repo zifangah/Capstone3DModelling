@@ -22,6 +22,7 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 #include <vtkActor.h>
 #include <vtkInteractorStyleTrackballCamera.h>
 #include <vtkObjectFactory.h>
+#include <vtkAutoInit.h>
 
 /**
 @brief Stores selected coordinates on data sets.
@@ -35,8 +36,17 @@ struct coordinate {
 class PointSelection : public vtkInteractorStyleTrackballCamera {
 
 public:
+
+#define vtkTypeMacro(thisClass,superclass) \
+      vtkAbstractTypeMacro(thisClass, superclass) \
+      protected: \
+      vtkObjectBase *NewInstanceInternal() const VTK_OVERRIDE \
+      { \
+        return thisClass::New(); \
+      } \
+
 	static PointSelection* New();
-	vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
+	//vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
 
 	int ref_count = 0; /* Number of coordinates selected on the reference pane */
 	int prod_count = 0; /* Number of coordinates selected on the production pane */
