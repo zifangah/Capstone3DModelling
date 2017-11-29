@@ -4,6 +4,7 @@
     <generated>
       <config projectName="EXAMPLES" targetName="ReadSTL" />
       <config projectName="EXAMPLES" targetName="TranslationTransform" />
+      <config projectName="EXAMPLES" targetName="VSVTK" />
       <config projectName="EXAMPLES" targetName="Cylinder" />
     </generated>
   </component>
@@ -14,8 +15,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2c9738c-d260-4c91-9676-6291ffa07659" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Comparisoft/QT/Comparisoft/Comparisoft.pro.user" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/QT/Comparisoft/Comparisoft.pro" afterPath="$PROJECT_DIR$/Comparisoft/QT/Comparisoft/Comparisoft.pro" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Comparisoft/VTK/PointSelection.cpp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Comparisoft/VTK/PointSelection.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/VTK/CMakeLists.txt" afterPath="$PROJECT_DIR$/Comparisoft/VTK/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/VTK/VSVTK.cxx" afterPath="$PROJECT_DIR$/Comparisoft/VTK/VSVTK.cxx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/VTK/VTK.cpp" afterPath="$PROJECT_DIR$/Comparisoft/VTK/VTK.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/VTK/VTK.h" afterPath="$PROJECT_DIR$/Comparisoft/VTK/VTK.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/VTK/fileDialogue.cpp" afterPath="$PROJECT_DIR$/Comparisoft/VTK/fileDialogue.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Comparisoft/VTK/fileDialogue.h" afterPath="$PROJECT_DIR$/Comparisoft/VTK/fileDialogue.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/EXAMPLES.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/EXAMPLES.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Examples/itk-example/TranslationTransform.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Examples/itk-example/TranslationTransform.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Examples/stl-example/ReadSTL.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Examples/stl-example/ReadSTL.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Examples/vtk-example/Cylinder.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/Examples/vtk-example/Cylinder.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,28 +49,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Examples/vtk-example/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fileDialogue.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Examples/stl-example/fileDialogue.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cmake_install.cmake" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Examples/vtk-example/Cylinder-bin/cmake_install.cmake">
+      <file leaf-file-name="VSVTK.cxx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Comparisoft/VTK/VSVTK.cxx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -57,14 +59,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadSTL.cxx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Examples/stl-example/ReadSTL.cxx">
+      <file leaf-file-name="PointSelection.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Comparisoft/VTK/PointSelection.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="338" column="34" lean-forward="false" selection-start-line="338" selection-start-column="34" selection-end-line="338" selection-end-column="34" />
-              <folding>
-                <marker date="1511914150435" expanded="true" signature="2924:2925" ph="{...}" />
-              </folding>
+            <state relative-caret-position="-268">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,8 +93,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="182" />
+    <option name="y" value="149" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
   </component>
@@ -129,18 +130,18 @@
               <item name="EXAMPLES" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="Capstone3DModelling" type="462c0819:PsiDirectoryNode" />
               <item name="Comparisoft" type="462c0819:PsiDirectoryNode" />
-              <item name="QT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EXAMPLES" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="Capstone3DModelling" type="462c0819:PsiDirectoryNode" />
-              <item name="Comparisoft" type="462c0819:PsiDirectoryNode" />
               <item name="VTK" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="EXAMPLES" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="Capstone3DModelling" type="462c0819:PsiDirectoryNode" />
               <item name="Examples" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EXAMPLES" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="Capstone3DModelling" type="462c0819:PsiDirectoryNode" />
+              <item name="Examples" type="462c0819:PsiDirectoryNode" />
+              <item name="vtk-example" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,8 +166,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TranslationTransform">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+  <component name="RunManager" selected="Application.VSVTK">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="EXAMPLES" RUN_TARGET_NAME="ReadSTL" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
     <configuration name="Cylinder" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="EXAMPLES" TARGET_NAME="Cylinder" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="EXAMPLES" RUN_TARGET_NAME="Cylinder">
@@ -178,11 +179,15 @@
     <configuration name="TranslationTransform" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="EXAMPLES" TARGET_NAME="TranslationTransform" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="EXAMPLES" RUN_TARGET_NAME="TranslationTransform">
       <envs />
     </configuration>
-    <list size="4">
+    <configuration name="VSVTK" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;/Users/zifangjiang/Downloads/Capstone3DModelling-master/Examples/stl-example/STL-bin/Debug/UpperModel.stl&quot; &quot;/Users/zifangjiang/Downloads/Capstone3DModelling-master/Examples/stl-example/STL-bin/Debug/lowerModel.stl&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="EXAMPLES" TARGET_NAME="VSVTK" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="EXAMPLES" RUN_TARGET_NAME="VSVTK">
+      <envs />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.TranslationTransform" />
-      <item index="2" class="java.lang.String" itemvalue="Application.ReadSTL" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Cylinder" />
+      <item index="1" class="java.lang.String" itemvalue="Application.VSVTK" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TranslationTransform" />
+      <item index="3" class="java.lang.String" itemvalue="Application.ReadSTL" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Cylinder" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -196,12 +201,12 @@
       <option name="presentableId" value="Default" />
       <updated>1511384928190</updated>
       <workItem from="1511384931485" duration="1389000" />
-      <workItem from="1511913009441" duration="1718000" />
+      <workItem from="1511913009441" duration="3647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4448000" />
+    <option name="totallyTimeSpent" value="6377000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -213,15 +218,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -295,10 +301,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/vtk-example/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/Examples/stl-example/ReadSTL.cxx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+        <state relative-caret-position="3876">
+          <caret line="345" column="18" lean-forward="false" selection-start-line="345" selection-start-column="18" selection-end-line="345" selection-end-column="18" />
+          <folding>
+            <marker date="1511914150435" expanded="true" signature="2924:2925" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Examples/vtk-example/Cylinder-bin/cmake_install.cmake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -311,7 +327,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/vtk-example/Cylinder-bin/cmake_install.cmake">
+    <entry file="file://$PROJECT_DIR$/Examples/vtk-example/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Comparisoft/VTK/VSVTK.cxx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -319,13 +343,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Examples/stl-example/ReadSTL.cxx">
+    <entry file="file://$PROJECT_DIR$/Comparisoft/VTK/PointSelection.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="338" column="34" lean-forward="false" selection-start-line="338" selection-start-column="34" selection-end-line="338" selection-end-column="34" />
-          <folding>
-            <marker date="1511914150435" expanded="true" signature="2924:2925" ph="{...}" />
-          </folding>
+        <state relative-caret-position="-268">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

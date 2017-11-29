@@ -149,6 +149,19 @@ ReadSTL/fast:
 	$(MAKE) -f Examples/stl-example/CMakeFiles/ReadSTL.dir/build.make Examples/stl-example/CMakeFiles/ReadSTL.dir/build
 .PHONY : ReadSTL/fast
 
+#=============================================================================
+# Target rules for targets named VSVTK
+
+# Build rule for target.
+VSVTK: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 VSVTK
+.PHONY : VSVTK
+
+# fast build rule for target.
+VSVTK/fast:
+	$(MAKE) -f Comparisoft/VTK/CMakeFiles/VSVTK.dir/build.make Comparisoft/VTK/CMakeFiles/VSVTK.dir/build
+.PHONY : VSVTK/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -160,6 +173,7 @@ help:
 	@echo "... Cylinder"
 	@echo "... TranslationTransform"
 	@echo "... ReadSTL"
+	@echo "... VSVTK"
 .PHONY : help
 
 

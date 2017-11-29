@@ -225,6 +225,61 @@ clean: Examples/stl-example/CMakeFiles/ReadSTL.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory Comparisoft/VTK
+
+# Convenience name for "all" pass in the directory.
+Comparisoft/VTK/all: Comparisoft/VTK/CMakeFiles/VSVTK.dir/all
+
+.PHONY : Comparisoft/VTK/all
+
+# Convenience name for "clean" pass in the directory.
+Comparisoft/VTK/clean: Comparisoft/VTK/CMakeFiles/VSVTK.dir/clean
+
+.PHONY : Comparisoft/VTK/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Comparisoft/VTK/preinstall:
+
+.PHONY : Comparisoft/VTK/preinstall
+
+#=============================================================================
+# Target rules for target Comparisoft/VTK/CMakeFiles/VSVTK.dir
+
+# All Build rule for target.
+Comparisoft/VTK/CMakeFiles/VSVTK.dir/all:
+	$(MAKE) -f Comparisoft/VTK/CMakeFiles/VSVTK.dir/build.make Comparisoft/VTK/CMakeFiles/VSVTK.dir/depend
+	$(MAKE) -f Comparisoft/VTK/CMakeFiles/VSVTK.dir/build.make Comparisoft/VTK/CMakeFiles/VSVTK.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target VSVTK"
+.PHONY : Comparisoft/VTK/CMakeFiles/VSVTK.dir/all
+
+# Include target in all.
+all: Comparisoft/VTK/CMakeFiles/VSVTK.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Comparisoft/VTK/CMakeFiles/VSVTK.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 Comparisoft/VTK/CMakeFiles/VSVTK.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles 0
+.PHONY : Comparisoft/VTK/CMakeFiles/VSVTK.dir/rule
+
+# Convenience name for target.
+VSVTK: Comparisoft/VTK/CMakeFiles/VSVTK.dir/rule
+
+.PHONY : VSVTK
+
+# clean rule for target.
+Comparisoft/VTK/CMakeFiles/VSVTK.dir/clean:
+	$(MAKE) -f Comparisoft/VTK/CMakeFiles/VSVTK.dir/build.make Comparisoft/VTK/CMakeFiles/VSVTK.dir/clean
+.PHONY : Comparisoft/VTK/CMakeFiles/VSVTK.dir/clean
+
+# clean rule for target.
+clean: Comparisoft/VTK/CMakeFiles/VSVTK.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

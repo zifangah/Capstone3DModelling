@@ -1,4 +1,4 @@
-#include <shobjidl.h>
+//#include <shobjidl.h>
 #include <vtkPolyData.h>
 #include <vtkSTLReader.h>
 #include <vtkSmartPointer.h>
@@ -16,25 +16,26 @@
 #include <vtkCoordinate.h>
 #include <vtkCommand.h>
 #include "VTK.h"
+#include "PointSelection.h"
 
 // Convert a wide Unicode string to an UTF8 string
-std::string utf8_encode(const std::wstring &wstr)
-{
-	if (wstr.empty()) return std::string();
-	int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
-	std::string strTo(size_needed, 0);
-	WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
-	return strTo;
-}
+//std::string utf8_encode(const std::wstring &wstr)
+//{
+//	if (wstr.empty()) return std::string();
+//	int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
+//	std::string strTo(size_needed, 0);
+//	WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
+//	return strTo;
+//}
 
 //VTK code is here
 
 //VTK code goes here. It is now a function, and is called with the file paths.
-int VTKmain(char* filePathReferance, char* filePathProduction)
+int VTKmain(char* filePathReference, char* filePathProduction)
 {
 
-	if (filePathReferance == NULL || filePathProduction == NULL) {
-		MessageBox(NULL, "Please select both files first.", "File Path", MB_OK);
+	if (filePathReference == NULL || filePathProduction == NULL) {
+		printf("Please select both files first.\n");
 		return 0;
 	}
 
@@ -43,7 +44,7 @@ int VTKmain(char* filePathReferance, char* filePathProduction)
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
 	//reader1->SetFileName(utf8_encode(filePathReferance).c_str());
-	reader1->SetFileName(filePathReferance);
+	reader1->SetFileName(filePathReference);
 	reader1->Update();
 
 	// Visualize
@@ -80,7 +81,9 @@ int VTKmain(char* filePathReferance, char* filePathProduction)
 		vtkSmartPointer<vtkActor>::New();
 	actor2->SetMapper(mapper2);
 
-
+	//Initialize point selector
+	vtkSmartPointer<vtkPointPicker> PointSelector =
+			vtkSmartPointer<vtkPointPicker>::New();
 
 	//Create renderer and render window, add the renderer to the window
 	vtkSmartPointer<vtkRenderer> renderer =
@@ -95,19 +98,25 @@ int VTKmain(char* filePathReferance, char* filePathProduction)
 		vtkSmartPointer<vtkRenderWindowInteractor>::New();
 
 	renderWindowInteractor->SetRenderWindow(renderWindow);
+	renderWindowInteractor->SetPicker(PointSelector); // Attach the point selector to the window
+
+	// Set point selection style to that defined in PointSelection.h
+	vtkSmartPointer<PointSelection> style =
+			vtkSmartPointer<PointSelection>::New();
+	renderWindowInteractor->SetInteractorStyle(style);
 
 	// Add the actors to the scene
 	renderer->AddActor(actor1);
 	renderer->AddActor(actor2);
 
-	renderer->SetBackground(.0, 1.0, 1.0); // Background color 
+	renderer->SetBackground(.0, 1.0, 1.0); // Background color
 
 
 										   // Render an image (lights and cameras are created automatically)
 	renderWindow->Render();
 
 	//Set the window title, must be called after Render()
-	renderWindow->SetWindowName("I'm a window! :D");
+	renderWindow->SetWindowName("Comparisoft");
 
 	// Create a text widget
 	/*

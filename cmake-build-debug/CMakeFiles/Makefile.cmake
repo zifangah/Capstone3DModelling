@@ -31,6 +31,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.8/Modules/Platform/UnixPaths.cmake"
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.8/Modules/ProcessorCount.cmake"
   "../CMakeLists.txt"
+  "../Comparisoft/VTK/CMakeLists.txt"
   "../Examples/itk-example/CMakeLists.txt"
   "../Examples/stl-example/CMakeLists.txt"
   "../Examples/vtk-example/CMakeLists.txt"
@@ -324,6 +325,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "Examples/vtk-example/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Examples/itk-example/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Examples/stl-example/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Comparisoft/VTK/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -331,4 +333,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "Examples/vtk-example/CMakeFiles/Cylinder.dir/DependInfo.cmake"
   "Examples/itk-example/CMakeFiles/TranslationTransform.dir/DependInfo.cmake"
   "Examples/stl-example/CMakeFiles/ReadSTL.dir/DependInfo.cmake"
+  "Comparisoft/VTK/CMakeFiles/VSVTK.dir/DependInfo.cmake"
   )
