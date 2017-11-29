@@ -17,7 +17,7 @@
 #include <vtkCommand.h>
 #include "VTK.h"
 #include "PointSelection.h"
-
+#include <cstdio>
 // Convert a wide Unicode string to an UTF8 string
 //std::string utf8_encode(const std::wstring &wstr)
 //{
@@ -33,6 +33,8 @@
 //VTK code goes here. It is now a function, and is called with the file paths.
 int VTKmain(char* filePathReference, char* filePathProduction)
 {
+	//Writing points to logfile instead
+	freopen("output.txt", "w", stdout);
 
 	if (filePathReference == NULL || filePathProduction == NULL) {
 		printf("Please select both files first.\n");
