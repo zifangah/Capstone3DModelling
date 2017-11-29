@@ -5,7 +5,7 @@
 #endif
 
 #include <iostream>
-#include <windows.h>
+//#include <windows.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -38,10 +38,10 @@ char* filePathProduction = NULL;
 int main(int argc, char *argv[])
 
 {
-	std::cout << "Hello World";
-	std::cout << "Hello World"<<std::endl;
-	printf("Hello World\n");
-	fflush(stdout);
+
+	//Writing points to logfile instead
+	freopen("output.txt", "w", stdout);
+
 	filePathReference = argv[1];
 	filePathProduction = argv[2];
 	//filePathReferance = L"lowerModel.stl";

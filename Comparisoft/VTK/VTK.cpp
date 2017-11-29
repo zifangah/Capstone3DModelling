@@ -33,8 +33,7 @@
 //VTK code goes here. It is now a function, and is called with the file paths.
 int VTKmain(char* filePathReference, char* filePathProduction)
 {
-	//Writing points to logfile instead
-	freopen("output.txt", "w", stdout);
+	
 
 	if (filePathReference == NULL || filePathProduction == NULL) {
 		printf("Please select both files first.\n");
