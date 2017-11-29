@@ -1,0 +1,9 @@
+Picking pixel: 155 134
+Value selected: 0.744721 -2.24693 10.927
+
+Picking pixel: 97 124
+Value selected: -20.2897 -2.38343 13.0282
+
+Picking pixel: 209 127
+Value selected: 21.6671 -8.17765 12.4478
+

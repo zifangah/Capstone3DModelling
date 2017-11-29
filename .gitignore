@@ -1,2 +1,5 @@
-Examples/stl-example/STL-bin/.vs/ReadSTL/v15/Browse.VC.db
-Examples/stl-example/STL-bin/.vs/ReadSTL/v15/ipch/AutoPCH/456677aae5a74353/READSTL.ipch
+Browse.VC.db
+READSTL.ipch
+VTK.ipch
+VSVTK.ipch
+*.ipch
