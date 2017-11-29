@@ -32,76 +32,20 @@ struct coordinate {
 	double z_val;
 };
 
-/**
-@brief Point selection class for selecting 3 points on each data set
-*/
-class PointSelection : public vtkInteractorStyleTrackballCamera
-{
+class PointSelection : public vtkInteractorStyleTrackballCamera {
+
 public:
 	static PointSelection* New();
 	vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
-
-	coordinate ref_coordinates[3]; /* Stores selected coordinates on the reference pane */
-	coordinate prod_coordinates[3]; /* Stores selected coordinates on the production pane */
 
 	int ref_count = 0; /* Number of coordinates selected on the reference pane */
 	int prod_count = 0; /* Number of coordinates selected on the production pane */
 	int count = 0; /* Determines which pane the point is being selected for */
 
-	/**
-	@brief Alter the inherited OnLeftButtonDown() of
-	vtkInteractorStyleTrackballCamera to be compatible with our intended use.
-	@returns void
-	*/
-	void OnRightButtonDown() override
-	{
-		/* Pixel being selected */
-		std::cout << "Picking pixel: " << this->Interactor->GetEventPosition()[0]
-				  << " " << this->Interactor->GetEventPosition()[1] << std::endl;
-		this->Interactor->GetPicker()->Pick(this->Interactor->GetEventPosition()[0],
-											this->Interactor->GetEventPosition()[1],
-											0,  // always zero.
-											this->Interactor->GetRenderWindow()->GetRenderers()->GetFirstRenderer());
-		double picked[3];
+	coordinate ref_coordinates[3]; /* Stores selected coordinates on the reference pane */
+	coordinate prod_coordinates[3]; /* Stores selected coordinates on the production pane */
 
-		/* Pixel actually selected */
-		this->Interactor->GetPicker()->GetPickPosition(picked);
-		std::cout << "Value selected: " << picked[0] << " " << picked[1] << " " << picked[2] << std::endl;
-		std::cout << std::endl;
-
-		if ((ref_count < 3) && (count % 2 == 0)) {
-			ref_coordinates[ref_count] = {picked[0], picked[1], picked[2]};
-			ref_count++;
-		}
-
-		else if ((prod_count < 3) && (count % 2 != 0)) {
-			prod_coordinates[prod_count] = {picked[0], picked[1], picked[2]};
-			prod_count++;
-		}
-
-		count++;
-
-		if ((prod_count == 3) && (ref_count == 3)) {
-			std::cout << "Point 1 on R Pane (x, y, z): " << ref_coordinates[0].x_val << " "
-					  << ref_coordinates[0].y_val << " " << ref_coordinates[0].z_val << std::endl;
-			std::cout << "Point 2 on R Pane (x, y, z): " << ref_coordinates[1].x_val << " "
-					  << ref_coordinates[1].y_val << " " << ref_coordinates[1].z_val << std::endl;
-			std::cout << "Point 3 on R Pane (x, y, z): " << ref_coordinates[2].x_val << " "
-					  << ref_coordinates[2].y_val << " " << ref_coordinates[2].z_val << std::endl;
-			std::cout << std::endl;
-
-			std::cout << "Point 1 on P Pane (x, y, z): " << prod_coordinates[0].x_val << " "
-					  << prod_coordinates[0].y_val << " " << prod_coordinates[0].z_val << std::endl;
-			std::cout << "Point 2 on P Pane (x, y, z): " << prod_coordinates[1].x_val << " "
-					  << prod_coordinates[1].y_val << " " << prod_coordinates[1].z_val << std::endl;
-			std::cout << "Point 3 on P Pane (x, y, z): " << prod_coordinates[2].x_val << " "
-					  << prod_coordinates[2].y_val << " " << prod_coordinates[2].z_val << std::endl;
-		}
-
-		vtkInteractorStyleTrackballCamera::OnRightButtonDown();
-	}
+	void OnRightButtonDown() override ;
 };
-
-vtkStandardNewMacro(PointSelection);
 
 #endif //VTK_POINTSELECTION_H
