@@ -37,16 +37,8 @@ class PointSelection : public vtkInteractorStyleTrackballCamera {
 
 public:
 
-#define vtkTypeMacro(thisClass,superclass) \
-      vtkAbstractTypeMacro(thisClass, superclass) \
-      protected: \
-      vtkObjectBase *NewInstanceInternal() const VTK_OVERRIDE \
-      { \
-        return thisClass::New(); \
-      } \
-
 	static PointSelection* New();
-	//vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
+	vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
 
 	int ref_count = 0; /* Number of coordinates selected on the reference pane */
 	int prod_count = 0; /* Number of coordinates selected on the production pane */
