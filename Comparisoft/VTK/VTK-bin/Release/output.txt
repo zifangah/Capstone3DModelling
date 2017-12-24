@@ -1,9 +1,25 @@
-Picking pixel: 155 134
-Value selected: 0.744721 -2.24693 10.927
+Picking pixel: 158 142
+Value selected: 0.473321 -1.91151 10.4746
 
-Picking pixel: 97 124
-Value selected: -20.2897 -2.38343 13.0282
+Picking pixel: 116 136
+Value selected: -14.1945 -10.905 8.0083
 
-Picking pixel: 209 127
-Value selected: 21.6671 -8.17765 12.4478
+Picking pixel: 183 140
+Value selected: 7.61863 7.03156 15.0001
 
+Picking pixel: 217 258
+Value selected: 30.3061 1.21566 -31.4925
+
+Picking pixel: 122 268
+Value selected: -5.08286 -0.814836 -41.0221
+
+Picking pixel: 60 257
+Value selected: -29.0468 -4.15248 -40.8736
+
+Point 1 on R Pane (x, y, z): 0.473321 -1.91151 10.4746
+Point 2 on R Pane (x, y, z): 7.61863 7.03156 15.0001
+Point 3 on R Pane (x, y, z): -5.08286 -0.814836 -41.0221
+
+Point 1 on P Pane (x, y, z): -14.1945 -10.905 8.0083
+Point 2 on P Pane (x, y, z): 30.3061 1.21566 -31.4925
+Point 3 on P Pane (x, y, z): -29.0468 -4.15248 -40.8736
