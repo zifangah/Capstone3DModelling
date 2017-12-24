@@ -18,17 +18,6 @@
 #include "VTK.h"
 #include "PointSelection.h"
 #include <cstdio>
-// Convert a wide Unicode string to an UTF8 string
-//std::string utf8_encode(const std::wstring &wstr)
-//{
-//	if (wstr.empty()) return std::string();
-//	int size_needed = WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), NULL, 0, NULL, NULL);
-//	std::string strTo(size_needed, 0);
-//	WideCharToMultiByte(CP_UTF8, 0, &wstr[0], (int)wstr.size(), &strTo[0], size_needed, NULL, NULL);
-//	return strTo;
-//}
-
-//VTK code is here
 
 //VTK code goes here. It is now a function, and is called with the file paths.
 int VTKmain(char* filePathReference, char* filePathProduction)
@@ -44,7 +33,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
-	//reader1->SetFileName(utf8_encode(filePathReferance).c_str());
 	reader1->SetFileName(filePathReference);
 	reader1->Update();
 
@@ -67,7 +55,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	//Read in the file
 	vtkSmartPointer<vtkSTLReader> reader2 =
 		vtkSmartPointer<vtkSTLReader>::New();
-	//reader2->SetFileName(utf8_encode(filePathProduction).c_str());
 	reader2->SetFileName(filePathProduction);
 	reader2->Update();
 
@@ -139,13 +126,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	textWidget->SetTextActor(textActor);
 	textWidget->SelectableOff();*/
 	
-
-	//Change the control style. Isn't necessary for default bahavior.
-	//vtkSmartPointer<vtkInteractorStyleTrackball> style =
-	//	vtkSmartPointer<vtkInteractorStyleTrackball>::New();
-
-	//renderWindowInteractor->SetInteractorStyle(style);
-
 
 	renderWindowInteractor->Initialize();
 	renderWindow->Render();

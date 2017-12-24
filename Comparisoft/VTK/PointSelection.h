@@ -37,14 +37,6 @@ class PointSelection : public vtkInteractorStyleTrackballCamera {
 
 public:
 
-/*#define vtkTypeMacro(thisClass,superclass) \
-      vtkAbstractTypeMacro(thisClass, superclass) \
-      protected: \
-      vtkObjectBase *NewInstanceInternal() const VTK_OVERRIDE \
-      { \
-        return thisClass::New(); \
-      } \*/
-
 	static PointSelection* New();
 	vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
 
