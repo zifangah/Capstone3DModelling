@@ -108,7 +108,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit"/>
+                <widget class="QLineEdit" name="AttemptOne"/>
                </item>
               </layout>
              </item>
