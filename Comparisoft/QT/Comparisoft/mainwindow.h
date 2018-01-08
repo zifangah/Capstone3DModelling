@@ -22,7 +22,10 @@ private slots:
     void on_Production_File_Button_clicked();
 
     QString fileDialog();
-    void on_AttemptOne_editingFinished();
+
+    void on_Settings_Button_clicked();
+
+    void on_Config_Button_clicked();
 
 private:
     Ui::MainWindow *ui;
