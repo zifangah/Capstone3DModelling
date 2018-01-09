@@ -24,8 +24,8 @@ void MainWindow::on_RunVTK_clicked()
 
     QString program = "./VSVTK.exe";
     QStringList argv;
-    QLineEdit* fileReferance = findChild<QLineEdit*>("ReferanceFileText");
-    QLineEdit* fileProduction = findChild<QLineEdit*>("ProductionFileText");
+    QLineEdit* fileReferance = findChild<QLineEdit*>("Referance_File_Text");
+    QLineEdit* fileProduction = findChild<QLineEdit*>("Production_File_Text");
     argv << fileReferance->text() << fileProduction->text();
 
     QProcess *VTK = new QProcess(parent);
@@ -42,14 +42,14 @@ void MainWindow::on_RunVTK_clicked()
 void MainWindow::on_Referance_File_Button_clicked()
 {
     QString filepathR = fileDialog();
-    QLineEdit* fileReferance = findChild<QLineEdit*>("ReferanceFileText");
+    QLineEdit* fileReferance = findChild<QLineEdit*>("Referance_File_Text");
     fileReferance->setText(filepathR);
 }
 
 void MainWindow::on_Production_File_Button_clicked()
 {
     QString filepathP = fileDialog();
-    QLineEdit* fileProduction = findChild<QLineEdit*>("ProductionFileText");
+    QLineEdit* fileProduction = findChild<QLineEdit*>("Production_File_Text");
     fileProduction->setText(filepathP);
 }
 
@@ -57,4 +57,10 @@ QString MainWindow::fileDialog()
 {
     QString filename = QFileDialog::getOpenFileName(this, tr("Select File"), "", tr("STL (*.stl)"));
     return filename;
+}
+
+void MainWindow::on_Config_Button_clicked()
+{
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+    view_holder->setCurrentIndex(1);
 }
