@@ -23,8 +23,6 @@ private slots:
 
     QString fileDialog();
 
-    void on_Settings_Button_clicked();
-
     void on_Config_Button_clicked();
 
 private:

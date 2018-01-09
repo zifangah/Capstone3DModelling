@@ -59,11 +59,6 @@ QString MainWindow::fileDialog()
     return filename;
 }
 
-void MainWindow::on_Settings_Button_clicked()
-{
-
-}
-
 void MainWindow::on_Config_Button_clicked()
 {
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
