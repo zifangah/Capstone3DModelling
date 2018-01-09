@@ -24,9 +24,9 @@ void MainWindow::on_RunVTK_clicked()
 
     QString program = "./VSVTK.exe";
     QStringList argv;
-    QLineEdit* fileReferance = findChild<QLineEdit*>("Referance_File_Text");
+    QLineEdit* fileReference = findChild<QLineEdit*>("Reference_File_Text");
     QLineEdit* fileProduction = findChild<QLineEdit*>("Production_File_Text");
-    argv << fileReferance->text() << fileProduction->text();
+    argv << fileReference->text() << fileProduction->text();
 
     QProcess *VTK = new QProcess(parent);
     VTK->start(program, argv);
@@ -38,12 +38,56 @@ void MainWindow::on_RunVTK_clicked()
 
 }
 
+MainWindow::userInfo getInfoFields(QString rFilePath) {
 
-void MainWindow::on_Referance_File_Button_clicked()
+    MainWindow::userInfo info;
+
+    /* Parse file path to find client name */
+    /* Assumption: client name in format of Dr.Name */
+    rFilePath = rFilePath.mid(rFilePath.lastIndexOf("/") + 1, rFilePath.length());
+    QString client = rFilePath.left(rFilePath.indexOf("_"));
+    info.client = client.left(client.indexOf(".") + 1);
+    client = client.mid(client.indexOf(".") + 1, client.length());
+    info.client.append(" " + client);
+
+    /* Parse file path to find patient name */
+    /* Assumption: patient name in format Last_First */
+    rFilePath = rFilePath.mid(rFilePath.indexOf("_") + 1, rFilePath.length());
+    QString patient_last = rFilePath.mid(0, rFilePath.indexOf("_"));
+    rFilePath = rFilePath.mid(rFilePath.indexOf("_") + 1, rFilePath.length());
+    QString patient_first = rFilePath.mid(0, rFilePath.indexOf("_"));
+    info.patient = patient_first;
+    info.patient.append(" " + patient_last);
+
+    /* Parse file path to find file description */
+    /* Assumption: file description exists following a space after file time */
+    rFilePath = rFilePath.mid(rFilePath.indexOf("_") + 1, rFilePath.length());
+
+    if (rFilePath.contains(".")) {
+        rFilePath = rFilePath.mid(rFilePath.indexOf(" ") + 1, rFilePath.length());
+        info.fileDescription = rFilePath.left(rFilePath.indexOf("."));
+    }
+    else {
+        info.fileDescription = rFilePath.mid(rFilePath.indexOf(" ") + 1, rFilePath.length());
+    }
+
+    return info;
+}
+
+void MainWindow::on_Reference_File_Button_clicked()
 {
     QString filepathR = fileDialog();
-    QLineEdit* fileReferance = findChild<QLineEdit*>("Referance_File_Text");
-    fileReferance->setText(filepathR);
+    QLineEdit* fileReference = findChild<QLineEdit*>("Reference_File_Text");
+    fileReference->setText(filepathR);
+
+    MainWindow::userInfo info = getInfoFields(fileReference->text());
+
+    QLineEdit* clientRef = MainWindow::findChild<QLineEdit*>("Client_Name");
+    clientRef->setText(info.client);
+    QLineEdit* patientRef = MainWindow::findChild<QLineEdit*>("Patient_Name");
+    patientRef->setText(info.patient);
+    QLineEdit* fileDescRef = MainWindow::findChild<QLineEdit*>("File_Description");
+    fileDescRef->setText(info.fileDescription);
 }
 
 void MainWindow::on_Production_File_Button_clicked()
