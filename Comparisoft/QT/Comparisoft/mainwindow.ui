@@ -93,7 +93,7 @@
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout">
                   <item>
-                   <widget class="QLineEdit" name="Referance_File_Text">
+                   <widget class="QLineEdit" name="Reference_File_Text">
                     <property name="minimumSize">
                      <size>
                       <width>700</width>
@@ -103,9 +103,9 @@
                    </widget>
                   </item>
                   <item>
-                   <widget class="QPushButton" name="Referance_File_Button">
+                   <widget class="QPushButton" name="Reference_File_Button">
                     <property name="text">
-                     <string>Referance File</string>
+                     <string>Reference File</string>
                     </property>
                    </widget>
                   </item>
@@ -119,7 +119,7 @@
                   <item>
                    <widget class="QPushButton" name="Production_File_Button">
                     <property name="text">
-                     <string>Prodiction File</string>
+                     <string>Production File</string>
                     </property>
                    </widget>
                   </item>
@@ -302,7 +302,7 @@
      <x>0</x>
      <y>0</y>
      <width>1305</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
