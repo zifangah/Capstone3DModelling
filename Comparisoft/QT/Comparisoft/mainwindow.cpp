@@ -108,3 +108,9 @@ void MainWindow::on_Config_Button_clicked()
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
     view_holder->setCurrentIndex(1);
 }
+
+void MainWindow::on_ReturnToMainPage_clicked()
+{
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+    view_holder->setCurrentIndex(0);
+}
