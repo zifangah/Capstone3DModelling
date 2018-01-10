@@ -34,14 +34,14 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 17), // "on_RunVTK_clicked"
 QT_MOC_LITERAL(2, 29, 0), // ""
-QT_MOC_LITERAL(3, 30, 32), // "on_Referance_File_Button_clicked"
+QT_MOC_LITERAL(3, 30, 32), // "on_Reference_File_Button_clicked"
 QT_MOC_LITERAL(4, 63, 33), // "on_Production_File_Button_cli..."
 QT_MOC_LITERAL(5, 97, 10), // "fileDialog"
 QT_MOC_LITERAL(6, 108, 24) // "on_Config_Button_clicked"
 
     },
     "MainWindow\0on_RunVTK_clicked\0\0"
-    "on_Referance_File_Button_clicked\0"
+    "on_Reference_File_Button_clicked\0"
     "on_Production_File_Button_clicked\0"
     "fileDialog\0on_Config_Button_clicked"
 };
@@ -84,7 +84,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_RunVTK_clicked(); break;
-        case 1: _t->on_Referance_File_Button_clicked(); break;
+        case 1: _t->on_Reference_File_Button_clicked(); break;
         case 2: _t->on_Production_File_Button_clicked(); break;
         case 3: { QString _r = _t->fileDialog();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;

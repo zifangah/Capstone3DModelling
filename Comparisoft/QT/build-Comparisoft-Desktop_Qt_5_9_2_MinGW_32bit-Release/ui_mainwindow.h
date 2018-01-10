@@ -47,8 +47,8 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QLineEdit *Referance_File_Text;
-    QPushButton *Referance_File_Button;
+    QLineEdit *Reference_File_Text;
+    QPushButton *Reference_File_Button;
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *Production_File_Text;
     QPushButton *Production_File_Button;
@@ -80,8 +80,10 @@ public:
     QLabel *label_8;
     QLineEdit *File_Name;
     QVBoxLayout *verticalLayout_10;
+    QWidget *widget_2;
     QPushButton *Config_Button;
     QWidget *Config_Page;
+    QVBoxLayout *verticalLayout_15;
     QPushButton *RunVTK;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
@@ -158,16 +160,16 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        Referance_File_Text = new QLineEdit(Main_Page);
-        Referance_File_Text->setObjectName(QStringLiteral("Referance_File_Text"));
-        Referance_File_Text->setMinimumSize(QSize(700, 0));
+        Reference_File_Text = new QLineEdit(Main_Page);
+        Reference_File_Text->setObjectName(QStringLiteral("Reference_File_Text"));
+        Reference_File_Text->setMinimumSize(QSize(600, 0));
 
-        horizontalLayout->addWidget(Referance_File_Text);
+        horizontalLayout->addWidget(Reference_File_Text);
 
-        Referance_File_Button = new QPushButton(Main_Page);
-        Referance_File_Button->setObjectName(QStringLiteral("Referance_File_Button"));
+        Reference_File_Button = new QPushButton(Main_Page);
+        Reference_File_Button->setObjectName(QStringLiteral("Reference_File_Button"));
 
-        horizontalLayout->addWidget(Referance_File_Button);
+        horizontalLayout->addWidget(Reference_File_Button);
 
 
         verticalLayout->addLayout(horizontalLayout);
@@ -345,6 +347,11 @@ public:
         verticalLayout_10 = new QVBoxLayout();
         verticalLayout_10->setSpacing(6);
         verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
+        widget_2 = new QWidget(Main_Page);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+
+        verticalLayout_10->addWidget(widget_2);
+
         Config_Button = new QPushButton(Main_Page);
         Config_Button->setObjectName(QStringLiteral("Config_Button"));
 
@@ -365,9 +372,15 @@ public:
         View_Holder->addWidget(Main_Page);
         Config_Page = new QWidget();
         Config_Page->setObjectName(QStringLiteral("Config_Page"));
+        verticalLayout_15 = new QVBoxLayout(Config_Page);
+        verticalLayout_15->setSpacing(6);
+        verticalLayout_15->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_15->setObjectName(QStringLiteral("verticalLayout_15"));
         RunVTK = new QPushButton(Config_Page);
         RunVTK->setObjectName(QStringLiteral("RunVTK"));
-        RunVTK->setGeometry(QRect(330, 540, 347, 28));
+
+        verticalLayout_15->addWidget(RunVTK);
+
         View_Holder->addWidget(Config_Page);
 
         verticalLayout_12->addWidget(View_Holder);
@@ -397,8 +410,8 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600; color:#b6fd01;\">Comparisoft</span></p></body></html>", Q_NULLPTR));
         Settings_Button->setText(QApplication::translate("MainWindow", "Settings", Q_NULLPTR));
-        Referance_File_Button->setText(QApplication::translate("MainWindow", "Referance File", Q_NULLPTR));
-        Production_File_Button->setText(QApplication::translate("MainWindow", "Prodiction File", Q_NULLPTR));
+        Reference_File_Button->setText(QApplication::translate("MainWindow", "Reference File", Q_NULLPTR));
+        Production_File_Button->setText(QApplication::translate("MainWindow", "Production File", Q_NULLPTR));
         label_2->setText(QApplication::translate("MainWindow", "Attempt:", Q_NULLPTR));
         label_3->setText(QApplication::translate("MainWindow", "Attempt:", Q_NULLPTR));
         label_4->setText(QApplication::translate("MainWindow", "<b>Client Name</b>", Q_NULLPTR));
