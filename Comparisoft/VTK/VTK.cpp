@@ -29,42 +29,29 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 		return 0;
 	}
 
-	//Read in the file
-
+	//File 1
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
 	reader1->SetFileName(filePathReference);
 	reader1->Update();
-
-	// Visualize
-
-
-	// Create a mapper and actor
+	
 	vtkSmartPointer<vtkPolyDataMapper> mapper1 =
 		vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper1->SetInputConnection(reader1->GetOutputPort());
 
-	//Add the mapper to the actor
 	vtkSmartPointer<vtkActor> actor1 =
 		vtkSmartPointer<vtkActor>::New();
 	actor1->SetMapper(mapper1);
 
-
-	//A second stl file
-
-	//Read in the file
 	vtkSmartPointer<vtkSTLReader> reader2 =
 		vtkSmartPointer<vtkSTLReader>::New();
 	reader2->SetFileName(filePathProduction);
 	reader2->Update();
-
-
-	// Create a mapper and actor
+	
 	vtkSmartPointer<vtkPolyDataMapper> mapper2 =
 		vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper2->SetInputConnection(reader2->GetOutputPort());
 
-	//Add the mapper to the actor
 	vtkSmartPointer<vtkActor> actor2 =
 		vtkSmartPointer<vtkActor>::New();
 	actor2->SetMapper(mapper2);
@@ -73,66 +60,62 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	vtkSmartPointer<vtkPointPicker> PointSelector =
 			vtkSmartPointer<vtkPointPicker>::New();
 
-	//Create renderer and render window, add the renderer to the window
-	vtkSmartPointer<vtkRenderer> renderer =
-		vtkSmartPointer<vtkRenderer>::New();
+	
+	/* Create one render window and one interactor for all 3 panes */
 	vtkSmartPointer<vtkRenderWindow> renderWindow =
-		vtkSmartPointer<vtkRenderWindow>::New();
-	renderWindow->AddRenderer(renderer);
-
-
-	// Create an interactor, and attatch it to a renderwindow
+			vtkSmartPointer<vtkRenderWindow>::New();
+	renderWindow->SetSize(800, 800);
 	vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
-		vtkSmartPointer<vtkRenderWindowInteractor>::New();
-
+			vtkSmartPointer<vtkRenderWindowInteractor>::New();
+	
 	renderWindowInteractor->SetRenderWindow(renderWindow);
-	renderWindowInteractor->SetPicker(PointSelector); // Attach the point selector to the window
-
-	// Set point selection style to that defined in PointSelection.h
+	renderWindowInteractor->SetPicker(PointSelector);
+	
+	//Set point selection style to that defined in PointSelection.h
 	vtkSmartPointer<PointSelection> style =
 			vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);
 
-	// Add the actors to the scene
-	renderer->AddActor(actor1);
-	renderer->AddActor(actor2);
 
-	renderer->SetBackground(.0, 1.0, 1.0); // Background color
+	/* Define viewport ranges */
+	double reference_pane[4] = {0, 0.5, 0.5, 1};
+	double production_pane[4] = {0.5, 0.5, 1, 1};
+	double comparison_pane[4] = {0, 0, 1, 0.5};
 
+	vtkSmartPointer<vtkRenderer> renderer1 =
+			vtkSmartPointer<vtkRenderer>::New();
 
-										   // Render an image (lights and cameras are created automatically)
+	vtkSmartPointer<vtkRenderer> renderer2 =
+			vtkSmartPointer<vtkRenderer>::New();
+
+	vtkSmartPointer<vtkRenderer> renderer3 =
+			vtkSmartPointer<vtkRenderer>::New();
+
+	renderWindow->AddRenderer(renderer1);
+	renderWindow->AddRenderer(renderer2);
+	renderWindow->AddRenderer(renderer3);
+
+	/* Set-up Reference Pane */
+	renderer1->AddActor(actor1);
+	renderer1->SetBackground(.5, .5, .6);
+	renderer1->SetViewport(reference_pane);
+	renderer1->ResetCamera();
+
+	/* Set-up Production Pane */
+	renderer2->AddActor(actor2);
+	renderer2->SetBackground(.5, .6, .5);
+	renderer2->SetViewport(production_pane);
+	renderer2->ResetCamera();
+
+	/* Set-up combined Comparison Pane */
+	renderer3->AddActor(actor1);
+	renderer3->AddActor(actor2);
+	renderer3->SetBackground(.5, .7, .8);
+	renderer3->SetViewport(comparison_pane);
+	renderer3->ResetCamera();
+
 	renderWindow->Render();
-
-	//Set the window title, must be called after Render()
 	renderWindow->SetWindowName("Comparisoft");
-
-	// Create a text widget
-	
-	/*vtkSmartPointer<vtkTextActor> textActor =
-		vtkSmartPointer<vtkTextActor>::New();
-	textActor->SetInput("Placeholder");
-	textActor->GetTextProperty()->SetColor(0.0, 1.0, 0.0);
-
-	vtkSmartPointer<vtkTextWidget> textWidget =
-		vtkSmartPointer<vtkTextWidget>::New();
-
-	vtkSmartPointer<vtkTextRepresentation> textRepresentation =
-		vtkSmartPointer<vtkTextRepresentation>::New();
-	textRepresentation->GetPositionCoordinate()->SetValue(.15, .15);
-	textRepresentation->GetPosition2Coordinate()->SetValue(.7, .2);
-	textWidget->SetRepresentation(textRepresentation);
-
-	textWidget->SetInteractor(renderWindowInteractor);
-	textWidget->SetTextActor(textActor);
-	textWidget->SelectableOff();*/
-	
-
-	renderWindowInteractor->Initialize();
-	renderWindow->Render();
-	//textWidget->On();
-	//renderWindow->Render();
-
-	// Begin mouse interaction
 	renderWindowInteractor->Start();
 
 	return EXIT_SUCCESS;
