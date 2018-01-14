@@ -1,0 +1,5 @@
+/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/CMakeFiles/rebuild_cache.dir
+/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/CMakeFiles/edit_cache.dir
+/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/CMakeFiles/VSVTK.dir

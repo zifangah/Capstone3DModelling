@@ -17,6 +17,7 @@
 #include <vtkCommand.h>
 #include "VTK.h"
 #include "PointSelection.h"
+
 #include <cstdio>
 
 //VTK code goes here. It is now a function, and is called with the file paths.
@@ -71,7 +72,7 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderWindowInteractor->SetRenderWindow(renderWindow);
 	renderWindowInteractor->SetPicker(PointSelector);
 	
-	//Set point selection style to that defined in PointSelection.h
+	//8Set point selection style to that defined in PointSelection.h
 	vtkSmartPointer<PointSelection> style =
 			vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);
