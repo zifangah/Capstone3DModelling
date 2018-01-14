@@ -36,6 +36,9 @@ FORMS += \
         mainwindow.ui
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+>>>>>>> master

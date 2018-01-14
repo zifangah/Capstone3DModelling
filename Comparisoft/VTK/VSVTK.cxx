@@ -7,6 +7,7 @@
 
 #include <iostream>
 <<<<<<< HEAD
+<<<<<<< HEAD
 //#include <windows.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,6 +17,11 @@
 #include <string.h>
 #include <stdio.h>
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+>>>>>>> master
 #include <stddef.h>
 #include <string>
 #include "VTK.h"
@@ -24,6 +30,7 @@
 
 
 // Global variables
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 // The main window class name.
@@ -35,11 +42,14 @@
 //HINSTANCE hInst;
 =======
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+>>>>>>> master
 
 //declare the file path variables here so that they are global
 char* filePathReference = NULL;
 char* filePathProduction = NULL;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // Forward declarations of functions included in this code module:
 //LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
@@ -73,6 +83,16 @@ int main(int argc, char *argv[])
 {
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
 
+=======
+/*
+argc is the count of arguments passed to the program. 1 is the program name, so this number will be n+1, where n is the number of commands
+we pass. argv is the arguments passed. 1 is the program name, the others are the ones that we pass, in the order passed.
+*/
+int main(int argc, char *argv[])
+
+{
+
+>>>>>>> master
 	//Writing points to logfile instead
 	freopen("output.txt", "w", stdout);
 
@@ -87,6 +107,7 @@ int main(int argc, char *argv[])
 	VTKmain(filePathReference, filePathProduction);
 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 //
@@ -334,3 +355,5 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 }*/
 =======
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+>>>>>>> master

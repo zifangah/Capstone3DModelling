@@ -18,6 +18,7 @@
 #include "VTK.h"
 #include "PointSelection.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // Convert a wide Unicode string to an UTF8 string
 //std::string utf8_encode(const std::wstring &wstr)
@@ -33,6 +34,9 @@
 =======
 #include <cstdio>
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+#include <cstdio>
+>>>>>>> master
 
 //VTK code goes here. It is now a function, and is called with the file paths.
 int VTKmain(char* filePathReference, char* filePathProduction)
@@ -48,9 +52,12 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//reader1->SetFileName(utf8_encode(filePathReferance).c_str());
 =======
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+>>>>>>> master
 	reader1->SetFileName(filePathReference);
 	reader1->Update();
 	
@@ -80,6 +87,9 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 			vtkSmartPointer<vtkPointPicker>::New();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	//Create renderer and render window, add the renderer to the window
 	vtkSmartPointer<vtkRenderer> renderer =
 		vtkSmartPointer<vtkRenderer>::New();
@@ -95,6 +105,9 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	
 	renderWindowInteractor->SetRenderWindow(renderWindow);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 	renderWindowInteractor->SetPicker(PointSelector); // Attach the point selector to the window
 
 	// Set point selection style to that defined in PointSelection.h
@@ -116,10 +129,10 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderWindow->SetWindowName("Comparisoft");
 
 	// Create a text widget
-	/*
-	vtkSmartPointer<vtkTextActor> textActor =
+	
+	/*vtkSmartPointer<vtkTextActor> textActor =
 		vtkSmartPointer<vtkTextActor>::New();
-	textActor->SetInput(utf8_encode(filePathReferance).c_str());
+	textActor->SetInput("Placeholder");
 	textActor->GetTextProperty()->SetColor(0.0, 1.0, 0.0);
 
 	vtkSmartPointer<vtkTextWidget> textWidget =
@@ -133,15 +146,8 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 
 	textWidget->SetInteractor(renderWindowInteractor);
 	textWidget->SetTextActor(textActor);
-	textWidget->SelectableOff();
-	*/
-
-	//Change the control style. Isn't necessary for default bahavior.
-	//vtkSmartPointer<vtkInteractorStyleTrackball> style =
-	//	vtkSmartPointer<vtkInteractorStyleTrackball>::New();
-
-	//renderWindowInteractor->SetInteractorStyle(style);
-
+	textWidget->SelectableOff();*/
+	
 
 	renderWindowInteractor->Initialize();
 =======
