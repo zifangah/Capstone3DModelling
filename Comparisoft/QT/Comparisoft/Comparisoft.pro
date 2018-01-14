@@ -6,7 +6,7 @@
 
 QT       += core gui
 
-QMAKE_LFLAGS += -static-libgcc -static-libstdc++
+QMAKE_LFLAGS += -static-libstdc++
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -35,4 +35,7 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b

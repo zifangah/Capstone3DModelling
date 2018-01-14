@@ -1,4 +1,8 @@
 /Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/zifangjiang/CLionProjects/Capstone3DModelling
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug
+CMake Error at CMakeLists.txt:4:
+  Parse error.  Expected a command name, got unquoted argument with text
+  "<<<<<<<".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles/CMakeOutput.log".
