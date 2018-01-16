@@ -114,3 +114,27 @@ void MainWindow::on_ReturnToMainPage_clicked()
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
     view_holder->setCurrentIndex(0);
 }
+
+void MainWindow::on_Settings_Button_clicked()
+{
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+    view_holder->setCurrentIndex(2);
+}
+
+void MainWindow::on_Settings_Button_2_clicked()
+{
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+    view_holder->setCurrentIndex(2);
+}
+
+void MainWindow::on_Return_to_Setup_Button_clicked()
+{
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+    view_holder->setCurrentIndex(0);
+}
+
+void MainWindow::on_Return_to_Configuration_Button_clicked()
+{
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+    view_holder->setCurrentIndex(1);
+}

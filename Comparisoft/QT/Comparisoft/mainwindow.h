@@ -33,6 +33,14 @@ private slots:
 
     void on_ReturnToMainPage_clicked();
 
+    void on_Settings_Button_clicked();
+
+    void on_Settings_Button_2_clicked();
+
+    void on_Return_to_Setup_Button_clicked();
+
+    void on_Return_to_Configuration_Button_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
