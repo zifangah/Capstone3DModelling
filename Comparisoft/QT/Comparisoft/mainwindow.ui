@@ -24,7 +24,7 @@
     <item>
      <widget class="QStackedWidget" name="View_Holder">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Main_Page">
        <property name="enabled">
@@ -360,7 +360,19 @@
                </widget>
               </item>
               <item>
-               <widget class="QComboBox" name="comboBox"/>
+               <widget class="QComboBox" name="Report_Type">
+                <property name="currentText">
+                 <string>Error Report</string>
+                </property>
+                <property name="currentIndex">
+                 <number>0</number>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Error Report</string>
+                 </property>
+                </item>
+               </widget>
               </item>
              </layout>
             </item>
@@ -374,7 +386,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spinBox"/>
+               <widget class="QSpinBox" name="Confidence_Level"/>
               </item>
               <item>
                <widget class="QLabel" name="label_10">
@@ -384,10 +396,21 @@
                </widget>
               </item>
               <item>
-               <widget class="QSpinBox" name="spinBox_2"/>
+               <widget class="QSpinBox" name="Error_Bound"/>
               </item>
               <item>
-               <widget class="QComboBox" name="comboBox_2"/>
+               <widget class="QComboBox" name="Error_Unit">
+                <item>
+                 <property name="text">
+                  <string>nm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>mm</string>
+                 </property>
+                </item>
+               </widget>
               </item>
              </layout>
             </item>
@@ -401,7 +424,18 @@
                </widget>
               </item>
               <item>
-               <widget class="QComboBox" name="comboBox_3"/>
+               <widget class="QComboBox" name="Allignment_Type">
+                <item>
+                 <property name="text">
+                  <string>Standard</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Quick</string>
+                 </property>
+                </item>
+               </widget>
               </item>
              </layout>
             </item>
