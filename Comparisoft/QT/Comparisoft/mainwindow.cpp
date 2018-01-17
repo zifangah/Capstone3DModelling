@@ -42,6 +42,9 @@ MainWindow::userInfo getInfoFields(QString rFilePath) {
 
     MainWindow::userInfo info;
 
+    /* Save beginning of filepath for determining save location */
+    info.filePath = rFilePath.mid(0, rFilePath.indexOf("/", rFilePath.indexOf("/") + 1));
+
     /* Parse file path to find client name */
     /* Assumption: client name in format of Dr.Name */
     rFilePath = rFilePath.mid(rFilePath.lastIndexOf("/") + 1, rFilePath.length());
@@ -88,6 +91,9 @@ void MainWindow::on_Reference_File_Button_clicked()
     patientRef->setText(info.patient);
     QLineEdit* fileDescRef = MainWindow::findChild<QLineEdit*>("File_Description");
     fileDescRef->setText(info.fileDescription);
+
+    QLineEdit* savePath = MainWindow::findChild<QLineEdit*>("Save_Location");
+    savePath->setText(info.filePath + "/Comparisoft/Reports/");
 }
 
 void MainWindow::on_Production_File_Button_clicked()

@@ -18,6 +18,7 @@ public:
         QString client;
         QString patient;
         QString fileDescription;
+        QString filePath;
     };
 
 private slots:
