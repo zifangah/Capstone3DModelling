@@ -16,7 +16,7 @@ CFLAGS        = -fno-keep-inline-dllexport -g -Wextra -Wall -W $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++11 -Wextra -Wall -W -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I..\Comparisoft -I. -IC:\Qt\5.9.2\mingw53_32\include -IC:\Qt\5.9.2\mingw53_32\include\QtWidgets -IC:\Qt\5.9.2\mingw53_32\include\QtGui -IC:\Qt\5.9.2\mingw53_32\include\QtANGLE -IC:\Qt\5.9.2\mingw53_32\include\QtCore -Idebug -I. -IC:\Qt\5.9.2\mingw53_32\mkspecs\win32-g++ 
 LINKER      =        g++
-LFLAGS        =        -static-libgcc -static-libstdc++ -Wl,-subsystem,windows -mthreads
+LFLAGS        =        -static-libstdc++ -Wl,-subsystem,windows -mthreads
 LIBS        =        -lmingw32 -LC:\Qt\5.9.2\mingw53_32\lib C:\Qt\5.9.2\mingw53_32\lib\libqtmaind.a -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib -lshell32 C:\Qt\5.9.2\mingw53_32\lib\libQt5Widgetsd.a C:\Qt\5.9.2\mingw53_32\lib\libQt5Guid.a C:\Qt\5.9.2\mingw53_32\lib\libQt5Cored.a 
 QMAKE         = C:\Qt\5.9.2\mingw53_32\bin\qmake.exe
 IDC           = idc
@@ -463,6 +463,8 @@ debug/mainwindow.o: ../Comparisoft/mainwindow.cpp ../Comparisoft/mainwindow.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QButtonGroup \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QFrame \
+		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QHBoxLayout \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qlayout.h \
@@ -472,7 +474,6 @@ debug/mainwindow.o: ../Comparisoft/mainwindow.cpp ../Comparisoft/mainwindow.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
@@ -485,6 +486,8 @@ debug/mainwindow.o: ../Comparisoft/mainwindow.cpp ../Comparisoft/mainwindow.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QLabel \
+		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qlabel.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QLineEdit \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qlineedit.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtGui/qtextcursor.h \
@@ -497,6 +500,8 @@ debug/mainwindow.o: ../Comparisoft/mainwindow.cpp ../Comparisoft/mainwindow.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QStackedWidget \
+		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qstackedwidget.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QStatusBar \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.9.2/mingw53_32/include/QtWidgets/QToolBar \
