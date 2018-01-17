@@ -88,6 +88,7 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 	//Create renderer and render window, add the renderer to the window
@@ -97,6 +98,10 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	
 	/* Create one render window and one interactor for all 3 panes */
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+	
+	/* Create one render window and one interactor for all 3 panes */
+>>>>>>> origin/Production
 	vtkSmartPointer<vtkRenderWindow> renderWindow =
 			vtkSmartPointer<vtkRenderWindow>::New();
 	renderWindow->SetSize(800, 800);
@@ -106,49 +111,41 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderWindowInteractor->SetRenderWindow(renderWindow);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> master
 	renderWindowInteractor->SetPicker(PointSelector); // Attach the point selector to the window
 
 	// Set point selection style to that defined in PointSelection.h
+=======
+	renderWindowInteractor->SetPicker(PointSelector);
+	
+	//Set point selection style to that defined in PointSelection.h
+>>>>>>> origin/Production
 	vtkSmartPointer<PointSelection> style =
 			vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);
 
-	// Add the actors to the scene
-	renderer->AddActor(actor1);
-	renderer->AddActor(actor2);
 
-	renderer->SetBackground(.0, 1.0, 1.0); // Background color
+	/* Define viewport ranges */
+	double reference_pane[4] = {0, 0.5, 0.5, 1};
+	double production_pane[4] = {0.5, 0.5, 1, 1};
+	double comparison_pane[4] = {0, 0, 1, 0.5};
 
+	vtkSmartPointer<vtkRenderer> renderer1 =
+			vtkSmartPointer<vtkRenderer>::New();
 
-										   // Render an image (lights and cameras are created automatically)
-	renderWindow->Render();
+	vtkSmartPointer<vtkRenderer> renderer2 =
+			vtkSmartPointer<vtkRenderer>::New();
 
-	//Set the window title, must be called after Render()
-	renderWindow->SetWindowName("Comparisoft");
+	vtkSmartPointer<vtkRenderer> renderer3 =
+			vtkSmartPointer<vtkRenderer>::New();
 
-	// Create a text widget
-	
-	/*vtkSmartPointer<vtkTextActor> textActor =
-		vtkSmartPointer<vtkTextActor>::New();
-	textActor->SetInput("Placeholder");
-	textActor->GetTextProperty()->SetColor(0.0, 1.0, 0.0);
+	renderWindow->AddRenderer(renderer1);
+	renderWindow->AddRenderer(renderer2);
+	renderWindow->AddRenderer(renderer3);
 
-	vtkSmartPointer<vtkTextWidget> textWidget =
-		vtkSmartPointer<vtkTextWidget>::New();
-
-	vtkSmartPointer<vtkTextRepresentation> textRepresentation =
-		vtkSmartPointer<vtkTextRepresentation>::New();
-	textRepresentation->GetPositionCoordinate()->SetValue(.15, .15);
-	textRepresentation->GetPosition2Coordinate()->SetValue(.7, .2);
-	textWidget->SetRepresentation(textRepresentation);
-
-	textWidget->SetInteractor(renderWindowInteractor);
-	textWidget->SetTextActor(textActor);
-	textWidget->SelectableOff();*/
-	
-
+<<<<<<< HEAD
 	renderWindowInteractor->Initialize();
 =======
 	renderWindowInteractor->SetPicker(PointSelector);
@@ -189,6 +186,20 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderer2->SetViewport(production_pane);
 	renderer2->ResetCamera();
 
+=======
+	/* Set-up Reference Pane */
+	renderer1->AddActor(actor1);
+	renderer1->SetBackground(.5, .5, .6);
+	renderer1->SetViewport(reference_pane);
+	renderer1->ResetCamera();
+
+	/* Set-up Production Pane */
+	renderer2->AddActor(actor2);
+	renderer2->SetBackground(.5, .6, .5);
+	renderer2->SetViewport(production_pane);
+	renderer2->ResetCamera();
+
+>>>>>>> origin/Production
 	/* Set-up combined Comparison Pane */
 	renderer3->AddActor(actor1);
 	renderer3->AddActor(actor2);
@@ -196,7 +207,10 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderer3->SetViewport(comparison_pane);
 	renderer3->ResetCamera();
 
+<<<<<<< HEAD
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
+=======
+>>>>>>> origin/Production
 	renderWindow->Render();
 	renderWindow->SetWindowName("Comparisoft");
 	renderWindowInteractor->Start();
