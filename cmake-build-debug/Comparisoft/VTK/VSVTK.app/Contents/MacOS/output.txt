@@ -1,42 +1,32 @@
-Picking pixel: 203 674
-Value selected: -0.891573 6.29081 3.38731
+Picking pixel: 198 680
+Value selected: -3.10683 8.0329 4.53955
 
-Picking pixel: 78 530
-Value selected: -34.8495 -32.1274 13.4396
+Picking pixel: 157 551
+Value selected: -13.741 -27.2571 11.9444
 
-Picking pixel: 224 509
-Value selected: 3.962 -38.2921 12.9779
+Picking pixel: 270 542
+Value selected: 16.4962 -29.9492 8.29061
 
-Picking pixel: 274 625
-Value selected: 18.2174 -7.65095 7.31394
+Picking pixel: 598 702
+Value selected: 104.741 13.3143 9.85542
 
-Picking pixel: 251 653
-Value selected: 12.5563 0.348233 4.05892
+Picking pixel: 525 554
+Value selected: 85.0906 -26.5247 9.85542
 
-Picking pixel: 206 541
-Value selected: -1.61897 -29.3138 15.8604
+Picking pixel: 702 542
+Value selected: 132.736 -29.7549 9.85542
 
-Point 1 on R Pane (x, y, z): -0.891573 6.29081 3.38731
-Point 2 on R Pane (x, y, z): 3.962 -38.2921 12.9779
-Point 3 on R Pane (x, y, z): 12.5563 0.348233 4.05892
+Point 1 on R Pane (x, y, z): -3.10683 8.0329 4.53955
+Point 2 on R Pane (x, y, z): 16.4962 -29.9492 8.29061
+Point 3 on R Pane (x, y, z): 85.0906 -26.5247 9.85542
 
-Point 1 on P Pane (x, y, z): -34.8495 -32.1274 13.4396
-Point 2 on P Pane (x, y, z): 18.2174 -7.65095 7.31394
-Point 3 on P Pane (x, y, z): -1.61897 -29.3138 15.8604
-Picking pixel: 297 516
-Value selected: 24.9034 -37.5844 8.72755
+Point 1 on P Pane (x, y, z): -13.741 -27.2571 11.9444
+Point 2 on P Pane (x, y, z): 104.741 13.3143 9.85542
+Point 3 on P Pane (x, y, z): 132.736 -29.7549 9.85542
+Point 1 on R Pane (x, y, z): -3.10683 8.0329 4.53955
+Point 2 on R Pane (x, y, z): 16.4962 -29.9492 8.29061
+Point 3 on R Pane (x, y, z): 85.0906 -26.5247 9.85542
 
-Point 1 on R Pane (x, y, z): -0.891573 6.29081 3.38731
-Point 2 on R Pane (x, y, z): 3.962 -38.2921 12.9779
-Point 3 on R Pane (x, y, z): 12.5563 0.348233 4.05892
-
-Point 1 on P Pane (x, y, z): -34.8495 -32.1274 13.4396
-Point 2 on P Pane (x, y, z): 18.2174 -7.65095 7.31394
-Point 3 on P Pane (x, y, z): -1.61897 -29.3138 15.8604
-Point 1 on R Pane (x, y, z): -0.891573 6.29081 3.38731
-Point 2 on R Pane (x, y, z): 3.962 -38.2921 12.9779
-Point 3 on R Pane (x, y, z): 12.5563 0.348233 4.05892
-
-Point 1 on P Pane (x, y, z): -34.8495 -32.1274 13.4396
-Point 2 on P Pane (x, y, z): 18.2174 -7.65095 7.31394
-Point 3 on P Pane (x, y, z): -1.61897 -29.3138 15.8604
+Point 1 on P Pane (x, y, z): -13.741 -27.2571 11.9444
+Point 2 on P Pane (x, y, z): 104.741 13.3143 9.85542
+Point 3 on P Pane (x, y, z): 132.736 -29.7549 9.85542
