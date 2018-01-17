@@ -9,6 +9,7 @@
 using namespace std;
 
 #if !defined(_WIN32)
+    #include <sys/types.h>
     #include <sys/stat.h>
 #endif
 
@@ -155,7 +156,12 @@ void MainWindow::on_Config_Button_clicked()
 
     /* Error has occurred */
     if (error != 0) {
+        qInfo( "Error occurred creating directory: errno:");
+        qDebug() << error;
     }
+
+    QString fileReference = findChild<QLineEdit*>("Reference_File_Text")->text();
+    MainWindow::userInfo info = getInfoFields(fileReference);
 
     QString saveFile = MainWindow::findChild<QLineEdit*>("File_Name")->text();
     ofstream comparison_report;
@@ -163,7 +169,9 @@ void MainWindow::on_Config_Button_clicked()
     filepath.append("/");
     filepath.append(saveFile);
     comparison_report.open (filepath.toLatin1().data());
-    comparison_report << "Writing this to a file.\n";
+    comparison_report << "Comparisoft\n";
+    comparison_report << "Client: " << info.client.toStdString() << "\n";
+    comparison_report << "Patient: " << info.patient.toStdString() << "\n";
     comparison_report.close();
 }
 
