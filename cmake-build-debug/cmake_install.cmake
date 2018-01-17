@@ -29,9 +29,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+<<<<<<< HEAD
   include("/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Examples/vtk-example/cmake_install.cmake")
   include("/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Examples/itk-example/cmake_install.cmake")
   include("/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Examples/stl-example/cmake_install.cmake")
+=======
+>>>>>>> HighlightSelectedPoints
   include("/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/cmake_install.cmake")
 
 endif()

@@ -5,7 +5,11 @@
 		<Option title="EXAMPLES"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="clang"/>
+<<<<<<< HEAD
 		<Option virtualFolders="CMake Files\;CMake Files\Examples\;CMake Files\Examples\vtk-example\;CMake Files\Examples\itk-example\;CMake Files\Examples\stl-example\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-8.0\;CMake Files\..\..\..\..\usr\local\lib\cmake\ITK-4.12\;CMake Files\..\..\..\..\usr\local\lib\cmake\ITK-4.12\Modules\;CMake Files\..\..\..\..\usr\local\Cellar\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\Modules\;CMake Files\Comparisoft\;CMake Files\Comparisoft\VTK\;"/>
+=======
+		<Option virtualFolders="CMake Files\;CMake Files\Comparisoft\;CMake Files\Comparisoft\VTK\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-8.0\;CMake Files\..\..\..\..\usr\local\Cellar\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\;CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\Modules\;"/>
+>>>>>>> HighlightSelectedPoints
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug"/>
@@ -37,6 +41,7 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
 			<Target title="Cylinder">
 				<Option output="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Examples/vtk-example/Cylinder.app/Contents/MacOS/Cylinder" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Examples/vtk-example"/>
@@ -3676,6 +3681,138 @@
 		</Unit>
 		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/Modules/vtkWrappingTcl.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\Modules\"/>
+=======
+			<Target title="VSVTK">
+				<Option output="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/VSVTK.app/Contents/MacOS/VSVTK" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DvtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"/>
+					<Add option="-DvtkIOExport_AUTOINIT=1(vtkIOExportOpenGL2)"/>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DvtkRenderingFreeType_AUTOINIT=1(vtkRenderingFreeTypeFontConfig)"/>
+					<Add option="-DvtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2)"/>
+					<Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"/>
+					<Add directory="/usr/local/Cellar/vtk/8.0.1/include/vtk-8.0"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/hdf5/1.10.1_2/include"/>
+					<Add directory="/usr/local/opt/szip/include"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/System/Library/Frameworks/Tcl.framework/Headers"/>
+					<Add directory="/System/Library/Frameworks/Python.framework"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 VSVTK"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="VSVTK/fast">
+				<Option output="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/VSVTK.app/Contents/MacOS/VSVTK" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DvtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2)"/>
+					<Add option="-DvtkIOExport_AUTOINIT=1(vtkIOExportOpenGL2)"/>
+					<Add option="-DvtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"/>
+					<Add option="-DvtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"/>
+					<Add option="-DvtkRenderingFreeType_AUTOINIT=1(vtkRenderingFreeTypeFontConfig)"/>
+					<Add option="-DvtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2)"/>
+					<Add option="-DvtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2)"/>
+					<Add directory="/usr/local/Cellar/vtk/8.0.1/include/vtk-8.0"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/hdf5/1.10.1_2/include"/>
+					<Add directory="/usr/local/opt/szip/include"/>
+					<Add directory="/usr/include/libxml2"/>
+					<Add directory="/System/Library/Frameworks/Tcl.framework/Headers"/>
+					<Add directory="/System/Library/Frameworks/Python.framework"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 VSVTK/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/Comparisoft/VTK/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/PointSelection.cpp">
+			<Option target="VSVTK"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/PointSelection.h">
+			<Option target="VSVTK"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/VSVTK.cxx">
+			<Option target="VSVTK"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/VTK.cpp">
+			<Option target="VSVTK"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/VTK.h">
+			<Option target="VSVTK"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Comparisoft\VTK\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Comparisoft\VTK\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/lib/cmake/vtk-8.0/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/lib/cmake/vtk-8.0/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/lib/cmake/vtk-8.0/VTKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/lib/cmake/vtk-8.0/VTKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/VTKTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/VTKTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/VTKTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/VTKTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/vtkModuleAPI.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+		</Unit>
+		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/UseVTK.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\"/>
+>>>>>>> HighlightSelectedPoints
 		</Unit>
 		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/Modules/vtkChartsCore.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\Modules\"/>
@@ -4433,11 +4570,14 @@
 		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/../../../../usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/Modules/vtkWrappingTcl.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\Cellar\vtk\8.0.1\lib\cmake\vtk-8.0\Modules\"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Comparisoft\VTK\"/>
 		</Unit>
 		<Unit filename="/Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Comparisoft\VTK\"/>
 		</Unit>
+=======
+>>>>>>> HighlightSelectedPoints
 	</Project>
 </CodeBlocks_project_file>

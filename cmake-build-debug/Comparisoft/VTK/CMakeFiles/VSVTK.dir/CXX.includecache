@@ -33,6 +33,11 @@ vtkInteractorStyleTrackballCamera.h
 -
 vtkObjectFactory.h
 -
+<<<<<<< HEAD
+=======
+vtkAutoInit.h
+-
+>>>>>>> HighlightSelectedPoints
 
 /Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/VSVTK.cxx
 iostream
@@ -41,6 +46,11 @@ stdlib.h
 -
 string.h
 -
+<<<<<<< HEAD
+=======
+stdio.h
+-
+>>>>>>> HighlightSelectedPoints
 stddef.h
 -
 string
@@ -87,6 +97,11 @@ VTK.h
 /Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/VTK.h
 PointSelection.h
 /Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/PointSelection.h
+<<<<<<< HEAD
+=======
+cstdio
+-
+>>>>>>> HighlightSelectedPoints
 
 /Users/zifangjiang/CLionProjects/Capstone3DModelling/Comparisoft/VTK/VTK.h
 string

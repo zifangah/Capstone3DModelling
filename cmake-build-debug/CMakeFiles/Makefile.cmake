@@ -32,9 +32,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Applications/CLion.app/Contents/bin/cmake/share/cmake-3.8/Modules/ProcessorCount.cmake"
   "../CMakeLists.txt"
   "../Comparisoft/VTK/CMakeLists.txt"
+<<<<<<< HEAD
   "../Examples/itk-example/CMakeLists.txt"
   "../Examples/stl-example/CMakeLists.txt"
   "../Examples/vtk-example/CMakeLists.txt"
+=======
+>>>>>>> HighlightSelectedPoints
   "CMakeFiles/3.8.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.8.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.8.2/CMakeSystem.cmake"
@@ -168,6 +171,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/VTKTargets-release.cmake"
   "/usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/VTKTargets.cmake"
   "/usr/local/Cellar/vtk/8.0.1/lib/cmake/vtk-8.0/vtkModuleAPI.cmake"
+<<<<<<< HEAD
   "/usr/local/lib/cmake/ITK-4.12/ITKConfig.cmake"
   "/usr/local/lib/cmake/ITK-4.12/ITKConfigVersion.cmake"
   "/usr/local/lib/cmake/ITK-4.12/ITKModuleAPI.cmake"
@@ -309,6 +313,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/lib/cmake/ITK-4.12/UseITK.cmake"
   "/usr/local/lib/cmake/ITK-4.12/itkImageIOFactoryRegisterManager.h.in"
   "/usr/local/lib/cmake/ITK-4.12/itkTransformIOFactoryRegisterManager.h.in"
+=======
+>>>>>>> HighlightSelectedPoints
   "/usr/local/lib/cmake/vtk-8.0/VTKConfig.cmake"
   "/usr/local/lib/cmake/vtk-8.0/VTKConfigVersion.cmake"
   )
@@ -322,16 +328,22 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+<<<<<<< HEAD
   "Examples/vtk-example/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Examples/itk-example/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Examples/stl-example/CMakeFiles/CMakeDirectoryInformation.cmake"
+=======
+>>>>>>> HighlightSelectedPoints
   "Comparisoft/VTK/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+<<<<<<< HEAD
   "Examples/vtk-example/CMakeFiles/Cylinder.dir/DependInfo.cmake"
   "Examples/itk-example/CMakeFiles/TranslationTransform.dir/DependInfo.cmake"
   "Examples/stl-example/CMakeFiles/ReadSTL.dir/DependInfo.cmake"
+=======
+>>>>>>> HighlightSelectedPoints
   "Comparisoft/VTK/CMakeFiles/VSVTK.dir/DependInfo.cmake"
   )

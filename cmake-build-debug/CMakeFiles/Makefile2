@@ -60,6 +60,7 @@ CMAKE_SOURCE_DIR = /Users/zifangjiang/CLionProjects/Capstone3DModelling
 CMAKE_BINARY_DIR = /Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug
 
 #=============================================================================
+<<<<<<< HEAD
 # Directory level rules for directory Examples/vtk-example
 
 # Convenience name for "all" pass in the directory.
@@ -225,6 +226,8 @@ clean: Examples/stl-example/CMakeFiles/ReadSTL.dir/clean
 .PHONY : clean
 
 #=============================================================================
+=======
+>>>>>>> HighlightSelectedPoints
 # Directory level rules for directory Comparisoft/VTK
 
 # Convenience name for "all" pass in the directory.
@@ -249,7 +252,11 @@ Comparisoft/VTK/preinstall:
 Comparisoft/VTK/CMakeFiles/VSVTK.dir/all:
 	$(MAKE) -f Comparisoft/VTK/CMakeFiles/VSVTK.dir/build.make Comparisoft/VTK/CMakeFiles/VSVTK.dir/depend
 	$(MAKE) -f Comparisoft/VTK/CMakeFiles/VSVTK.dir/build.make Comparisoft/VTK/CMakeFiles/VSVTK.dir/build
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles --progress-num=9,10,11,12 "Built target VSVTK"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/zifangjiang/CLionProjects/Capstone3DModelling/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target VSVTK"
+>>>>>>> HighlightSelectedPoints
 .PHONY : Comparisoft/VTK/CMakeFiles/VSVTK.dir/all
 
 # Include target in all.

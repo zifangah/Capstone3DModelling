@@ -19,6 +19,7 @@
 #include "PointSelection.h"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // Convert a wide Unicode string to an UTF8 string
 //std::string utf8_encode(const std::wstring &wstr)
@@ -32,6 +33,9 @@
 
 //VTK code is here
 =======
+=======
+
+>>>>>>> HighlightSelectedPoints
 #include <cstdio>
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
 =======
@@ -120,8 +124,12 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 =======
 	renderWindowInteractor->SetPicker(PointSelector);
 	
+<<<<<<< HEAD
 	//Set point selection style to that defined in PointSelection.h
 >>>>>>> origin/Production
+=======
+	//8Set point selection style to that defined in PointSelection.h
+>>>>>>> HighlightSelectedPoints
 	vtkSmartPointer<PointSelection> style =
 			vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);

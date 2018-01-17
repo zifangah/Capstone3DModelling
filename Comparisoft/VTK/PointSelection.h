@@ -1,8 +1,8 @@
+
 /******************************************************************************/
 /**
 @file		PointSelection.h
 @author 	Dana Klamut
-
 @details	This file handles the point selection on the data sets.
 Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 */
@@ -50,9 +50,20 @@ public:
 >>>>>>> 628ae4e85d0cb492a48759dcc996ea166b12582b
 =======
 
+<<<<<<< HEAD
 >>>>>>> master
+=======
+#define vtkTypeMacro(thisClass,superclass) \
+      vtkAbstractTypeMacro(thisClass, superclass) \
+      protected: \
+      vtkObjectBase *NewInstanceInternal() const VTK_OVERRIDE \
+      { \
+        return thisClass::New(); \
+      } \
+
+>>>>>>> HighlightSelectedPoints
 	static PointSelection* New();
-	vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
+	//vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
 
 	int ref_count = 0; /* Number of coordinates selected on the reference pane */
 	int prod_count = 0; /* Number of coordinates selected on the production pane */
@@ -60,6 +71,10 @@ public:
 
 	coordinate ref_coordinates[3]; /* Stores selected coordinates on the reference pane */
 	coordinate prod_coordinates[3]; /* Stores selected coordinates on the production pane */
+
+	ofstream file;
+
+	bool is_open;
 
 	void OnRightButtonDown() override ;
 };

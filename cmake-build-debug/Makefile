@@ -111,6 +111,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for targets named Cylinder
 
 # Build rule for target.
@@ -150,6 +151,8 @@ ReadSTL/fast:
 .PHONY : ReadSTL/fast
 
 #=============================================================================
+=======
+>>>>>>> HighlightSelectedPoints
 # Target rules for targets named VSVTK
 
 # Build rule for target.
@@ -170,9 +173,12 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+<<<<<<< HEAD
 	@echo "... Cylinder"
 	@echo "... TranslationTransform"
 	@echo "... ReadSTL"
+=======
+>>>>>>> HighlightSelectedPoints
 	@echo "... VSVTK"
 .PHONY : help
 
