@@ -31,6 +31,8 @@ private slots:
 
     void on_Config_Button_clicked();
 
+    void on_saveLocation_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -238,6 +238,13 @@
                 <item>
                  <widget class="QLineEdit" name="Save_Location"/>
                 </item>
+                <item>
+                 <widget class="QPushButton" name="saveLocation">
+                  <property name="text">
+                   <string>...</string>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </item>
              </layout>
