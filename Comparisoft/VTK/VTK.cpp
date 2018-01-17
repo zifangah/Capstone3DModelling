@@ -131,30 +131,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderWindowInteractor->Initialize();
 
 	renderWindowInteractor->SetPicker(PointSelector);
-	
-	//Set point selection style to that defined in PointSelection.h
-	vtkSmartPointer<PointSelection> style =
-			vtkSmartPointer<PointSelection>::New();
-	renderWindowInteractor->SetInteractorStyle(style);
-
-
-	/* Define viewport ranges */
-	double reference_pane[4] = {0, 0.5, 0.5, 1};
-	double production_pane[4] = {0.5, 0.5, 1, 1};
-	double comparison_pane[4] = {0, 0, 1, 0.5};
-
-	vtkSmartPointer<vtkRenderer> renderer1 =
-			vtkSmartPointer<vtkRenderer>::New();
-
-	vtkSmartPointer<vtkRenderer> renderer2 =
-			vtkSmartPointer<vtkRenderer>::New();
-
-	vtkSmartPointer<vtkRenderer> renderer3 =
-			vtkSmartPointer<vtkRenderer>::New();
-
-	renderWindow->AddRenderer(renderer1);
-	renderWindow->AddRenderer(renderer2);
-	renderWindow->AddRenderer(renderer3);
 
 	/* Set-up Reference Pane */
 	renderer1->AddActor(actor1);
