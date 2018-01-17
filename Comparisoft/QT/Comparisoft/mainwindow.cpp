@@ -3,6 +3,7 @@
 #include <QProcess>
 #include <QFileDialog>
 #include <QDebug>
+#include <QDate>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -94,6 +95,23 @@ void MainWindow::on_Reference_File_Button_clicked()
 
     QLineEdit* savePath = MainWindow::findChild<QLineEdit*>("Save_Location");
     savePath->setText(info.filePath + "/Comparisoft/Reports/");
+
+    QLineEdit* saveFile = MainWindow::findChild<QLineEdit*>("File_Name");
+    QDate date = QDate::currentDate();
+    QString newFileName = "Report_";
+    newFileName.append(QString::number(date.year()));
+    newFileName.append("-");
+    newFileName.append(QString::number(date.month()));
+    newFileName.append("-");
+    newFileName.append(QString::number(date.day()));
+    newFileName.append("_");
+    newFileName.append(info.client.replace(" ", ""));
+    newFileName.append("_");
+    newFileName.append(info.patient.replace(" ", ""));
+    newFileName.append("_");
+    newFileName.append(info.fileDescription.replace(" ", ""));
+    newFileName.append(".pdf");
+    saveFile->setText(newFileName);
 }
 
 void MainWindow::on_Production_File_Button_clicked()
