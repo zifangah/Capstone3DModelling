@@ -3,6 +3,15 @@
 #include <QProcess>
 #include <QFileDialog>
 #include <QDebug>
+#include <QDate>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+#if !defined(_WIN32)
+    #include <sys/types.h>
+    #include <sys/stat.h>
+#endif
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -48,6 +57,9 @@ void MainWindow::on_RunVTK_clicked()
 MainWindow::userInfo getInfoFields(QString rFilePath) {
 
     MainWindow::userInfo info;
+
+    /* Save beginning of filepath for determining save location */
+    info.filePath = rFilePath.mid(0, rFilePath.indexOf("/", rFilePath.indexOf("/") + 1));
 
     /* Parse file path to find client name */
     /* Assumption: client name in format of Dr.Name */
@@ -95,6 +107,26 @@ void MainWindow::on_Reference_File_Button_clicked()
     patientRef->setText(info.patient);
     QLineEdit* fileDescRef = MainWindow::findChild<QLineEdit*>("File_Description");
     fileDescRef->setText(info.fileDescription);
+
+    QLineEdit* savePath = MainWindow::findChild<QLineEdit*>("Save_Location");
+    savePath->setText(info.filePath + "/Comparisoft/Reports/");
+
+    QLineEdit* saveFile = MainWindow::findChild<QLineEdit*>("File_Name");
+    QDate date = QDate::currentDate();
+    QString newFileName = "Report_";
+    newFileName.append(QString::number(date.year()));
+    newFileName.append("-");
+    newFileName.append(QString::number(date.month()));
+    newFileName.append("-");
+    newFileName.append(QString::number(date.day()));
+    newFileName.append("_");
+    newFileName.append(info.client.replace(" ", ""));
+    newFileName.append("_");
+    newFileName.append(info.patient.replace(" ", ""));
+    newFileName.append("_");
+    newFileName.append(info.fileDescription.replace(" ", ""));
+    newFileName.append(".txt");
+    saveFile->setText(newFileName);
 }
 
 void MainWindow::on_Production_File_Button_clicked()
@@ -123,6 +155,47 @@ void MainWindow::on_Config_Button_clicked()
 {
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
     view_holder->setCurrentIndex(1);
+
+    std::string sPath = "/tmp/test";
+
+    QString savePath = MainWindow::findChild<QLineEdit*>("Save_Location")->text();
+
+    mode_t u_mode = 0733;
+    int error = 0;
+
+    /* For Windows environments */
+    #if defined(_WIN32)
+        error = _mkdir(savePath.toStdString().c_str());
+    #else
+        error = mkdir(savePath.toStdString().c_str(), u_mode);
+    #endif
+
+    /* Error has occurred */
+    if (error != 0) {
+        qInfo( "Error occurred creating directory: errno:");
+        qDebug() << error;
+    }
+
+    QString fileReference = findChild<QLineEdit*>("Reference_File_Text")->text();
+    MainWindow::userInfo info = getInfoFields(fileReference);
+
+    QString saveFile = MainWindow::findChild<QLineEdit*>("File_Name")->text();
+    ofstream comparison_report;
+    QString filepath = savePath;
+    filepath.append("/");
+    filepath.append(saveFile);
+    comparison_report.open (filepath.toLatin1().data());
+    comparison_report << "Comparisoft\n";
+    comparison_report << "Client: " << info.client.toStdString() << "\n";
+    comparison_report << "Patient: " << info.patient.toStdString() << "\n";
+    comparison_report.close();
+}
+
+void MainWindow::on_saveLocation_clicked()
+{
+    QString fileSavePath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "", QFileDialog::ShowDirsOnly);
+    QLineEdit* fileSave = findChild<QLineEdit*>("Save_Location");
+    fileSave->setText(fileSavePath);
 }
 
 void MainWindow::on_ReturnToMainPage_clicked()

@@ -18,6 +18,7 @@ public:
         QString client;
         QString patient;
         QString fileDescription;
+        QString filePath;
     };
 
 private slots:
@@ -32,6 +33,8 @@ private slots:
     QStringList fileDialogMulti();
 
     void on_Config_Button_clicked();
+
+    void on_saveLocation_clicked();
 
     void on_ReturnToMainPage_clicked();
 
