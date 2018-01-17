@@ -84,6 +84,7 @@ public:
     QVBoxLayout *verticalLayout_9;
     QLabel *label_7;
     QLineEdit *Save_Location;
+    QPushButton *saveLocation;
     QHBoxLayout *horizontalLayout_9;
     QVBoxLayout *verticalLayout_11;
     QLabel *label_8;
@@ -420,6 +421,12 @@ public:
         Save_Location->setObjectName(QStringLiteral("Save_Location"));
 
         verticalLayout_9->addWidget(Save_Location);
+
+        saveLocation = new QPushButton(Main_Page);
+        saveLocation->setObjectName(QStringLiteral("saveLocation"));
+        saveLocation->setMinimumSize(QSize(0, 0));
+
+        verticalLayout_9->addWidget(saveLocation);
 
 
         horizontalLayout_8->addLayout(verticalLayout_9);
@@ -909,6 +916,7 @@ public:
         label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Patient Name:</span></p></body></html>", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">File Description:</span></p></body></html>", Q_NULLPTR));
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Save Location:</span></p></body></html>", Q_NULLPTR));
+        saveLocation->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">File Name:</span></p></body></html>", Q_NULLPTR));
         Config_Button->setText(QApplication::translate("MainWindow", "Configure", Q_NULLPTR));
         ReturnToMainPage->setText(QApplication::translate("MainWindow", "Setup", Q_NULLPTR));

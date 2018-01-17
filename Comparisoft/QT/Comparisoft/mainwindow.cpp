@@ -11,6 +11,8 @@ using namespace std;
 #if !defined(_WIN32)
     #include <sys/types.h>
     #include <sys/stat.h>
+#else
+    #include <direct.h>
 #endif
 
 MainWindow::MainWindow(QWidget *parent) :
