@@ -25,8 +25,15 @@ void MainWindow::on_RunVTK_clicked()
     QString program = "./VSVTK.exe";
     QStringList argv;
     QLineEdit* fileReference = findChild<QLineEdit*>("Reference_File_Text");
-    QLineEdit* fileProduction = findChild<QLineEdit*>("Production_File_Text");
-    argv << fileReference->text() << fileProduction->text();
+    QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
+    argv << fileReference->text();
+    QString productionfiles = fileProduction->toPlainText();
+    //qInfo() << productionfiles;
+    QStringList pFileList = productionfiles.split(QRegularExpression("\n"),QString::SkipEmptyParts);
+    foreach(QString line, pFileList){
+        //qInfo() << line;
+        argv << line;
+    }
 
     QProcess *VTK = new QProcess(parent);
     VTK->start(program, argv);
@@ -92,15 +99,24 @@ void MainWindow::on_Reference_File_Button_clicked()
 
 void MainWindow::on_Production_File_Button_clicked()
 {
-    QString filepathP = fileDialog();
-    QLineEdit* fileProduction = findChild<QLineEdit*>("Production_File_Text");
-    fileProduction->setText(filepathP);
+    QStringList filepathPlist = fileDialogMulti();
+    QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
+    foreach (QString filepath, filepathPlist) {
+        fileProduction->append(filepath);
+    }
+
 }
 
 QString MainWindow::fileDialog()
 {
     QString filename = QFileDialog::getOpenFileName(this, tr("Select File"), "", tr("STL (*.stl)"));
     return filename;
+}
+
+QStringList MainWindow::fileDialogMulti()
+{
+    QStringList filenames = QFileDialog::getOpenFileNames(this, tr("Select File"), "", tr("STL (*.stl)"));
+    return filenames;
 }
 
 void MainWindow::on_Config_Button_clicked()
@@ -137,4 +153,10 @@ void MainWindow::on_Return_to_Configuration_Button_clicked()
 {
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
     view_holder->setCurrentIndex(1);
+}
+
+void MainWindow::on_Clear_Production_Files_clicked()
+{
+    QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
+    fileProduction->clear();
 }

@@ -29,6 +29,8 @@ private slots:
 
     QString fileDialog();
 
+    QStringList fileDialogMulti();
+
     void on_Config_Button_clicked();
 
     void on_ReturnToMainPage_clicked();
@@ -40,6 +42,8 @@ private slots:
     void on_Return_to_Setup_Button_clicked();
 
     void on_Return_to_Configuration_Button_clicked();
+
+    void on_Clear_Production_Files_clicked();
 
 private:
     Ui::MainWindow *ui;
