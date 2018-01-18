@@ -17,6 +17,7 @@
 #include <vtkCommand.h>
 #include "VTK.h"
 #include "PointSelection.h"
+#include "Align.h"
 
 
 // Convert a wide Unicode string to an UTF8 string
@@ -61,11 +62,12 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 		vtkSmartPointer<vtkActor>::New();
 	actor1->SetMapper(mapper1);
 
+	//File 2
 	vtkSmartPointer<vtkSTLReader> reader2 =
 		vtkSmartPointer<vtkSTLReader>::New();
 	reader2->SetFileName(filePathProduction);
 	reader2->Update();
-	
+
 	vtkSmartPointer<vtkPolyDataMapper> mapper2 =
 		vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper2->SetInputConnection(reader2->GetOutputPort());
@@ -107,7 +109,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	vtkSmartPointer<PointSelection> style =
 			vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);
-
 
 	/* Define viewport ranges */
 	double reference_pane[4] = {0, 0.5, 0.5, 1};

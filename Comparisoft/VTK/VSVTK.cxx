@@ -6,9 +6,8 @@
 #endif
 
 #include <iostream>
-//#include <windows.h>
-//#include <tchar.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include <stddef.h>
 #include <string>
@@ -45,4 +44,3 @@ int main(int argc, char *argv[])
 	VTKmain(filePathReference, filePathProduction);
 
 }
-
