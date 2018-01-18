@@ -15,7 +15,7 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 	@brief Alter the inherited OnLeftButtonDown() of
 	vtkInteractorStyleTrackballCamera to be compatible with our intended use.
 	@returns void
-	*/
+*/
 	void PointSelection::OnRightButtonDown()
 	{
 		/* Pixel being selected */
