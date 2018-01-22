@@ -28,8 +28,8 @@ void Align::AlignModels() {
 	//Hardcoded files for testing
 	char* filePathReference = NULL;
 	char* filePathProduction = NULL;
-	filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/lowerModel.stl";
-	filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/upperModel.stl";
+	filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
+	filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
 
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
@@ -83,6 +83,7 @@ void Align::AlignModels() {
 	transformedActor->SetMapper(transformedMapper);
 	transformedActor->GetProperty()->SetColor(0, 1, 0);
 
+	//RETURNS ACTORS TO BE ADDED IN THE MAIN VTK FUNCTION
 
 	// Set up the rest of the visualization pipeline
 	vtkSmartPointer<vtkRenderer> renderer =

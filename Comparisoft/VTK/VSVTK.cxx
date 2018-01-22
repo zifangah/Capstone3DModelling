@@ -37,8 +37,8 @@ int main(int argc, char *argv[])
 	//filePathProduction = argv[2];
 
 	//Hardcoded files for testing
-	filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/lowerModel.stl";
-	filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/upperModel.stl";
+	filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
+	filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
 
 	//Launch the VTK function
 	VTKmain(filePathReference, filePathProduction);

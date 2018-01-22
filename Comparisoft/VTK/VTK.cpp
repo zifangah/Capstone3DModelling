@@ -108,9 +108,9 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderer2->SetViewport(production_pane);
 	renderer2->ResetCamera();
 
-	/* Set-up combined Comparison Pane */
-	renderer3->AddActor(actor1);
-	renderer3->AddActor(actor2);
+	//Once all the click work is done, this will show the aligned models
+	//renderer3->AddActor(actor1);
+	//renderer3->AddActor(actor2);
 	renderer3->SetBackground(.5, .7, .8);
 	renderer3->SetViewport(comparison_pane);
 	renderer3->ResetCamera();
