@@ -16,6 +16,7 @@
 #include <vtkCommand.h>
 #include "VTK.h"
 #include "PointSelection.h"
+#include "Align.h"
 #include <cstdio>
 
 //VTK code goes here. It is now a function, and is called with the file paths.

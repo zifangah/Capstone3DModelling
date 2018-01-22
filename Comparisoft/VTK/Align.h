@@ -13,10 +13,12 @@ public:
 	//Data members
 	vtkSmartPointer<vtkPoints> sourcePoints;
 	vtkSmartPointer<vtkPoints> targetPoints;
+	//static char* filePathRef;
+	//static char* filePathProd;
 
 	//Constructors
 	Align();
 	
 	//Methods
-	//void Align::AlignModels();
+	void Align::AlignModels();
 };
