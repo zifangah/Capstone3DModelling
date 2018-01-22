@@ -34,8 +34,6 @@ private slots:
 
     void on_Config_Button_clicked();
 
-    void on_saveLocation_clicked();
-
     void on_ReturnToMainPage_clicked();
 
     void on_Settings_Button_clicked();
@@ -47,6 +45,8 @@ private slots:
     void on_Return_to_Configuration_Button_clicked();
 
     void on_Clear_Production_Files_clicked();
+
+    void on_saveLocationButton_clicked();
 
 private:
     Ui::MainWindow *ui;

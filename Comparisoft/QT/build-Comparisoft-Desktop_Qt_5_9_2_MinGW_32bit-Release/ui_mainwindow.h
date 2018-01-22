@@ -74,17 +74,21 @@ public:
     QVBoxLayout *verticalLayout_7;
     QLabel *label_4;
     QLineEdit *Client_Name;
+    QSpacerItem *verticalSpacer_7;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_5;
     QLineEdit *Patient_Name;
     QHBoxLayout *horizontalLayout_8;
     QVBoxLayout *verticalLayout_8;
     QLabel *label_6;
+    QHBoxLayout *horizontalLayout_22;
     QLineEdit *File_Description;
+    QSpacerItem *verticalSpacer_8;
     QVBoxLayout *verticalLayout_9;
     QLabel *label_7;
+    QHBoxLayout *horizontalLayout_17;
     QLineEdit *Save_Location;
-    QPushButton *saveLocation;
+    QPushButton *saveLocationButton;
     QHBoxLayout *horizontalLayout_9;
     QVBoxLayout *verticalLayout_11;
     QLabel *label_8;
@@ -173,7 +177,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1318, 674);
+        MainWindow->resize(1318, 729);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -254,7 +258,7 @@ public:
 
         horizontalLayout->addWidget(Reference_File_Text);
 
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_6 = new QSpacerItem(0, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         horizontalLayout->addItem(verticalSpacer_6);
 
@@ -371,6 +375,10 @@ public:
 
         horizontalLayout_7->addLayout(verticalLayout_7);
 
+        verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        horizontalLayout_7->addItem(verticalSpacer_7);
+
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
@@ -396,18 +404,29 @@ public:
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(6);
         verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        verticalLayout_8->setContentsMargins(-1, -1, -1, 0);
         label_6 = new QLabel(Main_Page);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         verticalLayout_8->addWidget(label_6);
 
+        horizontalLayout_22 = new QHBoxLayout();
+        horizontalLayout_22->setSpacing(6);
+        horizontalLayout_22->setObjectName(QStringLiteral("horizontalLayout_22"));
         File_Description = new QLineEdit(Main_Page);
         File_Description->setObjectName(QStringLiteral("File_Description"));
 
-        verticalLayout_8->addWidget(File_Description);
+        horizontalLayout_22->addWidget(File_Description);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_22);
 
 
         horizontalLayout_8->addLayout(verticalLayout_8);
+
+        verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        horizontalLayout_8->addItem(verticalSpacer_8);
 
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setSpacing(6);
@@ -417,16 +436,22 @@ public:
 
         verticalLayout_9->addWidget(label_7);
 
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setSpacing(6);
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
         Save_Location = new QLineEdit(Main_Page);
         Save_Location->setObjectName(QStringLiteral("Save_Location"));
 
-        verticalLayout_9->addWidget(Save_Location);
+        horizontalLayout_17->addWidget(Save_Location);
 
-        saveLocation = new QPushButton(Main_Page);
-        saveLocation->setObjectName(QStringLiteral("saveLocation"));
-        saveLocation->setMinimumSize(QSize(0, 0));
+        saveLocationButton = new QPushButton(Main_Page);
+        saveLocationButton->setObjectName(QStringLiteral("saveLocationButton"));
+        saveLocationButton->setMinimumSize(QSize(0, 0));
 
-        verticalLayout_9->addWidget(saveLocation);
+        horizontalLayout_17->addWidget(saveLocationButton);
+
+
+        verticalLayout_9->addLayout(horizontalLayout_17);
 
 
         horizontalLayout_8->addLayout(verticalLayout_9);
@@ -458,7 +483,7 @@ public:
         verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         Config_Button = new QPushButton(Main_Page);
         Config_Button->setObjectName(QStringLiteral("Config_Button"));
-        Config_Button->setMinimumSize(QSize(100, 75));
+        Config_Button->setMinimumSize(QSize(0, 75));
 
         verticalLayout_10->addWidget(Config_Button);
 
@@ -916,10 +941,10 @@ public:
         label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Patient Name:</span></p></body></html>", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">File Description:</span></p></body></html>", Q_NULLPTR));
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Save Location:</span></p></body></html>", Q_NULLPTR));
-        saveLocation->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
+        saveLocationButton->setText(QApplication::translate("MainWindow", "Browse", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">File Name:</span></p></body></html>", Q_NULLPTR));
         Config_Button->setText(QApplication::translate("MainWindow", "Configure", Q_NULLPTR));
-        ReturnToMainPage->setText(QApplication::translate("MainWindow", "Setup", Q_NULLPTR));
+        ReturnToMainPage->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
         Banner_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600; color:#b6fd01;\">Comparisoft</span></p></body></html>", Q_NULLPTR));
         Settings_Button_2->setText(QApplication::translate("MainWindow", "Settings", Q_NULLPTR));
         label_15->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Run Configuration</span></p></body></html>", Q_NULLPTR));

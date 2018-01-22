@@ -34,15 +34,22 @@ void MainWindow::on_RunVTK_clicked()
     QObject *parent;
 
     QString program = "./VSVTK.exe";
+
+    //create argument list
     QStringList argv;
+
+    //argument 0: program name
+    //argument 1: referance file
     QLineEdit* fileReference = findChild<QLineEdit*>("Reference_File_Text");
-    QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
     argv << fileReference->text();
+
+    //argument ___:production file(s)
+    QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
+
+    //insert multiple production files
     QString productionfiles = fileProduction->toPlainText();
-    //qInfo() << productionfiles;
     QStringList pFileList = productionfiles.split(QRegularExpression("\n"),QString::SkipEmptyParts);
     foreach(QString line, pFileList){
-        //qInfo() << line;
         argv << line;
     }
 
@@ -193,13 +200,6 @@ void MainWindow::on_Config_Button_clicked()
     comparison_report.close();
 }
 
-void MainWindow::on_saveLocation_clicked()
-{
-    QString fileSavePath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "", QFileDialog::ShowDirsOnly);
-    QLineEdit* fileSave = findChild<QLineEdit*>("Save_Location");
-    fileSave->setText(fileSavePath);
-}
-
 void MainWindow::on_ReturnToMainPage_clicked()
 {
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
@@ -234,4 +234,11 @@ void MainWindow::on_Clear_Production_Files_clicked()
 {
     QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
     fileProduction->clear();
+}
+
+void MainWindow::on_saveLocationButton_clicked()
+{
+    QString fileSavePath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "", QFileDialog::ShowDirsOnly);
+    QLineEdit* fileSave = findChild<QLineEdit*>("Save_Location");
+    fileSave->setText(fileSavePath);
 }
