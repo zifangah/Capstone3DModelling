@@ -1,4 +1,3 @@
-
 /******************************************************************************/
 /**
 @file		PointSelection.h
@@ -36,16 +35,9 @@ struct coordinate {
 class PointSelection : public vtkInteractorStyleTrackballCamera {
 
 public:
-#define vtkTypeMacro(thisClass,superclass) \
-      vtkAbstractTypeMacro(thisClass, superclass) \
-      protected: \
-      vtkObjectBase *NewInstanceInternal() const VTK_OVERRIDE \
-      { \
-        return thisClass::New(); \
-      } \
 
 	static PointSelection* New();
-	//vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
+	vtkTypeMacro(PointSelection, vtkInteractorStyleTrackballCamera);
 
 	int ref_count = 0; /* Number of coordinates selected on the reference pane */
 	int prod_count = 0; /* Number of coordinates selected on the production pane */
@@ -54,11 +46,7 @@ public:
 	coordinate ref_coordinates[3]; /* Stores selected coordinates on the reference pane */
 	coordinate prod_coordinates[3]; /* Stores selected coordinates on the production pane */
 
-	ofstream file;
-
-	bool is_open;
-
-	void OnRightButtonDown() override ;
+	void OnRightButtonDown() override;
 };
 
 #endif //VTK_POINTSELECTION_H

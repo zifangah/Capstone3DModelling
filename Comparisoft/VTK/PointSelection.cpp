@@ -10,7 +10,7 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 /******************************************************************************/
 
 #include "PointSelection.h"
-#include "Align.h"
+//#include "Align.h"
 /**
 	@brief Alter the inherited OnLeftButtonDown() of
 	vtkInteractorStyleTrackballCamera to be compatible with our intended use.
@@ -47,25 +47,25 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 		count++;
 
 		if ((prod_count == 3) && (ref_count == 3)) {
-			Align bottomPanel;
+			//Align bottomPanel;
 			//Insert points into bottom panel
-			double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
-			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
-			std::cout << "BottomPanel" << bottomPanel.sourcePoints << std::endl;
-			//bottomPanel.sourcePoints->PrintSelf(std::cout);
-			double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
-			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
-			double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
-			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
+			//double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
+			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
+			//std::cout << "BottomPanel" << bottomPanel.sourcePoints << std::endl;
+			////bottomPanel.sourcePoints->PrintSelf(std::cout);
+			//double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
+			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
+			//double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
+			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
 
-			double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
-			bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
-			double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
-			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
-			double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
-			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
+			//double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
+			//bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
+			//double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
+			//bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
+			//double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
+			//bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
 
-			bottomPanel.sourcePoints->Print(std::cout);
+			//bottomPanel.sourcePoints->Print(std::cout);
 
 
 			// Test source points
@@ -86,7 +86,7 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			//bottomPanel.targetPoints->InsertNextPoint(targetPoint3);
 
 
-			bottomPanel.AlignModels();
+			//bottomPanel.AlignModels();
 
 			// We now have sufficient click data, pass to our alignment
 			std::cout << "Point 1 on R Pane (x, y, z): " << ref_coordinates[0].x_val << " "
