@@ -10,7 +10,7 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 /******************************************************************************/
 
 #include "PointSelection.h"
-//#include "Align.h"
+#include "Align.h"
 /**
 	@brief Alter the inherited OnLeftButtonDown() of
 	vtkInteractorStyleTrackballCamera to be compatible with our intended use.
@@ -47,25 +47,44 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 		count++;
 
 		if ((prod_count == 3) && (ref_count == 3)) {
-			//Align bottomPanel;
+			Align bottomPanel;
+			
 			//Insert points into bottom panel
-			//double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
-			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
-			//std::cout << "BottomPanel" << bottomPanel.sourcePoints << std::endl;
-			////bottomPanel.sourcePoints->PrintSelf(std::cout);
-			//double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
-			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
-			//double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
-			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
-
-			//double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
-			//bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
-			//double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
-			//bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
-			//double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
-			//bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
-
+			bottomPanel.sourcePoints = vtkSmartPointer<vtkPoints>::New();
+			double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
+			double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
+			double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
+			
 			//bottomPanel.sourcePoints->Print(std::cout);
+			//for (vtkIdType i = 0; i < bottomPanel.sourcePoints->GetNumberOfPoints(); i++)
+			//{
+			//	double p[3];
+			//	bottomPanel.sourcePoints->GetPoint(i, p);
+			//	// This is identical to:
+			//	// polydata->GetPoints()->GetPoint(i,p);
+			//	std::cout << "Point " << i << " : (" << p[0] << " " << p[1] << " " << p[2] << ")" << std::endl;
+			//}
+
+			bottomPanel.targetPoints = vtkSmartPointer<vtkPoints>::New();
+			double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
+			double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
+			double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
+			
+			//bottomPanel.targetPoints->Print(std::cout);
+			//for (vtkIdType i = 0; i < bottomPanel.targetPoints->GetNumberOfPoints(); i++)
+			//{
+			//	double p[3];
+			//	bottomPanel.targetPoints->GetPoint(i, p);
+			//	// This is identical to:
+			//	// polydata->GetPoints()->GetPoint(i,p);
+			//	std::cout << "Point " << i << " : (" << p[0] << " " << p[1] << " " << p[2] << ")" << std::endl;
+			//}
 
 
 			// Test source points
@@ -77,7 +96,7 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint3);
 
 
-			//// Test target points
+			// Test target points
 			//double targetPoint1[3] = { 0.0, 0.0, 1.1 };
 			//bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
 			//double targetPoint2[3] = { 0.0, 1.02, 0.0 };

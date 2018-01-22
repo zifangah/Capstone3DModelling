@@ -5,7 +5,7 @@
 @details	This file handles the alignment of the models
 ******************************************************************************/
 #include <vtkSmartPointer.h>
-#include <vtkPointPicker.h>
+#include <vtkPoints.h>
 
 class Align {
 
@@ -18,5 +18,5 @@ public:
 	Align();
 	
 	//Methods
-	void Align::AlignModels();
+	//void Align::AlignModels();
 };
