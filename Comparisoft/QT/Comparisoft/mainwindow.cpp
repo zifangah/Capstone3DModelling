@@ -39,20 +39,87 @@ void MainWindow::on_RunVTK_clicked()
     QStringList argv;
 
     //argument 0: program name
-    //argument 1: referance file
+    //this is done automatically
+
+    //argument 1: Client_Name
+    QLineEdit* cname = findChild<QLineEdit*>("Client_Name");
+    argv << cname->text();
+
+    //argument 2: Patient_Name
+    QLineEdit* pname = findChild<QLineEdit*>("Patient_Name");
+    argv << pname->text();
+
+    //argument 3: File_Description
+    QLineEdit* fdesc = findChild<QLineEdit*>("File_Description");
+    argv << fdesc->text();
+
+    //argument 4: Save_Location
+    QLineEdit* sloc = findChild<QLineEdit*>("Save_Location");
+    argv << sloc->text();
+
+    //argument 5: File_Name
+    QLineEdit* fname = findChild<QLineEdit*>("File_Name");
+    argv << fname->text();
+
+    //argument 6: Technician_Name
+    QLineEdit* tname = findChild<QLineEdit*>("Technician_Name");
+    argv << tname->text();
+
+    //argument 7: Product_Name
+    QLineEdit* prodname = findChild<QLineEdit*>("Product_Name");
+    argv << prodname->text();
+
+    //argument 8: Production_Date
+    QLineEdit* pdate = findChild<QLineEdit*>("Production_Date");
+    argv << pdate->text();
+
+    //argument 9: Product_Description
+    QTextEdit* pdesc = findChild<QTextEdit*>("Product_Description");
+    argv << pdesc->toPlainText();
+
+    //argument 10: Report_Type
+    QComboBox* rtype = findChild<QComboBox*>("Report_Type");
+    argv << rtype->currentText();
+
+    //argument 11: Confidence_Level
+    QSpinBox* clevel = findChild<QSpinBox*>("Confidence_Level");
+    argv << clevel->cleanText();
+
+    //argument 12: Error_Bound
+    QSpinBox* ebound = findChild<QSpinBox*>("Error_Bound");
+    argv << ebound->cleanText();
+
+    //argument 13: Error_Unit
+    QComboBox* eunit = findChild<QComboBox*>("Error_Unit");
+    argv << eunit->currentText();
+
+    //argument 14: Alignment_Type
+    QComboBox* atype = findChild<QComboBox*>("Alignment_Type");
+    argv << atype->currentText();
+
+    //argument 15: Ref_Attempt
+    QLineEdit* refattempt = findChild<QLineEdit*>("Ref_Attempt");
+    argv << refattempt->text();
+
+    //argument 16: Prod_Attempt
+    QLineEdit* prodattempt = findChild<QLineEdit*>("Prod_Attempt");
+    argv << prodattempt->text();
+
+    //argument 17: referance file
     QLineEdit* fileReference = findChild<QLineEdit*>("Reference_File_Text");
     argv << fileReference->text();
 
-    //argument ___:production file(s)
+    //argument 18+:production file(s)
     QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
 
     //insert multiple production files
     QString productionfiles = fileProduction->toPlainText();
-    QStringList pFileList = productionfiles.split(QRegularExpression("\n"),QString::SkipEmptyParts);
+    QStringList pFileList = productionfiles.split(QRegularExpression("\n"), QString::SkipEmptyParts);
     foreach(QString line, pFileList){
         argv << line;
     }
 
+    //launch the vtk program, then hide the UI until it closes
     QProcess *VTK = new QProcess(parent);
     VTK->start(program, argv);
     VTK->waitForStarted();
@@ -104,6 +171,7 @@ MainWindow::userInfo getInfoFields(QString rFilePath) {
 
 void MainWindow::on_Reference_File_Button_clicked()
 {
+    //get referance file
     QString filepathR = fileDialog();
     QLineEdit* fileReference = findChild<QLineEdit*>("Reference_File_Text");
     fileReference->setText(filepathR);
@@ -140,6 +208,7 @@ void MainWindow::on_Reference_File_Button_clicked()
 
 void MainWindow::on_Production_File_Button_clicked()
 {
+    //get production files
     QStringList filepathPlist = fileDialogMulti();
     QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
     foreach (QString filepath, filepathPlist) {
@@ -162,6 +231,7 @@ QStringList MainWindow::fileDialogMulti()
 
 void MainWindow::on_Config_Button_clicked()
 {
+    //move from setup to config
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
     view_holder->setCurrentIndex(1);
 
@@ -202,42 +272,21 @@ void MainWindow::on_Config_Button_clicked()
 
 void MainWindow::on_ReturnToMainPage_clicked()
 {
+    //Move from config to setup
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
     view_holder->setCurrentIndex(0);
-}
-
-void MainWindow::on_Settings_Button_clicked()
-{
-    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
-    view_holder->setCurrentIndex(2);
-}
-
-void MainWindow::on_Settings_Button_2_clicked()
-{
-    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
-    view_holder->setCurrentIndex(2);
-}
-
-void MainWindow::on_Return_to_Setup_Button_clicked()
-{
-    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
-    view_holder->setCurrentIndex(0);
-}
-
-void MainWindow::on_Return_to_Configuration_Button_clicked()
-{
-    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
-    view_holder->setCurrentIndex(1);
 }
 
 void MainWindow::on_Clear_Production_Files_clicked()
 {
+    //clear the production files
     QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
     fileProduction->clear();
 }
 
 void MainWindow::on_saveLocationButton_clicked()
 {
+    //browse for a save location
     QString fileSavePath = QFileDialog::getExistingDirectory(this, tr("Open Directory"), "", QFileDialog::ShowDirsOnly);
     QLineEdit* fileSave = findChild<QLineEdit*>("Save_Location");
     fileSave->setText(fileSavePath);
