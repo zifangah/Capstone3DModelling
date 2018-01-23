@@ -82,6 +82,7 @@ public:
     QVBoxLayout *verticalLayout_8;
     QLabel *label_6;
     QHBoxLayout *horizontalLayout_22;
+    QWidget *widget_9;
     QLineEdit *File_Description;
     QSpacerItem *verticalSpacer_8;
     QVBoxLayout *verticalLayout_9;
@@ -413,6 +414,13 @@ public:
         horizontalLayout_22 = new QHBoxLayout();
         horizontalLayout_22->setSpacing(6);
         horizontalLayout_22->setObjectName(QStringLiteral("horizontalLayout_22"));
+        widget_9 = new QWidget(Main_Page);
+        widget_9->setObjectName(QStringLiteral("widget_9"));
+        widget_9->setMinimumSize(QSize(0, 28));
+        widget_9->setMaximumSize(QSize(0, 28));
+
+        horizontalLayout_22->addWidget(widget_9);
+
         File_Description = new QLineEdit(Main_Page);
         File_Description->setObjectName(QStringLiteral("File_Description"));
 
