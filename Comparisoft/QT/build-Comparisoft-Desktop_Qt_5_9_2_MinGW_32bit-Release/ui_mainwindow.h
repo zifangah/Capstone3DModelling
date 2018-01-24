@@ -21,7 +21,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -45,9 +44,9 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout_14;
     QHBoxLayout *horizontalLayout_6;
-    QWidget *widget_5;
+    QWidget *widget_4;
     QLabel *Banner;
-    QPushButton *Settings_Button;
+    QWidget *widget_5;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_3;
@@ -74,17 +73,22 @@ public:
     QVBoxLayout *verticalLayout_7;
     QLabel *label_4;
     QLineEdit *Client_Name;
+    QSpacerItem *verticalSpacer_7;
     QVBoxLayout *verticalLayout_6;
     QLabel *label_5;
     QLineEdit *Patient_Name;
     QHBoxLayout *horizontalLayout_8;
     QVBoxLayout *verticalLayout_8;
     QLabel *label_6;
+    QHBoxLayout *horizontalLayout_22;
+    QWidget *widget_9;
     QLineEdit *File_Description;
+    QSpacerItem *verticalSpacer_8;
     QVBoxLayout *verticalLayout_9;
     QLabel *label_7;
+    QHBoxLayout *horizontalLayout_17;
     QLineEdit *Save_Location;
-    QPushButton *saveLocation;
+    QPushButton *saveLocationButton;
     QHBoxLayout *horizontalLayout_9;
     QVBoxLayout *verticalLayout_11;
     QLabel *label_8;
@@ -100,7 +104,7 @@ public:
     QWidget *widget_6;
     QLabel *Banner_2;
     QWidget *widget_7;
-    QPushButton *Settings_Button_2;
+    QWidget *widget_2;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_17;
     QLabel *label_15;
@@ -122,7 +126,7 @@ public:
     QVBoxLayout *verticalLayout_23;
     QLabel *label_11;
     QHBoxLayout *horizontalLayout_20;
-    QComboBox *Allignment_Type;
+    QComboBox *Alignment_Type;
     QSpacerItem *verticalSpacer;
     QVBoxLayout *verticalLayout_18;
     QLabel *label_16;
@@ -139,32 +143,10 @@ public:
     QHBoxLayout *horizontalLayout_18;
     QVBoxLayout *verticalLayout_32;
     QLabel *label_20;
-    QPlainTextEdit *Product_Description;
+    QTextEdit *Product_Description;
     QVBoxLayout *verticalLayout_33;
     QSpacerItem *verticalSpacer_5;
     QPushButton *RunVTK;
-    QWidget *Settings_Page;
-    QVBoxLayout *verticalLayout_28;
-    QWidget *widget_4;
-    QVBoxLayout *verticalLayout_27;
-    QHBoxLayout *horizontalLayout_15;
-    QPushButton *Return_to_Setup_Button;
-    QWidget *widget_2;
-    QLabel *Banner_3;
-    QWidget *widget_8;
-    QPushButton *Return_to_Configuration_Button;
-    QHBoxLayout *horizontalLayout_16;
-    QVBoxLayout *verticalLayout_29;
-    QLabel *label_17;
-    QLineEdit *Model_Working_Directory;
-    QSpacerItem *verticalSpacer_2;
-    QVBoxLayout *verticalLayout_30;
-    QLabel *label_18;
-    QLineEdit *Reports_Working_Directory;
-    QSpacerItem *verticalSpacer_3;
-    QLabel *label_19;
-    QLineEdit *Aligned_Models_Save_Location;
-    QSpacerItem *verticalSpacer_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -173,7 +155,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1318, 674);
+        MainWindow->resize(1318, 729);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -207,11 +189,10 @@ public:
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
         horizontalLayout_6->setSizeConstraint(QLayout::SetMinimumSize);
-        widget_5 = new QWidget(widget);
-        widget_5->setObjectName(QStringLiteral("widget_5"));
-        widget_5->setMaximumSize(QSize(100, 16777215));
+        widget_4 = new QWidget(widget);
+        widget_4->setObjectName(QStringLiteral("widget_4"));
 
-        horizontalLayout_6->addWidget(widget_5);
+        horizontalLayout_6->addWidget(widget_4);
 
         Banner = new QLabel(widget);
         Banner->setObjectName(QStringLiteral("Banner"));
@@ -221,11 +202,11 @@ public:
 
         horizontalLayout_6->addWidget(Banner);
 
-        Settings_Button = new QPushButton(widget);
-        Settings_Button->setObjectName(QStringLiteral("Settings_Button"));
-        Settings_Button->setMaximumSize(QSize(100, 16777215));
+        widget_5 = new QWidget(widget);
+        widget_5->setObjectName(QStringLiteral("widget_5"));
+        widget_5->setMinimumSize(QSize(0, 76));
 
-        horizontalLayout_6->addWidget(Settings_Button);
+        horizontalLayout_6->addWidget(widget_5);
 
 
         verticalLayout_14->addLayout(horizontalLayout_6);
@@ -254,7 +235,7 @@ public:
 
         horizontalLayout->addWidget(Reference_File_Text);
 
-        verticalSpacer_6 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_6 = new QSpacerItem(0, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         horizontalLayout->addItem(verticalSpacer_6);
 
@@ -371,6 +352,10 @@ public:
 
         horizontalLayout_7->addLayout(verticalLayout_7);
 
+        verticalSpacer_7 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        horizontalLayout_7->addItem(verticalSpacer_7);
+
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
@@ -396,18 +381,36 @@ public:
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(6);
         verticalLayout_8->setObjectName(QStringLiteral("verticalLayout_8"));
+        verticalLayout_8->setContentsMargins(-1, -1, -1, 0);
         label_6 = new QLabel(Main_Page);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         verticalLayout_8->addWidget(label_6);
 
+        horizontalLayout_22 = new QHBoxLayout();
+        horizontalLayout_22->setSpacing(6);
+        horizontalLayout_22->setObjectName(QStringLiteral("horizontalLayout_22"));
+        widget_9 = new QWidget(Main_Page);
+        widget_9->setObjectName(QStringLiteral("widget_9"));
+        widget_9->setMinimumSize(QSize(0, 28));
+        widget_9->setMaximumSize(QSize(0, 28));
+
+        horizontalLayout_22->addWidget(widget_9);
+
         File_Description = new QLineEdit(Main_Page);
         File_Description->setObjectName(QStringLiteral("File_Description"));
 
-        verticalLayout_8->addWidget(File_Description);
+        horizontalLayout_22->addWidget(File_Description);
+
+
+        verticalLayout_8->addLayout(horizontalLayout_22);
 
 
         horizontalLayout_8->addLayout(verticalLayout_8);
+
+        verticalSpacer_8 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        horizontalLayout_8->addItem(verticalSpacer_8);
 
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setSpacing(6);
@@ -417,16 +420,22 @@ public:
 
         verticalLayout_9->addWidget(label_7);
 
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setSpacing(6);
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
         Save_Location = new QLineEdit(Main_Page);
         Save_Location->setObjectName(QStringLiteral("Save_Location"));
 
-        verticalLayout_9->addWidget(Save_Location);
+        horizontalLayout_17->addWidget(Save_Location);
 
-        saveLocation = new QPushButton(Main_Page);
-        saveLocation->setObjectName(QStringLiteral("saveLocation"));
-        saveLocation->setMinimumSize(QSize(0, 0));
+        saveLocationButton = new QPushButton(Main_Page);
+        saveLocationButton->setObjectName(QStringLiteral("saveLocationButton"));
+        saveLocationButton->setMinimumSize(QSize(0, 0));
 
-        verticalLayout_9->addWidget(saveLocation);
+        horizontalLayout_17->addWidget(saveLocationButton);
+
+
+        verticalLayout_9->addLayout(horizontalLayout_17);
 
 
         horizontalLayout_8->addLayout(verticalLayout_9);
@@ -458,7 +467,7 @@ public:
         verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         Config_Button = new QPushButton(Main_Page);
         Config_Button->setObjectName(QStringLiteral("Config_Button"));
-        Config_Button->setMinimumSize(QSize(100, 75));
+        Config_Button->setMinimumSize(QSize(0, 75));
 
         verticalLayout_10->addWidget(Config_Button);
 
@@ -517,11 +526,11 @@ public:
 
         horizontalLayout_10->addWidget(widget_7);
 
-        Settings_Button_2 = new QPushButton(widget_3);
-        Settings_Button_2->setObjectName(QStringLiteral("Settings_Button_2"));
-        Settings_Button_2->setMaximumSize(QSize(100, 16777215));
+        widget_2 = new QWidget(widget_3);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        widget_2->setMaximumSize(QSize(100, 16777215));
 
-        horizontalLayout_10->addWidget(Settings_Button_2);
+        horizontalLayout_10->addWidget(widget_2);
 
 
         verticalLayout_16->addLayout(horizontalLayout_10);
@@ -631,10 +640,10 @@ public:
         horizontalLayout_20 = new QHBoxLayout();
         horizontalLayout_20->setSpacing(6);
         horizontalLayout_20->setObjectName(QStringLiteral("horizontalLayout_20"));
-        Allignment_Type = new QComboBox(Config_Page);
-        Allignment_Type->setObjectName(QStringLiteral("Allignment_Type"));
+        Alignment_Type = new QComboBox(Config_Page);
+        Alignment_Type->setObjectName(QStringLiteral("Alignment_Type"));
 
-        horizontalLayout_20->addWidget(Allignment_Type);
+        horizontalLayout_20->addWidget(Alignment_Type);
 
 
         verticalLayout_23->addLayout(horizontalLayout_20);
@@ -729,7 +738,7 @@ public:
 
         verticalLayout_32->addWidget(label_20);
 
-        Product_Description = new QPlainTextEdit(Config_Page);
+        Product_Description = new QTextEdit(Config_Page);
         Product_Description->setObjectName(QStringLiteral("Product_Description"));
 
         verticalLayout_32->addWidget(Product_Description);
@@ -762,122 +771,6 @@ public:
         verticalLayout_15->addLayout(verticalLayout_19);
 
         View_Holder->addWidget(Config_Page);
-        Settings_Page = new QWidget();
-        Settings_Page->setObjectName(QStringLiteral("Settings_Page"));
-        verticalLayout_28 = new QVBoxLayout(Settings_Page);
-        verticalLayout_28->setSpacing(6);
-        verticalLayout_28->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_28->setObjectName(QStringLiteral("verticalLayout_28"));
-        widget_4 = new QWidget(Settings_Page);
-        widget_4->setObjectName(QStringLiteral("widget_4"));
-        widget_4->setMaximumSize(QSize(16777215, 100));
-        verticalLayout_27 = new QVBoxLayout(widget_4);
-        verticalLayout_27->setSpacing(6);
-        verticalLayout_27->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_27->setObjectName(QStringLiteral("verticalLayout_27"));
-        horizontalLayout_15 = new QHBoxLayout();
-        horizontalLayout_15->setSpacing(6);
-        horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
-        horizontalLayout_15->setSizeConstraint(QLayout::SetMinimumSize);
-        Return_to_Setup_Button = new QPushButton(widget_4);
-        Return_to_Setup_Button->setObjectName(QStringLiteral("Return_to_Setup_Button"));
-        Return_to_Setup_Button->setMaximumSize(QSize(100, 16777215));
-
-        horizontalLayout_15->addWidget(Return_to_Setup_Button);
-
-        widget_2 = new QWidget(widget_4);
-        widget_2->setObjectName(QStringLiteral("widget_2"));
-        widget_2->setMinimumSize(QSize(0, 73));
-
-        horizontalLayout_15->addWidget(widget_2);
-
-        Banner_3 = new QLabel(widget_4);
-        Banner_3->setObjectName(QStringLiteral("Banner_3"));
-        Banner_3->setMaximumSize(QSize(16777215, 50));
-        Banner_3->setTextFormat(Qt::RichText);
-        Banner_3->setAlignment(Qt::AlignCenter);
-
-        horizontalLayout_15->addWidget(Banner_3);
-
-        widget_8 = new QWidget(widget_4);
-        widget_8->setObjectName(QStringLiteral("widget_8"));
-        widget_8->setMinimumSize(QSize(0, 73));
-
-        horizontalLayout_15->addWidget(widget_8);
-
-        Return_to_Configuration_Button = new QPushButton(widget_4);
-        Return_to_Configuration_Button->setObjectName(QStringLiteral("Return_to_Configuration_Button"));
-        Return_to_Configuration_Button->setMaximumSize(QSize(100, 16777215));
-
-        horizontalLayout_15->addWidget(Return_to_Configuration_Button);
-
-
-        verticalLayout_27->addLayout(horizontalLayout_15);
-
-
-        verticalLayout_28->addWidget(widget_4);
-
-        horizontalLayout_16 = new QHBoxLayout();
-        horizontalLayout_16->setSpacing(6);
-        horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
-        verticalLayout_29 = new QVBoxLayout();
-        verticalLayout_29->setSpacing(6);
-        verticalLayout_29->setObjectName(QStringLiteral("verticalLayout_29"));
-        label_17 = new QLabel(Settings_Page);
-        label_17->setObjectName(QStringLiteral("label_17"));
-
-        verticalLayout_29->addWidget(label_17);
-
-        Model_Working_Directory = new QLineEdit(Settings_Page);
-        Model_Working_Directory->setObjectName(QStringLiteral("Model_Working_Directory"));
-
-        verticalLayout_29->addWidget(Model_Working_Directory);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_29->addItem(verticalSpacer_2);
-
-
-        horizontalLayout_16->addLayout(verticalLayout_29);
-
-        verticalLayout_30 = new QVBoxLayout();
-        verticalLayout_30->setSpacing(6);
-        verticalLayout_30->setObjectName(QStringLiteral("verticalLayout_30"));
-        label_18 = new QLabel(Settings_Page);
-        label_18->setObjectName(QStringLiteral("label_18"));
-
-        verticalLayout_30->addWidget(label_18);
-
-        Reports_Working_Directory = new QLineEdit(Settings_Page);
-        Reports_Working_Directory->setObjectName(QStringLiteral("Reports_Working_Directory"));
-
-        verticalLayout_30->addWidget(Reports_Working_Directory);
-
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_30->addItem(verticalSpacer_3);
-
-        label_19 = new QLabel(Settings_Page);
-        label_19->setObjectName(QStringLiteral("label_19"));
-
-        verticalLayout_30->addWidget(label_19);
-
-        Aligned_Models_Save_Location = new QLineEdit(Settings_Page);
-        Aligned_Models_Save_Location->setObjectName(QStringLiteral("Aligned_Models_Save_Location"));
-
-        verticalLayout_30->addWidget(Aligned_Models_Save_Location);
-
-        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_30->addItem(verticalSpacer_4);
-
-
-        horizontalLayout_16->addLayout(verticalLayout_30);
-
-
-        verticalLayout_28->addLayout(horizontalLayout_16);
-
-        View_Holder->addWidget(Settings_Page);
 
         verticalLayout_12->addWidget(View_Holder);
 
@@ -906,7 +799,6 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         Banner->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600; color:#b6fd01;\">Comparisoft</span></p></body></html>", Q_NULLPTR));
-        Settings_Button->setText(QApplication::translate("MainWindow", "Settings", Q_NULLPTR));
         Reference_File_Button->setText(QApplication::translate("MainWindow", "Reference File", Q_NULLPTR));
         Production_File_Button->setText(QApplication::translate("MainWindow", "Production File", Q_NULLPTR));
         Clear_Production_Files->setText(QApplication::translate("MainWindow", "Clear", Q_NULLPTR));
@@ -916,12 +808,11 @@ public:
         label_5->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Patient Name:</span></p></body></html>", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">File Description:</span></p></body></html>", Q_NULLPTR));
         label_7->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Save Location:</span></p></body></html>", Q_NULLPTR));
-        saveLocation->setText(QApplication::translate("MainWindow", "...", Q_NULLPTR));
+        saveLocationButton->setText(QApplication::translate("MainWindow", "Browse", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">File Name:</span></p></body></html>", Q_NULLPTR));
         Config_Button->setText(QApplication::translate("MainWindow", "Configure", Q_NULLPTR));
-        ReturnToMainPage->setText(QApplication::translate("MainWindow", "Setup", Q_NULLPTR));
+        ReturnToMainPage->setText(QApplication::translate("MainWindow", "Back", Q_NULLPTR));
         Banner_2->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600; color:#b6fd01;\">Comparisoft</span></p></body></html>", Q_NULLPTR));
-        Settings_Button_2->setText(QApplication::translate("MainWindow", "Settings", Q_NULLPTR));
         label_15->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Run Configuration</span></p></body></html>", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "<b>Report Type:</b>", Q_NULLPTR));
         Report_Type->clear();
@@ -938,23 +829,17 @@ public:
          << QApplication::translate("MainWindow", "mm", Q_NULLPTR)
         );
         label_11->setText(QApplication::translate("MainWindow", "<b>Alignment type:</b>", Q_NULLPTR));
-        Allignment_Type->clear();
-        Allignment_Type->insertItems(0, QStringList()
+        Alignment_Type->clear();
+        Alignment_Type->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "Standard", Q_NULLPTR)
          << QApplication::translate("MainWindow", "Quick", Q_NULLPTR)
         );
         label_16->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Report Information</span></p></body></html>", Q_NULLPTR));
         label_12->setText(QApplication::translate("MainWindow", "<b>Technician Name:</b>", Q_NULLPTR));
-        label_13->setText(QApplication::translate("MainWindow", "<b>Product Type:</b>", Q_NULLPTR));
+        label_13->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Product Name:</span></p></body></html>", Q_NULLPTR));
         label_14->setText(QApplication::translate("MainWindow", "<b>Production Date:</b>", Q_NULLPTR));
         label_20->setText(QApplication::translate("MainWindow", "<b>Product Description</b>", Q_NULLPTR));
         RunVTK->setText(QApplication::translate("MainWindow", "Align", Q_NULLPTR));
-        Return_to_Setup_Button->setText(QApplication::translate("MainWindow", "Setup", Q_NULLPTR));
-        Banner_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600; color:#b6fd01;\">Comparisoft</span></p></body></html>", Q_NULLPTR));
-        Return_to_Configuration_Button->setText(QApplication::translate("MainWindow", "Configuration", Q_NULLPTR));
-        label_17->setText(QApplication::translate("MainWindow", "<b>Model Working Directory:</b>", Q_NULLPTR));
-        label_18->setText(QApplication::translate("MainWindow", "<b>Reports Working Directory:</b>", Q_NULLPTR));
-        label_19->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-weight:600;\">Aligned Models Save Location</span></p></body></html>", Q_NULLPTR));
     } // retranslateUi
 
 };
