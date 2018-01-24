@@ -21,7 +21,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
@@ -144,7 +143,7 @@ public:
     QHBoxLayout *horizontalLayout_18;
     QVBoxLayout *verticalLayout_32;
     QLabel *label_20;
-    QPlainTextEdit *Product_Description;
+    QTextEdit *Product_Description;
     QVBoxLayout *verticalLayout_33;
     QSpacerItem *verticalSpacer_5;
     QPushButton *RunVTK;
@@ -739,7 +738,7 @@ public:
 
         verticalLayout_32->addWidget(label_20);
 
-        Product_Description = new QPlainTextEdit(Config_Page);
+        Product_Description = new QTextEdit(Config_Page);
         Product_Description->setObjectName(QStringLiteral("Product_Description"));
 
         verticalLayout_32->addWidget(Product_Description);

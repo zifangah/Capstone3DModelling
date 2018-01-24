@@ -686,7 +686,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QPlainTextEdit" name="Product_Description"/>
+               <widget class="QTextEdit" name="Product_Description"/>
               </item>
              </layout>
             </item>

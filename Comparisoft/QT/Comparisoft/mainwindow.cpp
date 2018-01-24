@@ -31,6 +31,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_RunVTK_clicked()
 {
+
     QObject *parent;
 
     QString program = "./VSVTK.exe";
@@ -111,6 +112,7 @@ void MainWindow::on_RunVTK_clicked()
 
     //argument 18+:production file(s)
     QTextEdit* fileProduction = findChild<QTextEdit*>("Production_File_Text");
+
 
     //insert multiple production files
     QString productionfiles = fileProduction->toPlainText();
