@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QDebug>
 #include <QDate>
+#include <QMessageBox>
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -61,7 +62,17 @@ MainWindow::userInfo getInfoFields(QString rFilePath) {
     MainWindow::userInfo info;
 
     /* Save beginning of filepath for determining save location */
-    info.filePath = rFilePath.mid(0, rFilePath.indexOf("/", rFilePath.indexOf("/") + 1));
+    QString copy = rFilePath;
+    int final_pos;
+    int pos = copy.indexOf("/") + 1;
+    final_pos = pos;
+    copy = copy.mid(pos, copy.length());
+    pos = copy.indexOf("/") + 1;
+    final_pos += pos;
+    copy = copy.mid(pos, copy.length());
+    pos = copy.indexOf("/");
+    final_pos += pos;
+    info.filePath = rFilePath.mid(0, final_pos);
 
     /* Parse file path to find client name */
     /* Assumption: client name in format of Dr.Name */
@@ -162,34 +173,92 @@ void MainWindow::on_Config_Button_clicked()
 
     QString savePath = MainWindow::findChild<QLineEdit*>("Save_Location")->text();
 
-    mode_t u_mode = 0733;
     int error = 0;
 
-    /* For Windows environments */
-    #if defined(_WIN32)
-        error = _mkdir(savePath.toStdString().c_str());
-    #else
-        error = mkdir(savePath.toStdString().c_str(), u_mode);
-    #endif
+    QString rFilePath = MainWindow::findChild<QLineEdit*>("Reference_File_Text")->text();
+    QString copy = rFilePath;
+    int final_pos;
+    int pos = copy.indexOf("/") + 1;
+    final_pos = pos;
+    copy = copy.mid(pos, copy.length());
+    pos = copy.indexOf("/") + 1;
+    final_pos += pos;
+    copy = copy.mid(pos, copy.length());
+    pos = copy.indexOf("/");
+    final_pos += pos;
+    rFilePath = rFilePath.mid(0, final_pos);
 
-    /* Error has occurred */
-    if (error != 0) {
-        qInfo( "Error occurred creating directory: errno:");
-        qDebug() << error;
+    QString default_path = rFilePath;
+    QString home = rFilePath;
+    default_path.append("/Comparisoft/Reports/");
+
+    if (savePath.contains(default_path)) {
+        QMessageBox msgBox;
+        msgBox.setText("The directory specified does not exist.");
+        msgBox.setInformativeText("Do you want to create a new Reports directory?");
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        int ret = msgBox.exec();
+
+        switch (ret) {
+          case QMessageBox::Ok:
+            /* For Windows environments */
+            #if defined(_WIN32)
+                error = _mkdir(home.append("/Comparisoft").toStdString().c_str());
+
+                /* Error has occurred */
+                if (error != 0) {
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                }
+
+                error = _mkdir(home.append("/Reports").toStdString().c_str());
+
+                /* Error has occurred */
+                if (error != 0) {
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                }
+            /* For Mac/Linux environments */
+            #else
+                error = mkdir(home.append("/Comparisoft").toStdString().c_str(), 0777);
+
+                /* Error has occurred */
+                if (error != 0) {
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                }
+
+                error = mkdir(home.append("/Reports").toStdString().c_str(), 0777);
+
+                /* Error has occurred */
+                if (error != 0) {
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                }
+            #endif
+            break;
+          case QMessageBox::Cancel:
+              /* User returns to Settings page */
+            view_holder->setCurrentIndex(0);
+              break;
+          default:
+              break;
+        }
     }
 
-    QString fileReference = findChild<QLineEdit*>("Reference_File_Text")->text();
-    MainWindow::userInfo info = getInfoFields(fileReference);
-
     QString saveFile = MainWindow::findChild<QLineEdit*>("File_Name")->text();
+    QString client = MainWindow::findChild<QLineEdit*>("Client_Name")->text();
+    QString patient = MainWindow::findChild<QLineEdit*>("Patient_Name")->text();
+
     ofstream comparison_report;
     QString filepath = savePath;
     filepath.append("/");
     filepath.append(saveFile);
     comparison_report.open (filepath.toLatin1().data());
     comparison_report << "Comparisoft\n";
-    comparison_report << "Client: " << info.client.toStdString() << "\n";
-    comparison_report << "Patient: " << info.patient.toStdString() << "\n";
+    comparison_report << "Client: " << client.toStdString() << "\n";
+    comparison_report << "Patient: " << patient.toStdString() << "\n";
     comparison_report.close();
 }
 
