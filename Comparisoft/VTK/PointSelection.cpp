@@ -51,21 +51,18 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 		if ((prod_count == 3) && (ref_count == 3)) {
 			Align bottomPanel;
 			
-			//Get renderer for bottom viewpoint (it is the third renderer in the collect
-			vtkRendererCollection* fgd = this->Interactor->GetRenderWindow()->GetRenderers();
-			vtkRenderer* rendawg = (vtkRenderer*) fgd->GetItemAsObject(2);
-			rendawg->Print(std::cout);
-			//Add the transformed actor, which is returned by bottompanel.alignmodels
-			
+			//Get renderer for bottom viewpoint (it is the third renderer in the collection)
+			vtkRendererCollection* panes = this->Interactor->GetRenderWindow()->GetRenderers();
+			vtkRenderer* combinedPane = (vtkRenderer*)panes->GetItemAsObject(2);
 			
 			//Insert points into bottom panel
 			bottomPanel.sourcePoints = vtkSmartPointer<vtkPoints>::New();
-			/*double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
+			double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
 			double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
 			double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
-			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);*/
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
 			
 			//for (vtkIdType i = 0; i < bottomPanel.sourcePoints->GetNumberOfPoints(); i++)
 			//{
@@ -77,12 +74,12 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			//}
 
 			bottomPanel.targetPoints = vtkSmartPointer<vtkPoints>::New();
-			/*double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
+			double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
 			double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
 			double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
-			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);*/
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
 			
 			//for (vtkIdType i = 0; i < bottomPanel.targetPoints->GetNumberOfPoints(); i++)
 			//{
@@ -95,32 +92,31 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 
 
 			// Test source points
-			double sourcePoint1[3] = { 0.0, 0.0, 1.0 };
+			/*double sourcePoint1[3] = { 0.0, 0.0, 1.0 };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
-			double sourcePoint2[3] = { 0.0, 1.0, 0.0 };
+			double sourcePoint2[3] = { 0.0, 0.0, 0.0 };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
 			double sourcePoint3[3] = { 0.0, 0.0, 1.0 };
-			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint3);
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint3);*/
 
 			// Test target points
-			double targetPoint1[3] = { 0.0, 0.0, 1.1 };
+			/*double targetPoint1[3] = { 0.0, 0.0, 1.1 };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
-			double targetPoint2[3] = { 0.0, 1.0, 0.0 };
+			double targetPoint2[3] = { 0.0, 0.0, 0.0 };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
-			double targetPoint3[3] = { 1.0, 0.0, 0.0 };
-			bottomPanel.targetPoints->InsertNextPoint(targetPoint3);
+			double targetPoint3[3] = { 0.0, 0.0, 1.0 };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint3);*/
 
 			//Add the transformed actors to , which is returned by bottompanel.alignmodels
 			bottomPanel.refActor = vtkSmartPointer<vtkActor>::New();
 			bottomPanel.prodActor = vtkSmartPointer<vtkActor>::New();
 			bottomPanel.AlignModels();
 			
-			rendawg->AddActor(bottomPanel.prodActor);
-			rendawg->AddActor(bottomPanel.refActor);
-			rendawg->ResetCamera();
+			combinedPane->AddActor(bottomPanel.prodActor);
+			combinedPane->AddActor(bottomPanel.refActor);
+			combinedPane->ResetCamera();
 			this->Interactor->GetRenderWindow()->Render();
-			//rendawg->AddViewProp(trans[0]);
-
+			 
 			// We now have sufficient click data, pass to our alignment
 			std::cout << "Point 1 on R Pane (x, y, z): " << ref_coordinates[0].x_val << " "
 				<< ref_coordinates[0].y_val << " " << ref_coordinates[0].z_val << std::endl;

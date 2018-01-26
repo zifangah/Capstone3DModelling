@@ -77,8 +77,14 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 		vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);
 
+	/*
+	* Reference pane is the pane on the top-left
+	* Production pane is the pane on the top-right
+	* Comparison pane is the pane on the bottom
+	*/
 
 	/* Define viewport ranges */
+	// (xmin, ymin, xmax, ymax)
 	double reference_pane[4] = { 0, 0.5, 0.5, 1 };
 	double production_pane[4] = { 0.5, 0.5, 1, 1 };
 	double comparison_pane[4] = { 0, 0, 1, 0.5 };
@@ -109,8 +115,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderer2->ResetCamera();
 
 	//Once all the click work is done, this will show the aligned models
-	//renderer3->AddActor(actor1);
-	//renderer3->AddActor(actor2);
 	renderer3->SetBackground(.5, .7, .8);
 	renderer3->SetViewport(comparison_pane);
 	renderer3->ResetCamera();

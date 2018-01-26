@@ -23,28 +23,45 @@ Align::Align() {
 
 
 // Methods
-// Gets passed a pointer to the two actors, from which we can get the source objects
+
 void Align::AlignModels() {
+	/*
+	* Transformed the actors so they are aligned using clicked points (as set in PointSelection.cpp)
+	* Sets variables refActor & prodActor to the transformed actors
+	*
+	* We perform the translation such that the reference file stays aligned the same, and the production file
+	* is translated to align with it.
+	*/
+
 	//Hardcoded files for testing
 	char* filePathReference = NULL;
 	char* filePathProduction = NULL;
 	filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
 	filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
-
+	
+	// Set up reference file
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
 	reader1->SetFileName(filePathReference);
 	reader1->Update();
-
-	// Create a mapper and actor
 	vtkSmartPointer<vtkPolyDataMapper> mapper1 =
 		vtkSmartPointer<vtkPolyDataMapper>::New();
 	mapper1->SetInputConnection(reader1->GetOutputPort());
-
-	//Add the mapper to the actor
-	vtkSmartPointer<vtkActor> actor1 =
+	vtkSmartPointer<vtkActor> referenceActor =
 		vtkSmartPointer<vtkActor>::New();
-	actor1->SetMapper(mapper1);
+	referenceActor->SetMapper(mapper1);
+
+	// Set up production file
+	vtkSmartPointer<vtkSTLReader> reader2 =
+		vtkSmartPointer<vtkSTLReader>::New();
+	reader2->SetFileName(filePathProduction);
+	reader2->Update();
+	vtkSmartPointer<vtkPolyDataMapper> mapper2 =
+		vtkSmartPointer<vtkPolyDataMapper>::New();
+	mapper2->SetInputConnection(reader2->GetOutputPort());
+	vtkSmartPointer<vtkActor> productionActor =
+		vtkSmartPointer<vtkActor>::New();
+	productionActor->SetMapper(mapper2);
 
 	// Setup the transform
 	vtkSmartPointer<vtkLandmarkTransform> landmarkTransform =
@@ -63,13 +80,14 @@ void Align::AlignModels() {
 		vtkSmartPointer<vtkPolyData>::New();
 	target->SetPoints(targetPoints);
 
+	//We perform the transformation to the production actor so it lines up with the reference actor
 	vtkSmartPointer<vtkTransformPolyDataFilter> transformFilter =
 		vtkSmartPointer<vtkTransformPolyDataFilter>::New();
-	transformFilter->SetInputConnection(reader1->GetOutputPort());
+	transformFilter->SetInputConnection(reader2->GetOutputPort());
 	transformFilter->SetTransform(landmarkTransform);
 	transformFilter->Update();
 
-	// Display the transformation matrix that was computed
+	// Display the transformation matrix that was computed (for debugging)
 	vtkMatrix4x4* mat = landmarkTransform->GetMatrix();
 	std::cout << "Matrix: " << *mat << std::endl;
 
@@ -78,43 +96,12 @@ void Align::AlignModels() {
 		vtkSmartPointer<vtkPolyDataMapper>::New();
 	transformedMapper->SetInputConnection(transformFilter->GetOutputPort());
 
-	vtkSmartPointer<vtkActor> transformedActor =
+	vtkSmartPointer<vtkActor> transformedProdActor =
 		vtkSmartPointer<vtkActor>::New();
-	transformedActor->SetMapper(transformedMapper);
-	transformedActor->GetProperty()->SetColor(0, 1, 0);
+	transformedProdActor->SetMapper(transformedMapper);
+	transformedProdActor->GetProperty()->SetColor(0, 1, 0);
 
-	//RETURNS ACTORS TO BE ADDED IN THE MAIN VTK FUNCTION
-
-	// Set up the rest of the visualization pipeline
-	/*vtkSmartPointer<vtkRenderer> renderer =
-		vtkSmartPointer<vtkRenderer>::New();
-	vtkSmartPointer<vtkRenderWindow> renderWindow =
-		vtkSmartPointer<vtkRenderWindow>::New();
-	renderWindow->AddRenderer(renderer);
-	vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
-		vtkSmartPointer<vtkRenderWindowInteractor>::New();
-	renderWindowInteractor->SetRenderWindow(renderWindow);*/
-
-	// Set up comparison
-	//double comparison_pane[4] = { 0, 0, 1, 0.5 };
-	//renderer->AddActor(actor1);
-	//renderer->AddActor(transformedActor);
-	refActor = actor1;
-	prodActor = transformedActor;
-
-	vtkSmartPointer<vtkActor> *transformedArray[2];
-	vtkSmartPointer<vtkActor> *actor1Pointer = &actor1;
-	vtkSmartPointer<vtkActor> *transformedPointer = &transformedActor;
-
-	transformedArray[0] = actor1Pointer;
-	transformedArray[1] = transformedPointer;
-	
-	//How to return array from function
-	//renderer->SetBackground(.3, .6, .3); // Set renderer's background color to green
-
-	//renderer->SetViewport(comparison_pane);
-	//renderer->ResetCamera();
-	//renderWindow->Render();
-	//renderWindow->SetWindowName("Comparisoft");
-	//renderWindowInteractor->Start();
+	//Assign the actors to variables to return
+	refActor = referenceActor;
+	prodActor = transformedProdActor;
 }
