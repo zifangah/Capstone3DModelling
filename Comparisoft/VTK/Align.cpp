@@ -86,24 +86,35 @@ void Align::AlignModels() {
 	//RETURNS ACTORS TO BE ADDED IN THE MAIN VTK FUNCTION
 
 	// Set up the rest of the visualization pipeline
-	vtkSmartPointer<vtkRenderer> renderer =
+	/*vtkSmartPointer<vtkRenderer> renderer =
 		vtkSmartPointer<vtkRenderer>::New();
 	vtkSmartPointer<vtkRenderWindow> renderWindow =
 		vtkSmartPointer<vtkRenderWindow>::New();
 	renderWindow->AddRenderer(renderer);
 	vtkSmartPointer<vtkRenderWindowInteractor> renderWindowInteractor =
 		vtkSmartPointer<vtkRenderWindowInteractor>::New();
-	renderWindowInteractor->SetRenderWindow(renderWindow);
+	renderWindowInteractor->SetRenderWindow(renderWindow);*/
 
 	// Set up comparison
-	double comparison_pane[4] = { 0, 0, 1, 0.5 };
-	renderer->AddActor(actor1);
-	renderer->AddActor(transformedActor);
-	renderer->SetBackground(.3, .6, .3); // Set renderer's background color to green
+	//double comparison_pane[4] = { 0, 0, 1, 0.5 };
+	//renderer->AddActor(actor1);
+	//renderer->AddActor(transformedActor);
+	refActor = actor1;
+	prodActor = transformedActor;
 
-	renderer->SetViewport(comparison_pane);
-	renderer->ResetCamera();
-	renderWindow->Render();
-	renderWindow->SetWindowName("Comparisoft");
-	renderWindowInteractor->Start();
+	vtkSmartPointer<vtkActor> *transformedArray[2];
+	vtkSmartPointer<vtkActor> *actor1Pointer = &actor1;
+	vtkSmartPointer<vtkActor> *transformedPointer = &transformedActor;
+
+	transformedArray[0] = actor1Pointer;
+	transformedArray[1] = transformedPointer;
+	
+	//How to return array from function
+	//renderer->SetBackground(.3, .6, .3); // Set renderer's background color to green
+
+	//renderer->SetViewport(comparison_pane);
+	//renderer->ResetCamera();
+	//renderWindow->Render();
+	//renderWindow->SetWindowName("Comparisoft");
+	//renderWindowInteractor->Start();
 }

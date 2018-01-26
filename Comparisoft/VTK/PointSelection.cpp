@@ -11,7 +11,9 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 
 #include "PointSelection.h"
 #include "Align.h"
+#include "vtkActor.h"
 /**
+
 	@brief Alter the inherited OnLeftButtonDown() of
 	vtkInteractorStyleTrackballCamera to be compatible with our intended use.
 	@returns void
@@ -48,8 +50,14 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 
 		if ((prod_count == 3) && (ref_count == 3)) {
 			Align bottomPanel;
+			
+			//Get renderer for bottom viewpoint (it is the third renderer in the collect
 			vtkRendererCollection* fgd = this->Interactor->GetRenderWindow()->GetRenderers();
-			fgd->Print(std::cout);
+			vtkRenderer* rendawg = (vtkRenderer*) fgd->GetItemAsObject(2);
+			rendawg->Print(std::cout);
+			//Add the transformed actor, which is returned by bottompanel.alignmodels
+			
+			
 			//Insert points into bottom panel
 			bottomPanel.sourcePoints = vtkSmartPointer<vtkPoints>::New();
 			/*double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
@@ -99,11 +107,19 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
 			double targetPoint2[3] = { 0.0, 1.0, 0.0 };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
-			double targetPoint3[3] = { 0.0, 0.0, 0.0 };
+			double targetPoint3[3] = { 1.0, 0.0, 0.0 };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint3);
 
-
+			//Add the transformed actors to , which is returned by bottompanel.alignmodels
+			bottomPanel.refActor = vtkSmartPointer<vtkActor>::New();
+			bottomPanel.prodActor = vtkSmartPointer<vtkActor>::New();
 			bottomPanel.AlignModels();
+			
+			rendawg->AddActor(bottomPanel.prodActor);
+			rendawg->AddActor(bottomPanel.refActor);
+			rendawg->ResetCamera();
+			this->Interactor->GetRenderWindow()->Render();
+			//rendawg->AddViewProp(trans[0]);
 
 			// We now have sufficient click data, pass to our alignment
 			std::cout << "Point 1 on R Pane (x, y, z): " << ref_coordinates[0].x_val << " "
