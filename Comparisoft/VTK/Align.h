@@ -7,6 +7,7 @@
 #include <vtkSmartPointer.h>
 #include <vtkPoints.h>
 #include <vtkActor.h>
+#include <vtkPolyData.h>
 
 class Align {
 
@@ -14,6 +15,8 @@ public:
 	//Data members
 	vtkSmartPointer<vtkPoints> sourcePoints;
 	vtkSmartPointer<vtkPoints> targetPoints;
+	vtkSmartPointer<vtkPolyData> sourcePoly;
+	vtkSmartPointer<vtkPolyData> targetPoly;
 	vtkSmartPointer<vtkActor> refActor;
 	vtkSmartPointer<vtkActor> prodActor;
 	//static char* filePathRef;
@@ -23,5 +26,6 @@ public:
 	Align();
 	
 	//Methods
-	void Align::AlignModels();
+	void Align::AlignModels(bool saveAlignedFile);
+
 };
