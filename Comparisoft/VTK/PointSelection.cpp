@@ -12,7 +12,6 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 #include "PointSelection.h"
 #include "Align.h"
 #include "vtkActor.h"
-#include "vtkVertexGlyphFilter.h"
 /**
 
 	@brief Alter the inherited OnLeftButtonDown() of
@@ -32,17 +31,17 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 
 		/* Pixel actually selected */
 		this->Interactor->GetPicker()->GetPickPosition(picked);
+		std::cout << "Value selected: " << picked[0] << " " << picked[1] << " " << picked[2] << std::endl;
+		std::cout << std::endl;
+
 		
+
 		if ((ref_count < 3) && (count % 2 == 0)) {
-			std::cout << "Reference value selected: " << picked[0] << " " << picked[1] << " " << picked[2] << std::endl;
-			std::cout << std::endl;
 			ref_coordinates[ref_count] = {picked[0], picked[1], picked[2]};
 			ref_count++;
 		}
 
 		else if ((prod_count < 3) && (count % 2 != 0)) {
-			std::cout << "Production value selected: " << picked[0] << " " << picked[1] << " " << picked[2] << std::endl;
-			std::cout << std::endl;
 			prod_coordinates[prod_count] = {picked[0], picked[1], picked[2]};
 			prod_count++;
 		}
@@ -55,46 +54,63 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			//Get renderer for bottom viewpoint (it is the third renderer in the collection)
 			vtkRendererCollection* panes = this->Interactor->GetRenderWindow()->GetRenderers();
 			vtkRenderer* combinedPane = (vtkRenderer*)panes->GetItemAsObject(2);
-
-			//Prepare Points
 			
-			/*Source Points*/			
+			//Insert points into bottom panel
 			bottomPanel.sourcePoints = vtkSmartPointer<vtkPoints>::New();
-			//double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
-			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
-			//double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
-			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
-			//double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
-			//bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
+			double sourcePoint0[3] = { ref_coordinates[0].x_val, ref_coordinates[0].y_val, ref_coordinates[0].z_val };
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint0);
+			double sourcePoint1[3] = { ref_coordinates[1].x_val, ref_coordinates[1].y_val, ref_coordinates[1].z_val };
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
+			double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
 			
+			//for (vtkIdType i = 0; i < bottomPanel.sourcePoints->GetNumberOfPoints(); i++)
+			//{
+			//	double p[3];
+			//	bottomPanel.sourcePoints->GetPoint(i, p);
+			//	// This is identical to:
+			//	// polydata->GetPoints()->GetPoint(i,p);
+			//	std::cout << "Point " << i << " : (" << p[0] << " " << p[1] << " " << p[2] << ")" << std::endl;
+			//}
+
+			bottomPanel.targetPoints = vtkSmartPointer<vtkPoints>::New();
+			double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
+			double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
+			double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
+			
+			//for (vtkIdType i = 0; i < bottomPanel.targetPoints->GetNumberOfPoints(); i++)
+			//{
+			//	double p[3];
+			//	bottomPanel.targetPoints->GetPoint(i, p);
+			//	// This is identical to:
+			//	// polydata->GetPoints()->GetPoint(i,p);
+			//	std::cout << "Point " << i << " : (" << p[0] << " " << p[1] << " " << p[2] << ")" << std::endl;
+			//}
+
+
 			// Test source points
-			double sourcePoint1[3] = { 0.0, 0.0, 1.0 };
+			/*double sourcePoint1[3] = { 0.0, 0.0, 1.0 };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
 			double sourcePoint2[3] = { 0.0, 0.0, 0.0 };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
 			double sourcePoint3[3] = { 0.0, 0.0, 1.0 };
-			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint3);
+			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint3);*/
 
-			/*Target Points*/
-			bottomPanel.targetPoints = vtkSmartPointer<vtkPoints>::New();
-			//double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
-			//bottomPanel.targetPoints->InsertNextPoint(targetPoint0);
-			//double targetPoint1[3] = { prod_coordinates[1].x_val, prod_coordinates[1].y_val, prod_coordinates[1].z_val };
-			//bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
-			//double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
-			//bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
-			
 			// Test target points
-			double targetPoint1[3] = { 0.0, 0.0, 1.1 };
+			/*double targetPoint1[3] = { 0.0, 0.0, 1.1 };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
 			double targetPoint2[3] = { 0.0, 0.0, 0.0 };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
 			double targetPoint3[3] = { 0.0, 0.0, 1.0 };
-			bottomPanel.targetPoints->InsertNextPoint(targetPoint3);
-			
+			bottomPanel.targetPoints->InsertNextPoint(targetPoint3);*/
+
+			//Add the transformed actors to , which is returned by bottompanel.alignmodels
 			bottomPanel.refActor = vtkSmartPointer<vtkActor>::New();
 			bottomPanel.prodActor = vtkSmartPointer<vtkActor>::New();
-			bottomPanel.AlignModels(false);		//Don't save the aligned files
+			bottomPanel.AlignModels();
 			
 			combinedPane->AddActor(bottomPanel.prodActor);
 			combinedPane->AddActor(bottomPanel.refActor);
