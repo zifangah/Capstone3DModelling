@@ -289,6 +289,7 @@ void MainWindow::on_Config_Button_clicked()
     int ret;                    /* Button selected when user is presented with a pop-up window */
     bool cancel = false;        /* If the user has selected "cancel" when presented with a pop-up window */
     bool setup_default = false; /* Whether the file save path is the default path */
+    bool root = false;          /* Whether the root directory of the default file path already exists */
     bool exists = false;        /* Whether the directory selected already exists */
     bool empty = false;         /* Whether the file save path is left empty */
 
@@ -320,11 +321,31 @@ void MainWindow::on_Config_Button_clicked()
             exists = false;
         }
 
+       /* Check if root folder of default directory exists */
+       if (setup_default && !exists) {
+           if (_taccess_s((LPCTSTR) (default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str(), 0 ) == 0) {
+                struct _stat status;
+                _tstat((LPCTSTR) default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str(), &status);
+                root = ((status.st_mode & S_IFDIR) != 0);
+            }
+
+            else {
+                root = false;
+            }
+       }
+
     /* Mac/Linux environment detected */
     /* Check if the file save path is a directory that already exists */
     #else
         if (opendir(path.toStdString().c_str())) {
             exists = true;
+        }
+
+        /* Check if root folder of default directory exists */
+        if (setup_default && !exists) {
+            if (opendir(default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str())) {
+                root = true;
+            }
         }
     #endif
 
@@ -349,7 +370,7 @@ void MainWindow::on_Config_Button_clicked()
           /* User selected Ok on pop-up window -> try and create directory */
           case QMessageBox::Ok:
                 /* Default file path selected */
-                if (setup_default) {
+                if (setup_default && !root) {
                     /* Create directory "Comparisoft" */
                     #if defined(_WIN32)
                         error = _mkdir(home.append("/Comparisoft").toStdString().c_str());
@@ -378,6 +399,12 @@ void MainWindow::on_Config_Button_clicked()
 
                     qInfo( "Error occurred creating directory:");
                     perror ("The following error occurred");
+                    if (setup_default) {
+                        qDebug("Directory1: %s", home.toStdString().c_str());
+                    }
+                    else {
+                        qDebug("Directory1: %s", path.toStdString().c_str());
+                    }
                     cancel = true;
                     err = true;
                 }
@@ -402,6 +429,12 @@ void MainWindow::on_Config_Button_clicked()
 
                         qInfo( "Error occurred creating directory:");
                         perror ("The following error occurred");
+                        if (setup_default) {
+                            qDebug("Directory2: %s", home.toStdString().c_str());
+                        }
+                        else {
+                            qDebug("Directory2: %s", path.toStdString().c_str());
+                        }
                         cancel = true;
                         err = true;
                     }
