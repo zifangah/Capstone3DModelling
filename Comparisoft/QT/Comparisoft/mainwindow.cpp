@@ -18,6 +18,10 @@ using namespace std;
 #else
     #include <direct.h>
     #include <windows.h>
+    #include <io.h>
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <tchar.h>
 #endif
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -250,6 +254,9 @@ void MainWindow::on_Config_Button_clicked()
 {
     std::string sPath = "/tmp/test";
 
+    //move from setup to config
+    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
+
     QString savePath = MainWindow::findChild<QLineEdit*>("Save_Location")->text();
 
     int error = 0;
@@ -270,85 +277,139 @@ void MainWindow::on_Config_Button_clicked()
     QString default_path = rFilePath;
     QString home = rFilePath;
     default_path.append("/Comparisoft/Reports/");
+
     int ret;
+    bool cancel = false;
+    bool setup_default = false;
+    bool exists = false;
+    bool empty = false;
+
+    QString path;
 
     if (savePath.contains(default_path)) {
-        bool exists = false;
+        path = default_path;
+        setup_default = true;
+    }
 
-        /* Windows environment detected */
-        #if defined(_WIN32)
-            exists = PathFileExists(default_path.toStdString().c_str());
-        /* Mac/Linux environment detected */
-        #else
-            if (opendir(default_path.toStdString().c_str())) {
-                exists = true;
-            }
-        #endif
+    else {
+        path = savePath;
+    }
 
-        QMessageBox msgBox;
+    empty = savePath.trimmed().isEmpty();
 
-        if (exists == false) {
-            msgBox.setText("The directory specified does not exist.");
+    /* Windows environment detected */
+    #if defined(_WIN32)
+       if (_taccess_s((LPCTSTR) path.toStdString().c_str(), 0 ) == 0) {
+            struct _stat status;
+            _tstat((LPCTSTR) path.toStdString().c_str(), &status);
+            exists = ((status.st_mode & S_IFDIR) != 0);
+        }
+
+        else {
+            exists = false;
+        }
+
+    /* Mac/Linux environment detected */
+    #else
+        if (opendir(path.toStdString().c_str())) {
+            exists = true;
+        }
+    #endif
+
+    QMessageBox msgBox;
+
+    if (exists == false && !empty) {
+        msgBox.setText("The directory specified does not exist.");
+        if (setup_default) {
             msgBox.setInformativeText("Do you want to create a new Reports directory?");
-            msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-            msgBox.setDefaultButton(QMessageBox::Ok);
-            ret = msgBox.exec();
+        }
+        else {
+            msgBox.setInformativeText("Do you want to create the specified directory?");
+        }
+        msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
+        msgBox.setDefaultButton(QMessageBox::Ok);
+        ret = msgBox.exec();
 
+        bool err = false;
 
-            switch (ret) {
-              case QMessageBox::Ok:
-                /* For Windows environments */
-                #if defined(_WIN32)
+        switch (ret) {
+          case QMessageBox::Ok:
+            /* For Windows environments */
+            #if defined(_WIN32)
+                if (setup_default) {
                     error = _mkdir(home.append("/Comparisoft").toStdString().c_str());
+                }
+                else {
+                    error = _mkdir(path.toStdString().c_str());
+                }
 
-                    /* Error has occurred */
-                    if (error != 0) {
-                        QMessageBox msgBox2;
-                        msgBox2.setText("An error occurred creating the directory.");
-                        msgBox2.setInformativeText("Please select a different save location.");
-                        msgBox2.setStandardButtons(QMessageBox::Ok);
-                        msgBox2.setDefaultButton(QMessageBox::Ok);
-                        msgBox2.exec();
+                /* Error has occurred */
+                if (error != 0) {
+                    QMessageBox msgBox2;
+                    msgBox2.setText("An error occurred creating the directory.");
+                    msgBox2.setInformativeText("Please select a different save location.");
+                    msgBox2.setStandardButtons(QMessageBox::Ok);
+                    msgBox2.setDefaultButton(QMessageBox::Ok);
+                    msgBox2.exec();
 
-                        qInfo( "Error occurred creating directory:");
-                        perror ("The following error occurred");
-                    }
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                    cancel = true;
+                }
 
-                    error = _mkdir(home.append("/Reports").toStdString().c_str());
+                error = _mkdir(home.append("/Reports").toStdString().c_str());
 
-                    /* Error has occurred */
-                    if (error != 0) {
-                        QMessageBox msgBox2;
-                        msgBox2.setText("An error occurred creating the directory.");
-                        msgBox2.setInformativeText("Please select a different save location.");
-                        msgBox2.setStandardButtons(QMessageBox::Ok);
-                        msgBox2.setDefaultButton(QMessageBox::Ok);
-                        msgBox2.exec();
+                /* Error has occurred */
+                if (error != 0) {
+                    QMessageBox msgBox2;
+                    msgBox2.setText("An error occurred creating the directory.");
+                    msgBox2.setInformativeText("Please select a different save location.");
+                    msgBox2.setStandardButtons(QMessageBox::Ok);
+                    msgBox2.setDefaultButton(QMessageBox::Ok);
+                    msgBox2.exec();
 
-                        qInfo( "Error occurred creating directory:");
-                        perror ("The following error occurred");
-                    }
-                /* For Mac/Linux environments */
-                #else
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                    cancel = true;
+                }
+            /* For Mac/Linux environments */
+            #else
                 /* Directory does not yet exist */
-                if (!opendir(home.append("/Comparisoft").toStdString().c_str())) {
-                    error = mkdir(home.toStdString().c_str(), 0777);
+                if (setup_default) {
+                    error = mkdir(home.append("/Comparisoft").toStdString().c_str(), 0777);
+                }
 
-                    /* Error has occurred */
-                    if (error != 0) {
-                        QMessageBox msgBox2;
-                        msgBox2.setText("An error occurred creating the directory.");
-                        msgBox2.setInformativeText("Please select a different save location.");
-                        msgBox2.setStandardButtons(QMessageBox::Ok);
-                        msgBox2.setDefaultButton(QMessageBox::Ok);
-                        msgBox2.exec();
+                else {
+                    error = mkdir(path.toStdString().c_str(), 0777);
+                }
 
-                        qInfo( "Error occurred creating directory:");
-                        perror ("The following error occurred");
-                        qDebug("Directory: %s", home.toStdString().c_str());
+                err = false;
+
+                /* Error has occurred */
+                if (error != 0) {
+                    err = true;
+
+                    QMessageBox msgBox2;
+                    msgBox2.setText("An error occurred creating the directory.");
+                    msgBox2.setInformativeText("Please select a different save location.");
+                    msgBox2.setStandardButtons(QMessageBox::Ok);
+                    msgBox2.setDefaultButton(QMessageBox::Ok);
+                    msgBox2.exec();
+
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                    qDebug("Directory: %s", home.toStdString().c_str());
+                    cancel = true;
+                }
+
+                if (!err) {
+                    if (setup_default) {
+                        error = mkdir(home.append("/Reports").toStdString().c_str(), 0777);
                     }
 
-                    error = mkdir(home.append("/Reports").toStdString().c_str(), 0777);
+                    else {
+                        error = mkdir(path.toStdString().c_str(), 0777);
+                    }
 
                     /* Error has occurred */
                     if (error != 0) {
@@ -361,15 +422,15 @@ void MainWindow::on_Config_Button_clicked()
 
                         qInfo( "Error occurred creating directory:");
                         perror ("The following error occurred");
+                        cancel = true;
                     }
                 }
-                #endif
-                break;
-              case QMessageBox::Cancel:
-                  break;
-              default:
-                  break;
-            }
+            #endif
+            break;
+          case QMessageBox::Cancel:
+              cancel = true;
+          default:
+              cancel = true;
         }
     }
 
@@ -396,10 +457,7 @@ void MainWindow::on_Config_Button_clicked()
     comparison_report << "Patient: " << patient.toStdString() << "\n";
     comparison_report.close();
 
-    //move from setup to config
-    QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
-
-    if (!savePath.trimmed().isEmpty()) {
+    if (!savePath.trimmed().isEmpty() && !cancel) {
         view_holder->setCurrentIndex(1);
     }
 }
