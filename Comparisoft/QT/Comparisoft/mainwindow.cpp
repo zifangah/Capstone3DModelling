@@ -9,19 +9,20 @@
 #include <fstream>
 using namespace std;
 
-/* Mac/Linux environment detected */
-#if !defined(_WIN32)
-    #include <sys/types.h>
-    #include <sys/stat.h>
-    #include <dirent.h>
 /* Windows environment detected */
-#else
+#if defined(_WIN32)
     #include <direct.h>
     #include <windows.h>
     #include <io.h>
     #include <sys/types.h>
     #include <sys/stat.h>
     #include <tchar.h>
+
+/* Mac/Linux environment detected */
+#else
+    #include <sys/types.h>
+    #include <sys/stat.h>
+    #include <dirent.h>
 #endif
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -257,10 +258,12 @@ void MainWindow::on_Config_Button_clicked()
     //move from setup to config
     QStackedWidget* view_holder = findChild<QStackedWidget*>("View_Holder");
 
+    /* Find the filepath selected for saving the report */
     QString savePath = MainWindow::findChild<QLineEdit*>("Save_Location")->text();
 
     int error = 0;
 
+    /* Filepath of the selected reference STL file */
     QString rFilePath = MainWindow::findChild<QLineEdit*>("Reference_File_Text")->text();
     QString copy = rFilePath;
     int final_pos;
@@ -272,20 +275,26 @@ void MainWindow::on_Config_Button_clicked()
     copy = copy.mid(pos, copy.length());
     pos = copy.indexOf("/");
     final_pos += pos;
+
+    /* Get "home drive" location by parsing the filpath of the selected reference STL
+        file to 3 '/'s */
     rFilePath = rFilePath.mid(0, final_pos);
 
     QString default_path = rFilePath;
     QString home = rFilePath;
+
+    /* "Default save location" is the user's "home drive" location with 2 new folders added */
     default_path.append("/Comparisoft/Reports/");
 
-    int ret;
-    bool cancel = false;
-    bool setup_default = false;
-    bool exists = false;
-    bool empty = false;
+    int ret;                    /* Button selected when user is presented with a pop-up window */
+    bool cancel = false;        /* If the user has selected "cancel" when presented with a pop-up window */
+    bool setup_default = false; /* Whether the file save path is the default path */
+    bool exists = false;        /* Whether the directory selected already exists */
+    bool empty = false;         /* Whether the file save path is left empty */
 
-    QString path;
+    QString path;               /* The file save path as shown in the save location text field */
 
+    /* Check whether the file save path as shown in the save location text field is the generated default path */
     if (savePath.contains(default_path)) {
         path = default_path;
         setup_default = true;
@@ -295,9 +304,11 @@ void MainWindow::on_Config_Button_clicked()
         path = savePath;
     }
 
+    /* Check whether the file save path is left empty */
     empty = savePath.trimmed().isEmpty();
 
     /* Windows environment detected */
+    /* Check if the file save path is a directory that already exists */
     #if defined(_WIN32)
        if (_taccess_s((LPCTSTR) path.toStdString().c_str(), 0 ) == 0) {
             struct _stat status;
@@ -310,6 +321,7 @@ void MainWindow::on_Config_Button_clicked()
         }
 
     /* Mac/Linux environment detected */
+    /* Check if the file save path is a directory that already exists */
     #else
         if (opendir(path.toStdString().c_str())) {
             exists = true;
@@ -318,6 +330,7 @@ void MainWindow::on_Config_Button_clicked()
 
     QMessageBox msgBox;
 
+    /* Case: if the directory selected does not exist, but is not an empty field */
     if (exists == false && !empty) {
         msgBox.setText("The directory specified does not exist.");
         if (setup_default) {
@@ -333,83 +346,50 @@ void MainWindow::on_Config_Button_clicked()
         bool err = false;
 
         switch (ret) {
+          /* User selected Ok on pop-up window -> try and create directory */
           case QMessageBox::Ok:
-            /* For Windows environments */
-            #if defined(_WIN32)
+                /* Default file path selected */
                 if (setup_default) {
-                    error = _mkdir(home.append("/Comparisoft").toStdString().c_str());
+                    /* Create directory "Comparisoft" */
+                    #if defined(_WIN32)
+                        error = _mkdir(home.append("/Comparisoft").toStdString().c_str());
+                    #else
+                        error = mkdir(home.append("/Comparisoft").toStdString().c_str(), 0777);
+                    #endif
                 }
+                /* Custom non-existant file path selected */
                 else {
-                    error = _mkdir(path.toStdString().c_str());
-                }
-
-                /* Error has occurred */
-                if (error != 0) {
-                    QMessageBox msgBox2;
-                    msgBox2.setText("An error occurred creating the directory.");
-                    msgBox2.setInformativeText("Please select a different save location.");
-                    msgBox2.setStandardButtons(QMessageBox::Ok);
-                    msgBox2.setDefaultButton(QMessageBox::Ok);
-                    msgBox2.exec();
-
-                    qInfo( "Error occurred creating directory:");
-                    perror ("The following error occurred");
-                    cancel = true;
-                }
-
-                error = _mkdir(home.append("/Reports").toStdString().c_str());
-
-                /* Error has occurred */
-                if (error != 0) {
-                    QMessageBox msgBox2;
-                    msgBox2.setText("An error occurred creating the directory.");
-                    msgBox2.setInformativeText("Please select a different save location.");
-                    msgBox2.setStandardButtons(QMessageBox::Ok);
-                    msgBox2.setDefaultButton(QMessageBox::Ok);
-                    msgBox2.exec();
-
-                    qInfo( "Error occurred creating directory:");
-                    perror ("The following error occurred");
-                    cancel = true;
-                }
-            /* For Mac/Linux environments */
-            #else
-                /* Directory does not yet exist */
-                if (setup_default) {
-                    error = mkdir(home.append("/Comparisoft").toStdString().c_str(), 0777);
-                }
-
-                else {
-                    error = mkdir(path.toStdString().c_str(), 0777);
-                }
-
-                err = false;
-
-                /* Error has occurred */
-                if (error != 0) {
-                    err = true;
-
-                    QMessageBox msgBox2;
-                    msgBox2.setText("An error occurred creating the directory.");
-                    msgBox2.setInformativeText("Please select a different save location.");
-                    msgBox2.setStandardButtons(QMessageBox::Ok);
-                    msgBox2.setDefaultButton(QMessageBox::Ok);
-                    msgBox2.exec();
-
-                    qInfo( "Error occurred creating directory:");
-                    perror ("The following error occurred");
-                    qDebug("Directory: %s", home.toStdString().c_str());
-                    cancel = true;
-                }
-
-                if (!err) {
-                    if (setup_default) {
-                        error = mkdir(home.append("/Reports").toStdString().c_str(), 0777);
-                    }
-
-                    else {
+                    /* Create new custom directory */
+                    #if defined(_WIN32)
+                        error = _mkdir(path.toStdString().c_str());
+                    #else
                         error = mkdir(path.toStdString().c_str(), 0777);
-                    }
+                    #endif
+                }
+
+                /* Error has occurred */
+                if (error != 0) {
+                    QMessageBox msgBox2;
+                    msgBox2.setText("An error occurred creating the directory.");
+                    msgBox2.setInformativeText("Please select a different save location.");
+                    msgBox2.setStandardButtons(QMessageBox::Ok);
+                    msgBox2.setDefaultButton(QMessageBox::Ok);
+                    msgBox2.exec();
+
+                    qInfo( "Error occurred creating directory:");
+                    perror ("The following error occurred");
+                    cancel = true;
+                    err = true;
+                }
+
+                /* Create "Reports" directory inside of "Comparisoft" directory
+                    (if the default file path is selected and no error occurred creating the first directory) */
+                if (setup_default && !err) {
+                    #if defined(_WIN32)
+                        error = _mkdir(home.append("/Reports").toStdString().c_str());
+                    #else
+                        error = mkdir(home.append("/Reports").toStdString().c_str(), 0777);
+                    #endif
 
                     /* Error has occurred */
                     if (error != 0) {
@@ -423,10 +403,11 @@ void MainWindow::on_Config_Button_clicked()
                         qInfo( "Error occurred creating directory:");
                         perror ("The following error occurred");
                         cancel = true;
+                        err = true;
                     }
                 }
-            #endif
             break;
+          /* User selected Cancel on pop-up window -> do not move on to configurations page */
           case QMessageBox::Cancel:
               cancel = true;
           default:
@@ -434,8 +415,9 @@ void MainWindow::on_Config_Button_clicked()
         }
     }
 
-    /* File path not selected */
+    /* File path not selected -> field is empty*/
     if (savePath.trimmed().isEmpty()) {
+        /* Prompt user to select a directory */
         QMessageBox msgBox;
         msgBox.setText("Please select a save location.");
         msgBox.setStandardButtons(QMessageBox::Ok);
@@ -447,6 +429,7 @@ void MainWindow::on_Config_Button_clicked()
     QString client = MainWindow::findChild<QLineEdit*>("Client_Name")->text();
     QString patient = MainWindow::findChild<QLineEdit*>("Patient_Name")->text();
 
+    /* Write some values to report file based off of user text field inputs */
     ofstream comparison_report;
     QString filepath = savePath;
     filepath.append("/");
@@ -457,6 +440,7 @@ void MainWindow::on_Config_Button_clicked()
     comparison_report << "Patient: " << patient.toStdString() << "\n";
     comparison_report.close();
 
+    /* Only move on to configuration page if the save directory has been selected and no errors occurred */
     if (!savePath.trimmed().isEmpty() && !cancel) {
         view_holder->setCurrentIndex(1);
     }
