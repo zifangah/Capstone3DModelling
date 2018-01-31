@@ -18,5 +18,5 @@ public:
 	Align();
 	
 	//Methods
-	void Align::AlignModels();
+	void AlignModels();
 };
