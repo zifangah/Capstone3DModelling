@@ -16,8 +16,8 @@ public:
 	vtkSmartPointer<vtkPoints> targetPoints;
 	vtkSmartPointer<vtkActor> refActor;
 	vtkSmartPointer<vtkActor> prodActor;
-	//static char* filePathRef;
-	//static char* filePathProd;
+	char* filePathRef;
+	char* filePathProd;
 
 	//Constructors
 	Align();

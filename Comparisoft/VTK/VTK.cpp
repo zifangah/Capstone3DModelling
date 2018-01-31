@@ -61,7 +61,6 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	vtkSmartPointer<vtkPointPicker> PointSelector =
 		vtkSmartPointer<vtkPointPicker>::New();
 
-
 	/* Create one render window and one interactor for all 3 panes */
 	vtkSmartPointer<vtkRenderWindow> renderWindow =
 		vtkSmartPointer<vtkRenderWindow>::New();
@@ -76,6 +75,9 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	vtkSmartPointer<PointSelection> style =
 		vtkSmartPointer<PointSelection>::New();
 	renderWindowInteractor->SetInteractorStyle(style);
+
+	style->filePathRef = filePathReference;
+	style->filePathProd = filePathProduction;
 
 	/*
 	* Reference pane is the pane on the top-left

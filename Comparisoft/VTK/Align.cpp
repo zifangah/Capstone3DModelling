@@ -34,15 +34,15 @@ void Align::AlignModels() {
 	*/
 
 	//Hardcoded files for testing
-	char* filePathReference = NULL;
-	char* filePathProduction = NULL;
-	filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
-	filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
+	//char* filePathReference = NULL;
+	//char* filePathProduction = NULL;
+	//filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
+	//filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
 	
 	// Set up reference file
 	vtkSmartPointer<vtkSTLReader> reader1 =
 		vtkSmartPointer<vtkSTLReader>::New();
-	reader1->SetFileName(filePathReference);
+	reader1->SetFileName(filePathRef);
 	reader1->Update();
 	vtkSmartPointer<vtkPolyDataMapper> mapper1 =
 		vtkSmartPointer<vtkPolyDataMapper>::New();
@@ -54,7 +54,7 @@ void Align::AlignModels() {
 	// Set up production file
 	vtkSmartPointer<vtkSTLReader> reader2 =
 		vtkSmartPointer<vtkSTLReader>::New();
-	reader2->SetFileName(filePathProduction);
+	reader2->SetFileName(filePathProd);
 	reader2->Update();
 	vtkSmartPointer<vtkPolyDataMapper> mapper2 =
 		vtkSmartPointer<vtkPolyDataMapper>::New();

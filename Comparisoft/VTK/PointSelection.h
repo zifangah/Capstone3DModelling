@@ -42,6 +42,9 @@ public:
 	int ref_count = 0; /* Number of coordinates selected on the reference pane */
 	int prod_count = 0; /* Number of coordinates selected on the production pane */
 	int count = 0; /* Determines which pane the point is being selected for */
+	
+	char* filePathRef;
+	char* filePathProd;
 
 	coordinate ref_coordinates[3]; /* Stores selected coordinates on the reference pane */
 	coordinate prod_coordinates[3]; /* Stores selected coordinates on the production pane */

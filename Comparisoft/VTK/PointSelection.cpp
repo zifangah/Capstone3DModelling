@@ -50,7 +50,10 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 
 		if ((prod_count == 3) && (ref_count == 3)) {
 			Align bottomPanel;
-			
+			bottomPanel.filePathProd = this->filePathProd;
+			bottomPanel.filePathRef = this->filePathRef;
+
+
 			//Get renderer for bottom viewpoint (it is the third renderer in the collection)
 			vtkRendererCollection* panes = this->Interactor->GetRenderWindow()->GetRenderers();
 			vtkRenderer* combinedPane = (vtkRenderer*)panes->GetItemAsObject(2);
@@ -63,15 +66,6 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint1);
 			double sourcePoint2[3] = { ref_coordinates[2].x_val, ref_coordinates[2].y_val, ref_coordinates[2].z_val };
 			bottomPanel.sourcePoints->InsertNextPoint(sourcePoint2);
-			
-			//for (vtkIdType i = 0; i < bottomPanel.sourcePoints->GetNumberOfPoints(); i++)
-			//{
-			//	double p[3];
-			//	bottomPanel.sourcePoints->GetPoint(i, p);
-			//	// This is identical to:
-			//	// polydata->GetPoints()->GetPoint(i,p);
-			//	std::cout << "Point " << i << " : (" << p[0] << " " << p[1] << " " << p[2] << ")" << std::endl;
-			//}
 
 			bottomPanel.targetPoints = vtkSmartPointer<vtkPoints>::New();
 			double targetPoint0[3] = { prod_coordinates[0].x_val, prod_coordinates[0].y_val, prod_coordinates[0].z_val };
@@ -80,16 +74,6 @@ Adapted from: https://www.vtk.org/Wiki/VTK/Examples/Cxx/Interaction/PointPicker
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint1);
 			double targetPoint2[3] = { prod_coordinates[2].x_val, prod_coordinates[2].y_val, prod_coordinates[2].z_val };
 			bottomPanel.targetPoints->InsertNextPoint(targetPoint2);
-			
-			//for (vtkIdType i = 0; i < bottomPanel.targetPoints->GetNumberOfPoints(); i++)
-			//{
-			//	double p[3];
-			//	bottomPanel.targetPoints->GetPoint(i, p);
-			//	// This is identical to:
-			//	// polydata->GetPoints()->GetPoint(i,p);
-			//	std::cout << "Point " << i << " : (" << p[0] << " " << p[1] << " " << p[2] << ")" << std::endl;
-			//}
-
 
 			// Test source points
 			/*double sourcePoint1[3] = { 0.0, 0.0, 1.0 };
