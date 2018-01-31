@@ -10,6 +10,7 @@
 #include <vtkSTLReader.h>
 #include <vtkPolyDataMapper.h>
 #include <vtkActor.h>
+#include <vtkIterativeClosestPointTransform.h>
 
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
@@ -25,83 +26,80 @@ Align::Align() {
 // Methods
 
 void Align::AlignModels() {
-	/*
-	* Transformed the actors so they are aligned using clicked points (as set in PointSelection.cpp)
-	* Sets variables refActor & prodActor to the transformed actors
-	*
-	* We perform the translation such that the reference file stays aligned the same, and the production file
-	* is translated to align with it.
-	*/
-
 	//Hardcoded files for testing
 	//char* filePathReference = NULL;
 	//char* filePathProduction = NULL;
 	//filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
 	//filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
 	
-	// Set up reference file
-	vtkSmartPointer<vtkSTLReader> reader1 =
-		vtkSmartPointer<vtkSTLReader>::New();
-	reader1->SetFileName(filePathRef);
-	reader1->Update();
-	vtkSmartPointer<vtkPolyDataMapper> mapper1 =
-		vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper1->SetInputConnection(reader1->GetOutputPort());
-	vtkSmartPointer<vtkActor> referenceActor =
-		vtkSmartPointer<vtkActor>::New();
-	referenceActor->SetMapper(mapper1);
-
-	// Set up production file
-	vtkSmartPointer<vtkSTLReader> reader2 =
-		vtkSmartPointer<vtkSTLReader>::New();
-	reader2->SetFileName(filePathProd);
-	reader2->Update();
-	vtkSmartPointer<vtkPolyDataMapper> mapper2 =
-		vtkSmartPointer<vtkPolyDataMapper>::New();
-	mapper2->SetInputConnection(reader2->GetOutputPort());
-	vtkSmartPointer<vtkActor> productionActor =
-		vtkSmartPointer<vtkActor>::New();
-	productionActor->SetMapper(mapper2);
-
-	// Setup the transform
-	vtkSmartPointer<vtkLandmarkTransform> landmarkTransform =
-		vtkSmartPointer<vtkLandmarkTransform>::New();
-	landmarkTransform->SetSourceLandmarks(sourcePoints);
-	landmarkTransform->SetTargetLandmarks(targetPoints);
-	//We only want rotation and translation so set to RigidBody
-	landmarkTransform->SetModeToRigidBody();
-	landmarkTransform->Update();
-
 	vtkSmartPointer<vtkPolyData> source =
 		vtkSmartPointer<vtkPolyData>::New();
-	source->SetPoints(sourcePoints);
-
 	vtkSmartPointer<vtkPolyData> target =
 		vtkSmartPointer<vtkPolyData>::New();
-	target->SetPoints(targetPoints);
 
-	//We perform the transformation to the production actor so it lines up with the reference actor
+	//Read files
+	vtkSmartPointer<vtkSTLReader> sourceReader =
+		vtkSmartPointer<vtkSTLReader>::New();
+	sourceReader->SetFileName(filePathRef);
+	sourceReader->Update();
+	source->ShallowCopy(sourceReader->GetOutput());
+	vtkSmartPointer<vtkSTLReader> targetReader =
+		vtkSmartPointer<vtkSTLReader>::New();
+	targetReader->SetFileName(filePathProd);
+	targetReader->Update();
+	target->ShallowCopy(targetReader->GetOutput());
+
+	//Some rotation
+	vtkSmartPointer<vtkTransform> transform = vtkSmartPointer<vtkTransform>::New();
+	//transform->RotateWXYZ(double angle, double x, double y, double z);
+	transform->RotateWXYZ(270, 0, 0, 1);
 	vtkSmartPointer<vtkTransformPolyDataFilter> transformFilter =
 		vtkSmartPointer<vtkTransformPolyDataFilter>::New();
-	transformFilter->SetInputConnection(reader2->GetOutputPort());
-	transformFilter->SetTransform(landmarkTransform);
+	transformFilter->SetTransform(transform);
+	transformFilter->SetInputData(source);
 	transformFilter->Update();
 
-	// Display the transformation matrix that was computed (for debugging)
-	vtkMatrix4x4* mat = landmarkTransform->GetMatrix();
-	std::cout << "Matrix: " << *mat << std::endl;
+	// Setup ICP transform
+	vtkSmartPointer<vtkIterativeClosestPointTransform> icp =
+		vtkSmartPointer<vtkIterativeClosestPointTransform>::New();
+	icp->SetSource(source);
+	icp->SetTarget(target);
+	icp->GetLandmarkTransform()->SetModeToRigidBody();
+	icp->SetMaximumNumberOfIterations(50);
+	icp->StartByMatchingCentroidsOn();
+	icp->Modified();
+	icp->Update();
 
-	// Set up the actor to display the transformed polydata in the bottom pane
-	vtkSmartPointer<vtkPolyDataMapper> transformedMapper =
+	// Get the resulting transformation matrix (this matrix takes the source points to the target points)
+	vtkSmartPointer<vtkMatrix4x4> m = icp->GetMatrix();
+	std::cout << "The resulting matrix is: " << *m << std::endl;
+	
+	// Transform the source points by the ICP solution
+	vtkSmartPointer<vtkTransformPolyDataFilter> icpTransformFilter =
+		vtkSmartPointer<vtkTransformPolyDataFilter>::New();
+	icpTransformFilter->SetInputConnection(transformFilter->GetOutputPort());
+	icpTransformFilter->SetTransform(icp);
+	icpTransformFilter->Update();
+	
+	//Prepare the actors
+	vtkSmartPointer<vtkPolyDataMapper> targetMapper =
 		vtkSmartPointer<vtkPolyDataMapper>::New();
-	transformedMapper->SetInputConnection(transformFilter->GetOutputPort());
-
-	vtkSmartPointer<vtkActor> transformedProdActor =
+	targetMapper->SetInputData(target);
+	vtkSmartPointer<vtkActor> targetActor =
 		vtkSmartPointer<vtkActor>::New();
-	transformedProdActor->SetMapper(transformedMapper);
-	transformedProdActor->GetProperty()->SetColor(0, 1, 0);
+	targetActor->SetMapper(targetMapper);
+	targetActor->GetProperty()->SetColor(0, 1, 0);
+	targetActor->GetProperty()->SetPointSize(4);
+	vtkSmartPointer<vtkPolyDataMapper> solutionMapper =
+		vtkSmartPointer<vtkPolyDataMapper>::New();
+	solutionMapper->SetInputConnection(icpTransformFilter->GetOutputPort());
+	vtkSmartPointer<vtkActor> solutionActor =
+		vtkSmartPointer<vtkActor>::New();
+	solutionActor->SetMapper(solutionMapper);
+	solutionActor->GetProperty()->SetColor(0, 0, 1);
+	solutionActor->GetProperty()->SetPointSize(3);
 
 	//Assign the actors to variables to return
-	refActor = referenceActor;
-	prodActor = transformedProdActor;
+	refActor = solutionActor;
+	prodActor = targetActor;
 }

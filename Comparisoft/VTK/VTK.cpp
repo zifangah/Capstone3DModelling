@@ -18,6 +18,9 @@
 #include "PointSelection.h"
 #include "Align.h"
 #include <cstdio>
+#include <vtkAxesActor.h>
+#include <vtkOrientationMarkerWidget.h>
+
 
 //VTK code goes here. It is now a function, and is called with the file paths.
 int VTKmain(char* filePathReference, char* filePathProduction)
@@ -120,6 +123,17 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderer3->SetBackground(.5, .7, .8);
 	renderer3->SetViewport(comparison_pane);
 	renderer3->ResetCamera();
+
+	vtkSmartPointer<vtkAxesActor> axes =
+		vtkSmartPointer<vtkAxesActor>::New();
+	vtkSmartPointer<vtkOrientationMarkerWidget> widget =
+		vtkSmartPointer<vtkOrientationMarkerWidget>::New();
+	widget->SetOutlineColor(0.9300, 0.5700, 0.1300);
+	widget->SetOrientationMarker(axes);
+	widget->SetInteractor(renderWindowInteractor);
+	widget->SetEnabled(1);
+	widget->InteractiveOn();
+
 
 	renderWindow->Render();
 	renderWindow->SetWindowName("Comparisoft");
