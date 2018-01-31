@@ -49,6 +49,9 @@ int main(int argc, char *argv[])
 	//Writing points to logfile instead
 	freopen("output.txt", "w", stdout);
 
+	//filePathReference = argv[1];
+	//filePathProduction = argv[2];
+	
 	//Argument 0: program name
 
 	//argument 1: Client_Name
@@ -161,11 +164,10 @@ int main(int argc, char *argv[])
 	
 
 	
-	
 
 	//Hardcoded files for testing
-	//filePathReferance = L"lowerModel.stl";
-	//filePathProduction = L"upperModel.stl";
+	//filePathReference = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerProduction.stl";
+	//filePathProduction = "C:/Development/Capstone/Capstone3DModelling/Comparisoft/VTK/VTK-bin/Release/CaroleLowerReference.stl";
 
 	//Launch the VTK function
 	VTKmain(filePathReference, filePathProduction);

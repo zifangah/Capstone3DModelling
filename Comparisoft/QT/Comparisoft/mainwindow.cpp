@@ -137,7 +137,7 @@ void MainWindow::on_RunVTK_clicked()
     VTK->start(program, argv);
     VTK->waitForStarted();
     window()->hide();
-    VTK->waitForFinished();
+    VTK->waitForFinished(-1);
     window()->show();
     VTK->close();
 
