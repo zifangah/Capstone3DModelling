@@ -17,6 +17,7 @@ using namespace std;
     #include <sys/types.h>
     #include <sys/stat.h>
     #include <tchar.h>
+    //#include <shlwapi.h>
 
 /* Mac/Linux environment detected */
 #else
@@ -279,6 +280,7 @@ void MainWindow::on_Config_Button_clicked()
     /* Get "home drive" location by parsing the filpath of the selected reference STL
         file to 3 '/'s */
     rFilePath = rFilePath.mid(0, final_pos);
+    //qInfo() << rFilePath;
 
     QString default_path = rFilePath;
     QString home = rFilePath;
@@ -311,10 +313,9 @@ void MainWindow::on_Config_Button_clicked()
     /* Windows environment detected */
     /* Check if the file save path is a directory that already exists */
     #if defined(_WIN32)
-       if (_taccess_s((LPCTSTR) path.toStdString().c_str(), 0 ) == 0) {
-            struct _stat status;
-            _tstat((LPCTSTR) path.toStdString().c_str(), &status);
-            exists = ((status.st_mode & S_IFDIR) != 0);
+       if (_access_s(path.toStdString().c_str(), 0 ) == 0) {
+            DWORD ftype = GetFileAttributesA(path.toStdString().c_str());
+            exists = ftype & FILE_ATTRIBUTE_DIRECTORY;
         }
 
         else {
@@ -323,10 +324,9 @@ void MainWindow::on_Config_Button_clicked()
 
        /* Check if root folder of default directory exists */
        if (setup_default && !exists) {
-           if (_taccess_s((LPCTSTR) (default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str(), 0 ) == 0) {
-                struct _stat status;
-                _tstat((LPCTSTR) default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str(), &status);
-                root = ((status.st_mode & S_IFDIR) != 0);
+           if (_access_s(default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str(), 0 ) == 0) {
+               DWORD ftype2 = GetFileAttributesA(default_path.mid(0, default_path.indexOf("/Reports")).toStdString().c_str());
+               root = ftype2 & FILE_ATTRIBUTE_DIRECTORY;
             }
 
             else {
@@ -379,7 +379,7 @@ void MainWindow::on_Config_Button_clicked()
                     #endif
                 }
                 /* Custom non-existant file path selected */
-                else {
+                else if(!setup_default) {
                     /* Create new custom directory */
                     #if defined(_WIN32)
                         error = _mkdir(path.toStdString().c_str());
@@ -412,6 +412,11 @@ void MainWindow::on_Config_Button_clicked()
                 /* Create "Reports" directory inside of "Comparisoft" directory
                     (if the default file path is selected and no error occurred creating the first directory) */
                 if (setup_default && !err) {
+
+                    //if root already existed, this needs to be added
+                    if(root){
+                        home.append("/Comparisoft");
+                    }
                     #if defined(_WIN32)
                         error = _mkdir(home.append("/Reports").toStdString().c_str());
                     #else
