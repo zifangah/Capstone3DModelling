@@ -18,6 +18,7 @@ public:
         QString client;
         QString patient;
         QString fileDescription;
+        QString filePath;
     };
 
 private slots:
@@ -29,7 +30,15 @@ private slots:
 
     QString fileDialog();
 
+    QStringList fileDialogMulti();
+
     void on_Config_Button_clicked();
+
+    void on_ReturnToMainPage_clicked();
+
+    void on_Clear_Production_Files_clicked();
+
+    void on_saveLocationButton_clicked();
 
 private:
     Ui::MainWindow *ui;
