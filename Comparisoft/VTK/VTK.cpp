@@ -124,6 +124,23 @@ int VTKmain(char* filePathReference, char* filePathProduction)
 	renderer3->SetViewport(comparison_pane);
 	renderer3->ResetCamera();
 
+    // Setup the text and add it to the respective renderer
+    vtkSmartPointer<vtkTextActor> textActor1 =
+            vtkSmartPointer<vtkTextActor>::New();
+    textActor1->SetInput ("Reference");
+    textActor1->SetPosition2 ( 40, 40 );
+    textActor1->GetTextProperty()->SetFontSize (20);
+    textActor1->GetTextProperty()->SetColor (0,0,255);
+    renderer1->AddActor2D ( textActor1 );
+
+    vtkSmartPointer<vtkTextActor> textActor2 =
+            vtkSmartPointer<vtkTextActor>::New();
+    textActor2->SetInput ("Production");
+    textActor2->SetPosition2 ( 40, 40 );
+    textActor2->GetTextProperty()->SetFontSize (20);
+    textActor2->GetTextProperty()->SetColor (0,0,255);
+    renderer2->AddActor2D (textActor2);
+
 	vtkSmartPointer<vtkAxesActor> axes =
 		vtkSmartPointer<vtkAxesActor>::New();
 	vtkSmartPointer<vtkOrientationMarkerWidget> widget =
