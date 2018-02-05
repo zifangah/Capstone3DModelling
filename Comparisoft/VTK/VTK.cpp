@@ -105,6 +105,7 @@ int VTKmain(char* filePathReference, char* filePathProduction)
     renderer2->SetBackground(.5, .6, .5);
     renderer2->SetViewport(production_pane);
     renderer2->ResetCamera();
+
     
     // Setup the text and add it to the renderer 1 and 2
     vtkSmartPointer<vtkTextActor> textActor =
@@ -122,6 +123,7 @@ int VTKmain(char* filePathReference, char* filePathProduction)
     textActor2->GetTextProperty()->SetFontSize ( 24 );
     textActor2->GetTextProperty()->SetColor ( 0.0, 1.0, 0.0 );
     renderer2->AddActor2D ( textActor2 );
+
 
 
     /* Set-up combined Comparison Pane */
