@@ -106,11 +106,31 @@ int VTKmain(char* filePathReference, char* filePathProduction)
     renderer2->SetViewport(production_pane);
     renderer2->ResetCamera();
 
+    
+    // Setup the text and add it to the renderer 1 and 2
+    vtkSmartPointer<vtkTextActor> textActor =
+            vtkSmartPointer<vtkTextActor>::New();
+    textActor->SetInput ( "Reference" );
+    textActor->SetPosition2 ( 10, 40 );
+    textActor->GetTextProperty()->SetFontSize ( 24 );
+    textActor->GetTextProperty()->SetColor ( 0.0, 1.0, 0.0 );
+    renderer1->AddActor2D ( textActor );
+
+    vtkSmartPointer<vtkTextActor> textActor2 =
+            vtkSmartPointer<vtkTextActor>::New();
+    textActor2->SetInput ( "Production" );
+    textActor2->SetPosition2 ( 10, 40 );
+    textActor2->GetTextProperty()->SetFontSize ( 24 );
+    textActor2->GetTextProperty()->SetColor ( 0.0, 1.0, 0.0 );
+    renderer2->AddActor2D ( textActor2 );
+
+
 
     /* Set-up combined Comparison Pane */
     renderer3->SetBackground(.5, .7, .8);
     renderer3->SetViewport(comparison_pane);
     renderer3->ResetCamera();
+
 
     //set the same camera for both renderers to ensure simultaneous interaction
     renderer2->SetActiveCamera(renderer1->GetActiveCamera());
